@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
+                    <a href="./index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Componentes</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -33,11 +33,24 @@
                             <a href="typography.html" class="dropdown-item">Tarjetas Madres</a>
                             <a href="element.html" class="dropdown-item">Tarjetas RAM</a>
                         </div>
+                        
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-location me-2"></i>UDS. Negocios</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                        <a href="signin.html" class="dropdown-item">Fogaza</a>
+                            <a href="signin.html" class="dropdown-item">Quinta Tabachines</a>
+                            <a href="signin.html" class="dropdown-item">BAOS</a>
+                            <a href="signin.html" class="dropdown-item">Sonoras Meat</a>
+                            <a href="signin.html" class="dropdown-item">Punto Modelo</a>
+                            <a href="signin.html" class="dropdown-item">Corporativo</a>
+                            
+                        </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Estado</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Eliminado</a>
+                        <a href="signin.html" class="dropdown-item">Eliminado</a>
                         </div>
                     </div>
                 </div>
