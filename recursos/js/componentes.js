@@ -1,7 +1,7 @@
-$(function mostrarTodosUDN() {
+$(function mostrarTodosComponentes() {
     let datos = new FormData();
     datos.append("opc", 1);
-    $.ajax({
+      $.ajax({
       type: "POST",
       url: "./controlador/ctrl_Componentes.php",
       contentType: false,
@@ -9,8 +9,8 @@ $(function mostrarTodosUDN() {
       processData: false,
       cache: false,
       success: function (respuesta) {
-        $("#tablasEquipos").html(respuesta);
-        console.log("Hola");
+        $("#tablascomponentes").html(respuesta);
+        console.log("Holaa")
       },
     });
   });

@@ -1,4 +1,4 @@
-$(function mostrarTodosUDN() {
+$(function mostrarTodosEquipos() {
     let datos = new FormData();
     datos.append("opc", 1);
     $.ajax({
