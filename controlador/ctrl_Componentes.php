@@ -17,9 +17,9 @@ switch($opc){
                                 <td>' . $row['modelo'] . ' </td>
                                 <td>' . $row['estado'] . ' </td>
                                 <td>$ ' . $row['costo'] . ' </td>
-                                <td><button type="button" class="btn btn-square btn-primary m-2"><i class="fa fa-edit"></i></button></td>
-                                <td><button type="button" class="btn btn-square btn-warning m-2"><i class="fa fa-print"></i></button></td>
-                                <td><button type="button" class="btn btn-square btn-danger m-2"><i class="fa fa-trash"></i></button></td>
+                                <td><button type="button" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
+                                <button type="button" class="btn btn-square btn-warning m-1"><i class="fa fa-print"></i></button>
+                                <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
                             </tr>
             ';                                  
 
