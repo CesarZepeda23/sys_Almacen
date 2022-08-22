@@ -7,8 +7,11 @@
     </div>
 </footer>
 
-
-<script src="./recursos/js/jquery.min.js"></script>
-<script src="./recursos/js/popper.js"></script>
-<script src="./recursos/js/bootstrap.min.js"></script>
-<script src="./recursos/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./recursos/lib/chart/chart.min.js"></script>
+    <script src="./recursos/lib/easing/easing.min.js"></script>
+    <script src="./recursos/lib/waypoints/waypoints.min.js"></script>
+    <script src="./recursos/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="./recursos/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="./recursos/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="./recursos/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>

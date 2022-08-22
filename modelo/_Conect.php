@@ -9,7 +9,7 @@
 					PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
 				);
 
-				$BD1	= "rfwsmqex_gvsl";
+			$BD1	= "rfwsmqex_gvsl";
       		$BD2	= "rfwsmqex_gvsl_sys_almacen";
 
 			try {
