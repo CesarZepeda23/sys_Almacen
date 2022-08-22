@@ -6,10 +6,10 @@ $opc    = $_POST['opc'];
 
 switch($opc){
     case 1://MOSTRAR UDN
-        $tablaindexComponentes = null;
+        $tablaComponentes = null;
         $sql = $obj -> mostrarComponentes(); 
         foreach($sql as $row){
-            $tablaindexComponentes = '
+            $tablaComponentes = '
                 <tr>
                                 <td>' . $row['idComponente'] . ' </td>
                                 <td>' . $row['nombre'] . ' </td>
@@ -17,11 +17,15 @@ switch($opc){
                                 <td>' . $row['modelo'] . ' </td>
                                 <td>' . $row['estado'] . ' </td>
                                 <td>$ ' . $row['costo'] . ' </td>
-
+                                <td><button type="button" class="btn btn-square btn-primary m-2"><i class="fa fa-edit"></i></button></td>
+                                <td><button type="button" class="btn btn-square btn-warning m-2"><i class="fa fa-print"></i></button></td>
+                                <td><button type="button" class="btn btn-square btn-danger m-2"><i class="fa fa-trash"></i></button></td>
                             </tr>
-            ';  
-            echo $tablaindexComponentes;
+            ';                                  
+
+            echo $tablaComponentes;
         }
         break;
+
 }   
 ?>

@@ -71,10 +71,10 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="./index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
-                    <a href="./vistas/componentes.php" class="nav-link dropdown-toggle"><i class="fa fa-laptop me-2"></i>Componentes</a>
-                    <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-location me-2"></i>UDS. Negocios</a>
-                    <a href="#" class="nav-link dropdown-toggle"><i class="far fa-file-alt me-2"></i>Estado</a>
+                    <a href="./index.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
+                    <a href="./vistas/componentes.php" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Componentes</a>
+                    <a href="#" class="nav-item nav-link"><i class="fa fa-location me-2"></i>UDS. Negocios</a>
+                    <a href="#" class="nav-item nav-link"><i class="far fa-file-alt me-2"></i>Estado</a>
                 </div>
             </nav>
         </div>
@@ -118,7 +118,7 @@
                                 <th scope="col">ColorUDN</th>
                             </tr>
                         </thead>
-                        <tbody id="tablasUDN">
+                        <tbody id="tablasUDNindex">
                             
                         </tbody>
                     </table>
@@ -138,7 +138,7 @@
                                             <th scope="col">Id Del Componente</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tablasEquipos">
+                                    <tbody id="tablasEquiposindex">
                                        
                                     </tbody>
                                 </table>
@@ -160,7 +160,7 @@
                                             <th scope="col">Costo</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tablascomponentes">
+                                    <tbody id="tablascomponentesindex">
                                         
                                     </tbody>
                                 </table>
@@ -189,7 +189,4 @@
     <script src="./recursos/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="./recursos/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="./recursos/js/index.js"=<?php echo time(); ?>"></script>
-    <script src="./recursos/js/equipos.js"=<?php echo time(); ?>"></script>
-    <script src="./recursos/js/componentes.js"=<?php echo time(); ?>"></script>
-    <script src="./recursos/js/udn.js"=<?php echo time(); ?>"></script>
 </body>

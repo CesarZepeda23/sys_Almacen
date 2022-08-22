@@ -3,11 +3,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario</title>
-    <link rel="shortcut icon" href="./recursos/img/Logo Almacen.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../recursos/img/Logo Almacen.png" type="image/x-icon">
 
     <!-- BOOTSTRAP -->
     <!-- https://getbootstrap.com/docs/5.2/getting-started/introduction/ -->
-    <link rel="stylesheet" href="./recursos/bootstrap-5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../recursos/bootstrap-5.2.0/css/bootstrap.min.css">
     <script src="../recursos/bootstrap-5.2.0/popper.js"></script>
     <script src="../recursos/bootstrap-5.2.0/js/bootstrap.min.js"></script>
     <script src="../recursos/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
