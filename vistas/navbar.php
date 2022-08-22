@@ -1,4 +1,4 @@
-<div class="container-xxl position-relative bg-white d-flex p-0">
+<div class="container-xxl position-relative bg-black d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -38,19 +38,20 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-location me-2"></i>UDS. Negocios</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                        <a href="signin.html" class="dropdown-item">Fogaza</a>
-                            <a href="signin.html" class="dropdown-item">Quinta Tabachines</a>
-                            <a href="signin.html" class="dropdown-item">BAOS</a>
-                            <a href="signin.html" class="dropdown-item">Sonoras Meat</a>
-                            <a href="signin.html" class="dropdown-item">Punto Modelo</a>
-                            <a href="signin.html" class="dropdown-item">Corporativo</a>
+                        <a href="#" class="dropdown-item">Fogaza</a>
+                            <a href="#" class="dropdown-item">Quinta Tabachines</a>
+                            <a href="#" class="dropdown-item">BAOS</a>
+                            <a href="#" class="dropdown-item">Sonoras Meat</a>
+                            <a href="#" class="dropdown-item">Punto Modelo</a>
+                            <a href="#" class="dropdown-item">Corporativo</a>
                             
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Estado</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                        <a href="signin.html" class="dropdown-item">Eliminado</a>
+                        <a href="#" class="dropdown-item">Almacen/Stock</a>
+                        <a href="#" class="dropdown-item">Eliminado</a>
                         </div>
                     </div>
                 </div>
@@ -66,9 +67,6 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control border-0" type="search" placeholder="Search">
-                </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
