@@ -9,7 +9,7 @@ $(function mostrarTodosUDN() {
       processData: false,
       cache: false,
       success: function (respuesta) {
-        $("#tablas").html(respuesta);
+        $("#tablasUDN").html(respuesta);
         console.log("Hola");
       },
     });

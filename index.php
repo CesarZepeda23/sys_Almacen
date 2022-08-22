@@ -5,10 +5,30 @@
    <main>
        <section class="container">
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4" id="tablas">
-                   <!--  <div class="col-sm-12 col-xl-6">
+                <div class="row g-4">
+                <div class="col-sm-12 col-xl-6">
+            <div class="bg-light rounded h-100 p-4">
+                <h6 class="mb-4">Unidades De Negocio</h6>
+                <div class="table-responsive">
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">idUDN</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Abreviatura</th>
+                                <th scope="col">ColorUDN</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablasUDN">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+                    <!-- <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Estado</h6>
+                            <h6 class="mb-4">Equipo</h6>
                             <div class="table-responsive">
                             <table class="table table-striped">
                                     <thead>
