@@ -5,7 +5,7 @@ require("../vistas/navbar.php"); ?>
 
 <body>
     <main>
-        <section class="container">
+    <section class="container">
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
                 <div class="col-sm-12">
@@ -28,6 +28,7 @@ require("../vistas/navbar.php"); ?>
                                     </tbody>
                                 </table>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-sm-12 col-xl-6">
@@ -70,6 +71,26 @@ require("../vistas/navbar.php"); ?>
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Equipo</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Id Del Equipo</th>
+                                                <th scope="col">Fecha De Alta</th>
+                                                <th scope="col">Encargado Del Equipo</th>
+                                                <th scope="col">Id Del Componente</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody id="tablasEquiposindex">
+                                            
+                                            </tbody>
+                                    </table>
+                                </div>
+                        </div>
+                    </div> 
                 </div>
             </div>        
         </section>
