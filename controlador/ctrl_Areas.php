@@ -6,37 +6,37 @@ $opc    = $_POST['opc'];
 
 switch($opc){
     case 1:
-        $tablaAreaUDN = null;
+        $tablasAreaUDN = null;
         $sql = $obj -> mostrarAreaUDN(); 
         foreach($sql as $row){
-            $tablasAreaUDN = '
+            $tablasAreaUDN .= '
             <tr>
                 <td>' . $row['idAreaUdn'] . ' </td>
                 <td>' . $row['id_Area'] . ' </td>
                 <td>' . $row['id_UDN'] . ' </td>
             </tr>
             ';  
-            echo $tablaAreaUDN;
         }
+        echo $tablasAreaUDN;
         break;
 
         case 2:
-            $tablaUDN = null;
+            $tablasUDN = null;
             $sql = $obj -> mostrarUDN(); 
             foreach($sql as $row){
-                $tablasUDN = '
+                $tablasUDN .= '
                 <tr>
                     <td>' . $row['idUDN'] . ' </td>
                     <td>' . $row['UDN'] . ' </td>
                     <td>' . $row['Abreviatura'] . ' </td>
                 </tr>
                 ';  
-                echo $tablaUDN;
             }
+            echo $tablasUDN;
             break;
 
         case 3:
-            $tablaArea = null;
+           /*  $tablaArea = null;
             $sql = $obj -> mostrarArea(); 
             foreach($sql as $row){
                 $tablasUDN = '
@@ -47,6 +47,8 @@ switch($opc){
                 </tr>
                 ';  
                 echo $tablaUDN;
+            } */
             break;
 }   
+
 ?>
