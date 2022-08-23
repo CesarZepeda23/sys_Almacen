@@ -1,6 +1,6 @@
 <?php
-include_once("../modelo/mdl_UDN.php");
-$obj = new UDN;
+include_once("../modelo/mdl_Areas.php");
+$obj = new Areas;
 
 $opc    = $_POST['opc'];
 
