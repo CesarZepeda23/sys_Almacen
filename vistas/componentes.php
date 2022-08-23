@@ -3,7 +3,7 @@
 require("../vistas/navbar.php"); ?>
 <!-- INDEX -->
 
-<body style="min-height: 100vw;">
+<body style="min-height: 100vh;">
     <main>
         <section class="container">
             <div class="container-fluid pt-4 px-4">
@@ -35,6 +35,50 @@ require("../vistas/navbar.php"); ?>
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade " id="modalProductos" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalProductos" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="col">
+                                <div class="card-text row">
+                                    <h5 class="modal-title fw-bold text-uppercase text-center">
+                                        Catalogo de Productos
+                                    </h5>
+                                </div>
+                                <div class="card-text row">
+                                    <div class="col-12 col-sm-3">
+                                        <div class="form-floating ">
+                                            <select id="listaCategoriasModal" class="form-select form-select-sm" placeholder="Selecciona una Opción">
+                                            </select>
+                                            <label for="listaCategorias" aria-label="Categoria Producto"><i class="icon-th-list"></i>
+                                                Categoria de Productos</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row" id="catalogoProductos"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger col-12 col-xl-7" data-bs-dismiss="modal">
+                                <i class="icon-basket-1"></i>
+                                Cerrar Catalogo de Productos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
         </section>
     </main>
 
