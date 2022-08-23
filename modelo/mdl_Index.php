@@ -3,7 +3,7 @@ include_once("_CRUD.php");
 
 Class Index extends CRUD {
     function mostrarUDNIndex () {
-        $query = "SELECT * FROM udn ORDER BY idUDN ASC";
+        $query = "SELECT * FROM udn WHERE Stado = 1";
         $sql = $this->_Select($query,null,"1");
         return $sql;
     }
