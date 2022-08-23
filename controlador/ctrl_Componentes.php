@@ -16,7 +16,7 @@ switch ($opc) {
                     <td>' . $row['nombre'] . ' </td>
                     <td>' . $row['marca'] . ' </td>
                     <td>' . $row['modelo'] . ' </td>
-                    <td>' . $row['uds'] . ' </td>
+                    <td>' . $row['udn'] . ' </td>
                     <td>' . $row['area'] . ' </td>
                     <td>' . $row['estado'] . ' </td>
                     <td>$ ' . number_format($row['costo'], 2) . ' </td>
