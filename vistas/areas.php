@@ -100,7 +100,7 @@ require("../vistas/navbar.php"); ?>
 
     <!--ARCHIVOS PHP -->
     <!--ARCHIVOS SCRIPTS -->
-    <script src="../recursos/js/udn.js"=<?php echo time(); ?>"></script>
+    <script src="../recursos/js/areas.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
 
 </body>
