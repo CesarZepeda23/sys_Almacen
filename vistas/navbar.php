@@ -17,8 +17,8 @@
                 <div class="navbar-nav w-100">
                     <a href="../index.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
                     <a href="../vistas/componentes.php" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Componentes</a>
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-location me-2"></i>UDS. Negocios</a>
-                    <a href="#" class="nav-item nav-link"><i class="far fa-file-alt me-2"></i>Estado</a>
+                    <a href="../vistas/areas.php" class="nav-item nav-link"><i class="fa fa-location me-2"></i>Areas</a>
+                    <a href="../vistas/equipos.php" class="nav-item nav-link"><i class="far fa-file-alt me-2"></i>Equipos</a>
                 </div>
             </nav>
         </div>

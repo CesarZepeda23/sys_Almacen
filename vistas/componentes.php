@@ -25,6 +25,9 @@ require("../vistas/navbar.php"); ?>
                                             <th scope="col">UDN. Negocios</th>
                                             <th scope="col">Area</th>
                                             <th scope="col">Condición</th>
+                                            <th scope="col">Area</th>>
+                                            <th scope="col">Estado</th>
+                                            <th scope="col">Costo</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>

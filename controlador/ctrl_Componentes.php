@@ -17,6 +17,8 @@ switch ($opc) {
                     <td>' . $row['nombre'] . ' </td>
                     <td>' . $row['modelo'] . ' </td>
                     <td>' . $row['nombre'] . ' </td>
+                    <td>' . $row['udn'] . ' </td>
+                    <td>' . $row['area'] . ' </td>
                     <td>' . $row['estado'] . ' </td>
                     <td>' . $row['modelo'] . ' </td>
                     <td>
