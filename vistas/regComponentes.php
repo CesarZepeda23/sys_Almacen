@@ -7,7 +7,6 @@ require("../vistas/navbar.php"); ?>
 <body>
     <main>
         <section class="container">
-
         </section>
     </main>
 

@@ -8,7 +8,7 @@ require("../vistas/navbar.php"); ?>
     <main>
         <section class="container">
             <div class="container-fluid pt-4 px-4">
-                <button type="button" class="btn btn-primary m-2" hrf="./regComponentes.php" target="_blank">
+                <button type="button" class="btn btn-primary m-2" onclick="location.href='regComponentes.php'; target='_blank'">
                     <i class="fa fa-pen me-2"></i>Nuevo Componente</button>
                 <div class="row g-4">
                     <div class="col-sm-12">
@@ -25,7 +25,7 @@ require("../vistas/navbar.php"); ?>
                                             <th scope="col">UDN. Negocios</th>
                                             <th scope="col">Area</th>
                                             <th scope="col">Condición</th>
-                                            <th scope="col">Area</th>>
+                                            <th scope="col">Area</th>
                                             <th scope="col">Estado</th>
                                             <th scope="col">Costo</th>
                                             <th scope="col">Acciones</th>
