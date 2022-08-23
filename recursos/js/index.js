@@ -4,7 +4,7 @@
         datos.append("opc", 1);
         $.ajax({
           type: "POST",
-          url: "./controlador/ctrl_Index.php",
+          url: "../controlador/ctrl_Index.php",
           contentType: false,
           data: datos,
           processData: false,
@@ -21,7 +21,7 @@
         datos.append("opc", 2);
         $.ajax({
           type: "POST",
-          url: "./controlador/ctrl_Index.php",
+          url: "../controlador/ctrl_Index.php",
           contentType: false,
           data: datos,
           processData: false,
@@ -38,7 +38,7 @@
         datos.append("opc", 3);
           $.ajax({
           type: "POST",
-          url: "./controlador/ctrl_Index.php",
+          url: "../controlador/ctrl_Index.php",
           contentType: false,
           data: datos,
           processData: false,
