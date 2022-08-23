@@ -10,20 +10,17 @@ require("../vistas/navbar.php"); ?>
                 <div class="row g-4">
                 <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Componentes</h6>
+                            <h6 class="mb-4">UDN - Areas</h6>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">ID Del Componente</th>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Marca</th>
-                                            <th scope="col">Modelo</th>
-                                            <th scope="col">Estado</th>
-                                            <th scope="col">Costo</th>
+                                            <th scope="col">Nombre UDN</th>
+                                            <th scope="col">Nombre Area</th>
+                                            <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tablascomponentesindex">
+                                    <tbody id="tablasAreaUDN">
 
                                     </tbody>
                                 </table>
@@ -33,18 +30,17 @@ require("../vistas/navbar.php"); ?>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Unidades De Negocio</h6>
+                            <h6 class="mb-4">UDN</h6>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Id De UDN</th>
+                                            <th scope="col">Id UDN</th>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Abreviatura</th>
-                                            <th scope="col">ColorUDN</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tablasUDNindex">
+                                    <tbody id="tablasUDN">
 
                                     </tbody>
                                 </table>
@@ -53,44 +49,23 @@ require("../vistas/navbar.php"); ?>
                     </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Equipo</h6>
+                            <h6 class="mb-4">Areas</h6>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Id Del Equipo</th>
-                                            <th scope="col">Fecha De Alta</th>
-                                            <th scope="col">Encargado Del Equipo</th>
-                                            <th scope="col">Id Del Componente</th>
+                                            <th scope="col">Id Area</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Abreviatura</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tablasEquiposindex">
+                                    <tbody id="tablasAreas">
 
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Equipo</h6>
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Id Del Equipo</th>
-                                                <th scope="col">Fecha De Alta</th>
-                                                <th scope="col">Encargado Del Equipo</th>
-                                                <th scope="col">Id Del Componente</th>
-                                            </tr>
-                                        </thead>
-                                            <tbody id="tablasEquiposindex">
-                                            
-                                            </tbody>
-                                    </table>
-                                </div>
-                        </div>
-                    </div> 
                 </div>
             </div>        
         </section>

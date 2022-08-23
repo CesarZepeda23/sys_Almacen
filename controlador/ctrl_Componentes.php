@@ -5,7 +5,7 @@ $obj = new Componentes;
 $opc    = $_POST['opc'];
 
 switch ($opc) {
-    case 1: //MOSTRAR UDN
+    case 1:
         $tablaComponentes = null;
         $sql = $obj->mostrarComponentes();
         foreach ($sql as $row) {
