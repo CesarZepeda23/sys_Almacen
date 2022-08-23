@@ -48,7 +48,7 @@ switch($opc){
                                         <td>' . $row['marca'] . ' </td>
                                         <td>' . $row['modelo'] . ' </td>
                                         <td>' . $row['estado'] . ' </td>
-                                        <td>$ ' . $row['costo'] . ' </td>
+                                        <td>$ ' . number_format($row['costo'], 2, '.',',') . ' </td>
         
                                     </tr>
                     ';  

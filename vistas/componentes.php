@@ -20,7 +20,7 @@ require("../vistas/navbar.php"); ?>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Marca</th>
                                             <th scope="col">Modelo</th>
-                                            <th scope="col">UDS. Negocios</th>
+                                            <th scope="col">UDN. Negocios</th>
                                             <th scope="col">Area</th>>
                                             <th scope="col">Estado</th>
                                             <th scope="col">Costo</th>
