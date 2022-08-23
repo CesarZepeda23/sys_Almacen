@@ -12,7 +12,7 @@ require("../vistas/navbar.php"); ?>
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Equipo</h6>
                             <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped" >
                                     <thead>
                                         <tr>
                                             <th scope="col">UDN</th>

@@ -1,13 +1,13 @@
 <?php
-include_once("../modelo/mdl_Index.php");
-$obj = new Index;
+include_once("../modelo/mdl_Dashboard.php");
+$obj = new Dashboard;
 
 $opc    = $_POST['opc'];
 
 switch($opc){
     case 1://MOSTRAR UDN
         $tablaindexUDN = null;
-        $sql = $obj -> mostrarUDNIndex(); 
+        $sql = $obj -> mostrarUDNDashboard(); 
         foreach($sql as $row){
             $tablaindexUDN = '
             <tr>
@@ -23,7 +23,7 @@ switch($opc){
 
         case 2://MOSTRAR UDN
             $tablaindexEquipos = null;
-            $sql = $obj -> mostrarEquiposIndex(); 
+            $sql = $obj -> mostrarEquiposDashboard(); 
             foreach($sql as $row){
                 $tablaindexEquipos = '
                 <tr>
@@ -39,7 +39,7 @@ switch($opc){
 
             case 3://MOSTRAR UDN
                 $tablaindexComponentes = null;
-                $sql = $obj -> mostrarComponentesIndex(); 
+                $sql = $obj -> mostrarComponentesDashboard(); 
                 foreach($sql as $row){
                     $tablaindexComponentes = '
                         <tr>
