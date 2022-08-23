@@ -2,7 +2,7 @@
 include_once("../modelo/mdl_Componentes.php");
 $obj = new Componentes;
 
-$opc    = $_POST['opc'];
+$opc    = $_POST['opc']
 
 switch ($opc) {
     case 1: //MOSTRAR UDN
