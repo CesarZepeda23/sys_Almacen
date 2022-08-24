@@ -16,6 +16,8 @@ switch($opc){
                                 <td>' . $row['numeroEquipo'] . ' </td>
                                 <td>' . $row['responsableEquipo'] . ' </td>
                                 <td>' . $row['fechaAlta'] . ' </td>
+                                <td>  <button type="button" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
+                                <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button> </td>
                             </tr>
             ';  
             echo $tablaEquipos;

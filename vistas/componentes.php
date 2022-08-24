@@ -64,8 +64,6 @@ require("../vistas/navbar.php"); ?>
                     </div>
                 </div>
             </div>
-
-
         </section>
     </main>
 

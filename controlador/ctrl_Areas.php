@@ -12,8 +12,8 @@ switch($opc){
             $tablasAreaUDN .= '
             <tr>
                 <td>' . $row['idAreaUdn'] . ' </td>
-                <td>' . $row['id_Area'] . ' </td>
-                <td>' . $row['id_UDN'] . ' </td>
+                <td>' . $row['nombre'] . ' </td>
+                <td>' . $row['UDN'] . ' </td>
             </tr>
             ';  
         }
@@ -36,18 +36,18 @@ switch($opc){
             break;
 
         case 3:
-           /*  $tablaArea = null;
+            $tablasAreas = null;
             $sql = $obj -> mostrarArea(); 
             foreach($sql as $row){
-                $tablasUDN = '
+                $tablasAreas = '
                 <tr>
                     <td>' . $row['idArea'] . ' </td>
                     <td>' . $row['nombre'] . ' </td>
                     <td>' . $row['abreviatura'] . ' </td>
                 </tr>
                 ';  
-                echo $tablaUDN;
-            } */
+                echo $tablasAreas;
+            }
             break;
 }   
 
