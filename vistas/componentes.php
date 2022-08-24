@@ -55,24 +55,23 @@ require("../vistas/navbar.php"); ?>
 
 
                             <div class="row">
-                                <div class="card mb-3" style="z-index:1;">
+                                <div class="mb-3" style="z-index:1;">
                                     <div class="row">
                                         <!-- CARD BODY -->
-                                        <div class="card-body p-sm-2 p-md-4 p-lg-4 p-xl-4">
+                                        <div class="card-body">
                                             <div class="card-text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="fechaActual" />
-                                                        <label for="fechaActual" aria-label="Fecha Actual">
-                                                            <i class="icon-calendar-2"></i class=>Fecha</label>
+                                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                        <label for="floatingInput"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-5"></div>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="folioPedido" placeholder="" />
-                                                        <label for="folioPedido" aria-label="Folio"><i class="icon-hash"></i>
-                                                            Numero de Pedido</label>
+                                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                        <label for="floatingInput"><i class="fa-solid fa-share-nodes me-2"></i>
+                                                            Areas</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,7 +139,7 @@ require("../vistas/navbar.php"); ?>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
                             <button type="button" class="btn btn-success m-2"><i class="fa-solid fa-computer-mouse me-2"></i>Agregar Componente</button>
                         </div>
                     </div>

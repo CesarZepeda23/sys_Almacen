@@ -9,16 +9,26 @@ class Componentes extends CRUD
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
+
+
+    function mostrarComponentes()
+    {
+        $query = "SELECT
+        rfwsmqex_gvsl_sys_almacen.componentes.idComponente,
+        rfwsmqex_gvsl_sys_almacen.componentes.nombre,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.marca,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.modelo,
+        rfwsmqex_gvsl.udn.UDN,
+        rfwsmqex_gvsl_sys_almacen.areas.nombre,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.condicion,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.costo
+        FROM
+        rfwsmqex_gvsl_sys_almacen.area_udn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.areas ON rfwsmqex_gvsl_sys_almacen.area_udn.id_Area = rfwsmqex_gvsl_sys_almacen.areas.idArea
+        INNER JOIN rfwsmqex_gvsl.udn ON rfwsmqex_gvsl_sys_almacen.area_udn.id_UDN = rfwsmqex_gvsl.udn.idUDN
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.componentes ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica";
+        $sql = $this->_Select($query, null, "2");
+        return $sql;
+    }
 }
-
-
-// $query = "SELECT *
-//         FROM rfwsmqex_gvsl.udn AS udn 
-//         INNER JOIN rfwsmqex_gvsl_sys_almacen.area_udn AS syscomareaudn
-//         ON udn.idUDN = syscomareaudn.id_UDN AND udn.Stado = 1
-//         INNER JOIN rfwsmqex_gvsl_sys_almacen.areas AS areas 
-//         ON syscomareaudn.id_Area = areas.idArea
-//         INNER JOIN  rfwsmqex_gvsl_sys_almacen.componentes AS comp
-//         ON syscomareaudn.idAreaUDN = comp.id_AreaUDN
-//         INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas AS caract
-//         ON comp.idComponente = caract.idCaracteristica AND caract.estado = 1";
