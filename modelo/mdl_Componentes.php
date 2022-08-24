@@ -10,6 +10,14 @@ class Componentes extends CRUD
         return $sql;
     }
 
+    function mostrarAreaUDN($idUDN)
+    {
+        $query = "SELECT * FROM area_udn 
+        INNER JOIN  areas ON area_udn.id_UDN = '" . $idUDN . "' AND  area_udn.id_Area = areas.idArea";
+        $sql = $this->_Select($query, null, "2");
+        return $sql;
+    }
+
 
     function mostrarComponentes()
     {

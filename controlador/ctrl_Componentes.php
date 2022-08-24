@@ -14,6 +14,15 @@ switch ($opc) {
         echo $diseño;
         break;
     case 2:
+        $diseño = '<option selected value="0" disabled >Seleccione una Opción</option>';
+        $idUDN = $_POST['idUDN'];
+        $sql = $obj->mostrarAreaUDN($idUDN);
+        foreach ($sql as $row) {
+            $diseño .= '<option value="' . $row['idAreaUdn'] . '">' . $row['nombre'] . '</option>';
+        }
+        echo $diseño;
+        break;
+    case 3:
         $tablaComponentes = null;
         $sql = $obj->mostrarComponentes();
         foreach ($sql as $row) {
