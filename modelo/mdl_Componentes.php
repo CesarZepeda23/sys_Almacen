@@ -3,6 +3,7 @@ include_once("_CRUD.php");
 
 class Componentes extends CRUD
 {
+
     function mostrarUDN()
     {
         $query = "SELECT * FROM udn WHERE Stado = 1";
