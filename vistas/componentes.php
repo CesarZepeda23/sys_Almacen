@@ -58,8 +58,8 @@ require("../vistas/navbar.php"); ?>
                                         <!-- CARD BODY -->
                                         <div class="card-body">
                                             <div class="card-text row">
-                                                <div class="col-12 col-sm-3">
-                                                    <div class="form-floating mb-4">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="form-floating mb-3">
                                                         <select class="form-select" id="udn" aria-label="Unidades de Negocio"> </select>
                                                         <label for="udn"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
                                                     </div>
@@ -79,57 +79,50 @@ require("../vistas/navbar.php"); ?>
                                             <div class="card-text row">
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="nombre" placeholder="Juan Perez Lopez" />
-                                                        <label for="nombre" aria-label="Nombre Completo"><i class="icon-user"></i>
-                                                            Nombre Completo</label>
+                                                        <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente">
+                                                        <label for="nombreComp" aria-label="Nombre del Componente"><i class="fa-solid fa-rectangle-list me-2"></i>
+                                                            Nombre del Componente</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input type="email" class="form-control text-center" id="email" placeholder="correo@dominio.com" />
-                                                        <label for="email" aria-label="Correo electrónico ó email"><i class="icon-at"></i> Correo Electronico </label>
+                                                        <input type="text" class="form-control text-center" id="marca" placeholder="Marca del Componente" />
+                                                        <label for="marca" aria-label="Marca del Componente"><i class="fa-solid fa-copyright me-2"></i> Marca</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="telefono" placeholder="000 000 00 00" />
-                                                        <label for="telefono" aria-label="Telefono"><i class="icon-phone-1"></i>
-                                                            Teléfono</label>
+                                                        <input type="text" class="form-control text-center" id="modelo" placeholder="Modelo del Componente" />
+                                                        <label for="modelo" aria-label="Modelo del Componente"><i class="fa-solid fa-laptop-file me-2"></i>
+                                                            Modelo</label>
                                                     </div>
                                                 </div>
                                             </div>
+
+
 
                                             <div class="card-text row">
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <select id="listaCategorias" class="form-select" placeholder="Selecciona una Opción">
-                                                        </select>
-                                                        <label for="listaCategorias" aria-label="Categoria Producto"><i class="icon-th-list"></i>
-                                                            Categoria de Productos</label>
+                                                        <input type="text" class="form-control text-center" id="tipo" placeholder="Tipo del Componente">
+                                                        <label for="tipo" aria-label="Tipo del Componente"><i class="fa-solid fa-object-ungroup"></i>
+                                                            Tipo</label>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-12 col-sm-4" id="divProducto">
+                                                <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input readonly type="text" class="form-control text-center" id="NombreProducto" />
-                                                        <label for="NombreProducto" aria-label="Nombre Producto">
-                                                            <i class="icon-cube"></i>
-                                                            Producto</label>
+                                                        <input type="text" class="form-control text-center" id="precio" placeholder="Precio del Componente" />
+                                                        <label for="marca" aria-label="Marca del Componente"><i class="fa-solid fa-copyright me-2"></i> Precio</label>
                                                     </div>
                                                 </div>
-
-                                                <div class="col-12 col-sm-4" id="divRelleno">
+                                                <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <select id="opcionRelleno" class="form-select" placeholder="Selecciona una Opción">
-                                                            <option selected value="Selecciona una Opción">Seleccione una Opción
-                                                            </option>
-                                                        </select>
-                                                        <label for="opcionRelleno" aria-label="Relleno"><i class="icon-chart-pie-alt"></i>
-                                                            Relleno</label>
+                                                        <input type="text" class="form-control text-center" id="modelo" placeholder="Modelo del Componente" />
+                                                        <label for="modelo" aria-label="Modelo del Componente"><i class="fa-solid fa-laptop-file me-2"></i>
+                                                            Condición Fisica</label>
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                         </div>
                                     </div>

@@ -21,6 +21,7 @@ $(function mostrarUDN() {
 $("#udn").change(function () {
   let datos = new FormData();
   datos.append("opc", 2);
+  datos.append("idUDN", $(this).val());
 
   $.ajax({
     type: "POST",
