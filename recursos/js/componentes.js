@@ -13,14 +13,31 @@ $(function mostrarUDN() {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      $("#").html(respuesta);
+      $("#udn").html(respuesta);
+    },
+  });
+});
+
+$("#udn").change(function () {
+  let datos = new FormData();
+  datos.append("opc", 2);
+
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Componentes.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      $("#areas").html(respuesta);
     },
   });
 });
 
 $(function mostrarComponentes() {
   let datos = new FormData();
-  datos.append("opc", 2);
+  datos.append("opc", 3);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Componentes.php",

@@ -52,8 +52,6 @@ require("../vistas/navbar.php"); ?>
                             </div>
                         </div>
                         <div class="modal-body">
-
-
                             <div class="row">
                                 <div class="mb-3" style="z-index:1;">
                                     <div class="row">
@@ -61,51 +59,45 @@ require("../vistas/navbar.php"); ?>
                                         <div class="card-body">
                                             <div class="card-text row">
                                                 <div class="col-12 col-sm-3">
-                                                    <div class="form-floating mb-3">
-                                                        <select class="form-select" id="udn" aria-label="Unidades de Negocio">
-                                                        </select>
-                                                        <label for="floatingInput"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
+                                                    <div class="form-floating mb-4">
+                                                        <select class="form-select" id="udn" aria-label="Unidades de Negocio"> </select>
+                                                        <label for="udn"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-sm-5"></div>
+                                                <div class="col-12 col-sm-4"></div>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <select class="form-select" id="areas" aria-label="Floating label select example">
-                                                            <option selected>Open this select menu</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                            <option value="3">Three</option>
+                                                        <select class="form-select" id="areas" aria-label="Areas UDN">
+                                                            <option selected value="0" disabled>Seleccione una Opción</option>
                                                         </select>
-                                                        <label for="floatingInput"><i class="fa-solid fa-share-nodes me-2"></i>
+                                                        <label for="areas"><i class="fa-solid fa-share-nodes me-2"></i>
                                                             Areas</label>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <fieldset disabled>
-                                                <div class="card-text row">
-                                                    <div class="col-12 col-sm-4">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control text-center" id="nombre" placeholder="Juan Perez Lopez" />
-                                                            <label for="nombre" aria-label="Nombre Completo"><i class="icon-user"></i>
-                                                                Nombre Completo</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-4">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="email" class="form-control text-center" id="email" placeholder="correo@dominio.com" />
-                                                            <label for="email" aria-label="Correo electrónico ó email"><i class="icon-at"></i> Correo Electronico </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-4">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control text-center" id="telefono" placeholder="000 000 00 00" />
-                                                            <label for="telefono" aria-label="Telefono"><i class="icon-phone-1"></i>
-                                                                Teléfono</label>
-                                                        </div>
+                                            <div class="card-text row">
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control text-center" id="nombre" placeholder="Juan Perez Lopez" />
+                                                        <label for="nombre" aria-label="Nombre Completo"><i class="icon-user"></i>
+                                                            Nombre Completo</label>
                                                     </div>
                                                 </div>
-                                            </fieldset>
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control text-center" id="email" placeholder="correo@dominio.com" />
+                                                        <label for="email" aria-label="Correo electrónico ó email"><i class="icon-at"></i> Correo Electronico </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control text-center" id="telefono" placeholder="000 000 00 00" />
+                                                        <label for="telefono" aria-label="Telefono"><i class="icon-phone-1"></i>
+                                                            Teléfono</label>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <div class="card-text row">
                                                 <div class="col-12 col-sm-4">
