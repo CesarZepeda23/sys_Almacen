@@ -9,7 +9,7 @@ Class Areas extends CRUD {
     }
 
     function mostrarUDN () {
-        $query = "SELECT * FROM udn";
+        $query = "SELECT * FROM udn WHERE Stado = 1";
         $sql = $this->_Select($query,null,"1");
         return $sql;
     }
