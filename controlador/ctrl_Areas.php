@@ -12,8 +12,11 @@ switch($opc){
             $tablasAreaUDN .= '
             <tr>
                 <td>' . $row['idAreaUdn'] . ' </td>
-                <td>' . $row['nombre'] . ' </td>
                 <td>' . $row['UDN'] . ' </td>
+                <td>' . $row['nombre'] . ' </td>
+                <td>
+                    <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button>
+                </td>
             </tr>
             ';  
         }
@@ -44,6 +47,9 @@ switch($opc){
                     <td>' . $row['idArea'] . ' </td>
                     <td>' . $row['nombre'] . ' </td>
                     <td>' . $row['abreviatura'] . ' </td>
+                    <td>
+                        <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button>
+                    </td>
                 </tr>
                 ';  
             }
