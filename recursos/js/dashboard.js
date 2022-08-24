@@ -10,8 +10,7 @@ $(function mostrarTodosUDN() {
       cache: false,
       success: function (respuesta) {
         $("#tablasUDNindex").html(respuesta);
-/*         console.log("Hola");
- */      },
+     },
     });
   });
 
