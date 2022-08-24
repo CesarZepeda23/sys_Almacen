@@ -70,7 +70,7 @@ require("../vistas/navbar.php"); ?>
                                                         <select class="form-select" id="areas" aria-label="Areas UDN">
                                                             <option selected value="0" disabled>Seleccione una Opción</option>
                                                         </select>
-                                                        <label for="areas"><i class="fa-solid fa-briefcase"></i>
+                                                        <label for="areas"><i class="fa-solid fa-share-nodes me-2"></i>
                                                             Areas</label>
                                                     </div>
                                                 </div>
@@ -102,27 +102,109 @@ require("../vistas/navbar.php"); ?>
 
 
                                             <div class="card-text row">
-                                                <div class="col-12 col-sm-4">
+                                                <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control text-center" id="tipo" placeholder="Tipo del Componente">
-                                                        <label for="tipo" aria-label="Tipo del Componente"><i class="fa-solid fa-object-ungroup"></i>
+                                                        <label for="tipo" aria-label="Tipo del Componente"><i class="fa-solid fa-object-ungroup me-2"></i>
                                                             Tipo</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-sm-4">
+
+                                                <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="precio" placeholder="Precio del Componente" />
-                                                        <label for="marca" aria-label="Marca del Componente"><i class="fa-solid fa-copyright me-2"></i> Precio</label>
+                                                        <select class="form-select" id="categoria" aria-label="Categoria Componente">
+                                                            <option selected value="0" disabled>Seleccione una Opción</option>
+                                                        </select>
+                                                        <label for="categoria"><i class="fa-solid fa-certificate me-2"></i>
+                                                            Categoria del Componente</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-sm-4">
+                                                <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="modelo" placeholder="Modelo del Componente" />
-                                                        <label for="modelo" aria-label="Modelo del Componente"><i class="fa-solid fa-laptop-file me-2"></i>
+                                                        <input type="number" class="form-control text-center" id="precio" placeholder="Precio del Componente" />
+                                                        <label for="precio" aria-label="Precio del Componente"><i class="fa-solid fa-dollar-sign me-2"></i> Precio</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-3">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control text-center" id="condicion" placeholder="Condicion del Componente" />
+                                                        <label for="condicion" aria-label="Condicion del Componente"><i class="fa-solid fa-thumbs-up me-2"></i>
                                                             Condición Fisica</label>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <br>
+                                            <div class="card-text row">
+                                                <div class="card-text text-center">
+                                                    <p class="text-muted"><i class="fa-solid fa-clipboard-check me-2"></i> Seleccione las Caracteristicas que Aplican</p>
+                                                </div>
+
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="voltajeSwitch">
+                                                        <label class="form-check-label" for="voltajeSwitch">Voltaje</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="velocidadSwitcht">
+                                                        <label class="form-check-label" for="velocidadSwitcht">Velocidad</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="contactosSwitcht">
+                                                        <label class="form-check-label" for="contactosSwitcht">Contactos</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="entradasSwitcht">
+                                                        <label class="form-check-label" for="entradasSwitcht">Entradas</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="salidasSwitcht">
+                                                        <label class="form-check-label" for="salidasSwitcht">Salidas</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="amperajeSwitcht">
+                                                        <label class="form-check-label" for="amperajeSwitcht">Amperaje</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="capacidadSwitcht">
+                                                        <label class="form-check-label" for="capacidadSwitcht">Capacidad</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="resolucionSwitcht">
+                                                        <label class="form-check-label" for="resolucionSwitcht">Resolución</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="tamañoSwitcht">
+                                                        <label class="form-check-label" for="tamañoSwitcht">Tamaño</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-sm-2">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="appSwitcht">
+                                                        <label class="form-check-label" for="appSwitcht">Aplicación</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
 
                                         </div>
                                     </div>
@@ -136,6 +218,28 @@ require("../vistas/navbar.php"); ?>
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </section>
     </main>
 
