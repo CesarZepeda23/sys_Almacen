@@ -7,6 +7,7 @@ require("../vistas/navbar.php"); ?>
     <main>
         <section class="container">
             <div class="container-fluid pt-4 px-4">
+            <button type="button" id="btnAgregarArea" class="btn btn-success m-2"><i class="fa-solid fa-briefcase"></i>  Agregar Componente</button>
                 <div class="row g-4">
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
@@ -71,7 +72,7 @@ require("../vistas/navbar.php"); ?>
             </div>
 
             <!-- Modal -->
-            <div class="modal fade " id="modalProductos" data-bs-backdrop="static" tabindex="-1"
+            <div class="modal fade " id="modalAreas" data-bs-backdrop="static" tabindex="-1"
                 aria-labelledby="modalProductos" aria-hidden="true">
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">

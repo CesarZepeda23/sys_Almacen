@@ -53,78 +53,50 @@ require("../vistas/navbar.php"); ?>
                                             <div class="text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="fechaActual" />
-                                                        <label for="fechaActual" aria-label="Fecha Actual">
-                                                            <i class="icon-calendar-2"></i class=>Fecha</label>
+                                                        <input type="datetime-local" class="form-control" id="" />
+                                                        <label for="" aria-label="Fecha Actual">
+                                                            <i class="fa-solid fa-calendar me-2"></i class=>Fecha</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-5"></div>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="folioPedido" placeholder="" />
-                                                        <label for="folioPedido" aria-label="Folio"><i class="icon-hash"></i>
-                                                            Numero de Pedido</label>
+                                                        <input type="text" class="form-control text-center" id="" placeholder="" />
+                                                        <label for="" aria-label="Folio"><i class="fa-solid fa-hashtag"></i>
+                                                            Numero De Equipo</label>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <fieldset disabled>
                                                 <div class="text row">
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control text-center" id="nombre" placeholder="Juan Perez Lopez" />
-                                                            <label for="nombre" aria-label="Nombre Completo"><i class="icon-user"></i>
-                                                                Nombre Completo</label>
+                                                            <input type="text" class="form-control" id="" placeholder="" />
+                                                            <label for="" aria-label="Nombre Completo"><i class="fa-solid fa-user"></i>
+                                                                Nombre De Encargado</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12 col-sm-4">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="email" class="form-control text-center" id="email" placeholder="correo@dominio.com" />
-                                                            <label for="email" aria-label="Correo electrónico ó email"><i class="icon-at"></i> Correo Electronico </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-sm-4">
-                                                        <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control text-center" id="telefono" placeholder="000 000 00 00" />
-                                                            <label for="telefono" aria-label="Telefono"><i class="icon-phone-1"></i>
-                                                                Teléfono</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-
-                                            <div class="text row">
-                                                <div class="col-12 col-sm-4">
+                                                    <div class="col-12 col-sm-4" id="divRelleno">
                                                     <div class="form-floating mb-3">
-                                                        <select id="listaCategorias" class="form-select" placeholder="Selecciona una Opción">
-                                                        </select>
-                                                        <label for="listaCategorias" aria-label="Categoria Producto"><i class="icon-th-list"></i>
-                                                            Categoria de Productos</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 col-sm-4" id="divProducto">
-                                                    <div class="form-floating mb-3">
-                                                        <input readonly type="text" class="form-control text-center" id="NombreProducto" />
-                                                        <label for="NombreProducto" aria-label="Nombre Producto">
-                                                            <i class="icon-cube"></i>
-                                                            Producto</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12 col-sm-4" id="divRelleno">
-                                                    <div class="form-floating mb-3">
-                                                        <select id="opcionRelleno" class="form-select" placeholder="Selecciona una Opción">
+                                                        <select id="" class="form-select" placeholder="Selecciona una Opción">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             </option>
                                                         </select>
-                                                        <label for="opcionRelleno" aria-label="Relleno"><i class="icon-chart-pie-alt"></i>
-                                                            Relleno</label>
+                                                        <label for="" aria-label="Relleno"><i class="fa-solid fa-building"></i>
+                                                            Unidad De Negocio</label>
                                                     </div>
                                                 </div>
-
-
-
+                                                <div class="col-12 col-sm-4" id="divRelleno">
+                                                    <div class="form-floating mb-3">
+                                                        <select id="" class="form-select" placeholder="Selecciona una Opción">
+                                                            <option selected value="Selecciona una Opción">Seleccione una Opción
+                                                            </option>
+                                                        </select>
+                                                        <label for="opcionRelleno" aria-label="Relleno"><i class="fa-solid fa-briefcase"></i>
+                                                            Areas</label>
+                                                    </div>
+                                                </div>
+                                        </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>

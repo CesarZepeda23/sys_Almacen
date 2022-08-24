@@ -1,3 +1,7 @@
+$("#btnAgregarArea").click(function(){
+$("#modalAreas").modal("show");
+});
+
 $(function mostrarAreaUDN() {
     let datos = new FormData();
     datos.append("opc", 1);
