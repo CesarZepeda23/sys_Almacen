@@ -74,7 +74,7 @@
             <a href="./index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
             <a href="./vistas/componentes.php" class="nav-item nav-link"><i class="fa fa-mouse me-2"></i>Componentes</a>
             <a href="./vistas/equipos.php" class="nav-item nav-link"><i class="fa fa-computer me-2"></i>Equipos</a>
-            <a href="./vistas/areas.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Areas</a>
+            <a href="./vistas/areas.php" class="nav-item nav-link"><i class="fa-solid fa-briefcase"></i>Areas</a>
         </div>
     </nav>
 </div>
