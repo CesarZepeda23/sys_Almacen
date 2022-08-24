@@ -108,7 +108,7 @@
                     <div class="row g-4">
                         <div class="col-sm-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
-                                <h6 class="mb-4">Unidades De Negocio</h6>
+                                <h4 class="mb-4">Unidades De Negocio</h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="col-sm-12 col-xl-6">
                             <div class="bg-light rounded h-100 p-4">
-                                <h6 class="mb-4">Equipo</h6>
+                                <h4 class="mb-4">Equipo</h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
@@ -148,7 +148,7 @@
                         </div>
                         <div class="col-sm-12">
                             <div class="bg-light rounded h-100 p-4">
-                                <h6 class="mb-4">Componentes</h6>
+                                <h4 class="mb-4">Componentes</h4>
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
