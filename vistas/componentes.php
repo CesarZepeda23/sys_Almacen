@@ -70,7 +70,7 @@ require("../vistas/navbar.php"); ?>
                                                         <select class="form-select" id="areas" aria-label="Areas UDN">
                                                             <option selected value="0" disabled>Seleccione una Opción</option>
                                                         </select>
-                                                        <label for="areas"><i class="fa-solid fa-share-nodes me-2"></i>
+                                                        <label for="areas"><i class="fa-solid fa-briefcase"></i>
                                                             Areas</label>
                                                     </div>
                                                 </div>

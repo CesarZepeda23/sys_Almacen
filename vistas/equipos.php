@@ -47,22 +47,22 @@ require("../vistas/navbar.php"); ?>
                         </div>
                         <div class="modal-body">
                         <div class="row">
-                               
                                     <div class="row">
                                         <div class="body p-sm-2 p-md-4 p-lg-4 p-xl-4">
                                             <div class="text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="datetime-local" class="form-control" id="" />
-                                                        <label for="" aria-label="Fecha Actual">
+                                                        <input type="date" class="form-control" id="" />
+                                                        <label for="" aria-label="Fecha">
                                                             <i class="fa-solid fa-calendar me-2"></i class=>Fecha</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-5"></div>
+                                                
                                                 <div class="col-12 col-sm-4">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="" placeholder="" />
-                                                        <label for="" aria-label="Folio"><i class="fa-solid fa-hashtag"></i>
+                                                    <div class="form-floating mb-3" >
+                                                        <input type="text" class="form-control text-center"  disabled id="numeroEquipo" placeholder="" />
+                                                        <label for="numeroEquipo" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
                                                             Numero De Equipo</label>
                                                     </div>
                                                 </div>
@@ -72,13 +72,27 @@ require("../vistas/navbar.php"); ?>
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" class="form-control" id="" placeholder="" />
-                                                            <label for="" aria-label="Nombre Completo"><i class="fa-solid fa-user"></i>
+                                                            <label for="" aria-label="Nombre De Encargado"><i class="fa-solid fa-user"></i>
                                                                 Nombre De Encargado</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-4">
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="" placeholder="" />
+                                                            <label for="" aria-label="Sistema Operativo"><i class="fa-brands fa-windows"></i>
+                                                                Sistema Operativo</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-4">
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="" placeholder="" />
+                                                            <label for="" aria-label="Estado"><i class="fa-solid fa-circle-exclamation"></i>
+                                                                Estado</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-4" id="divRelleno">
                                                     <div class="form-floating mb-3">
-                                                        <select id="" class="form-select" placeholder="Selecciona una Opción">
+                                                        <select id="salectUDN" class="form-select" placeholder="Selecciona una Opción">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             </option>
                                                         </select>
