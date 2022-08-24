@@ -20,6 +20,20 @@ Class Equipos extends CRUD {
         $sql = $this->_Select($query,null,"2");
         return $sql;
     }
+
+    function ultimoNumeroEquipo()
+    {
+        $query = "SELECT MAX(idEquipo) AS id FROM equipo";
+        $sql = $this->_Select($query, null, "2");
+        foreach ($sql as $row);
+        return  $row[0];
+    }
+
+    function UDNS() {
+        $query = "SELECT * FROM udn WHERE Stado = 1";
+        $sql = $this->_Select($query, null, "1");
+        return $sql;
+    }
 }
 
 ?>

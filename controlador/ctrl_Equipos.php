@@ -23,5 +23,19 @@ switch($opc){
         }
         echo $tablaEquipos;
         break;
+
+        case 2:
+            echo $obj->ultimoNumeroEquipo() + 1;
+            break;
+
+        case 3:
+                $selectUDN = '<option  disabled selected value="0">ELIJA UNA OPCION</option>';
+                $sql = $obj->UDNS();
+                foreach ($sql as $row) {
+                    $selectUDN .=
+                        '<option  value="' . $row['idUDN'] . '">' . $row['UDN'] . '</option>';
+                }
+                echo $selectUDN;
+                break;
 }   
 ?>
