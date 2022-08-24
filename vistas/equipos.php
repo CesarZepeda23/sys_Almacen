@@ -90,7 +90,7 @@ require("../vistas/navbar.php"); ?>
                                                                 Estado</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12 col-sm-4" id="divRelleno">
+                                                    <div class="col-12 col-sm-4" id="">
                                                     <div class="form-floating mb-3">
                                                         <select id="salectUDN" class="form-select" placeholder="Selecciona una Opción">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
@@ -100,9 +100,9 @@ require("../vistas/navbar.php"); ?>
                                                             Unidad De Negocio</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-sm-4" id="divRelleno">
+                                                <div class="col-12 col-sm-4" id="">
                                                     <div class="form-floating mb-3">
-                                                        <select id="" class="form-select" placeholder="Selecciona una Opción">
+                                                        <select id="salectAreaUDN" class="form-select" placeholder="Selecciona una Opción">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             </option>
                                                         </select>
@@ -110,8 +110,17 @@ require("../vistas/navbar.php"); ?>
                                                             Areas</label>
                                                     </div>
                                                 </div>
+                                                <div class="col-12 col-sm-4"></div>
+                                                <div class="col-12 col-sm-4" id="">
+                                                <h5>Componentes</h5>
+                                                <select id="checkComponentes" class="form-select" placeholder="Selecciona una Opción">
+                                                            <option selected value="Selecciona una Opción">Seleccione una Opción
+                                                            </option>
+                                                </select>
+                                                
+                                                </div>
                                         </div>
-                        </div>
+                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>
                             <button type="button" class="btn btn-success m-2">Crear Equipo<i class="fa-solid fa-computer ms-2"></i></button>

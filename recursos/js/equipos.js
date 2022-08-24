@@ -49,4 +49,37 @@ $(function () {
       },
     });
   });
+
+  $("#salectUDN").change(function () {
+    let datos = new FormData();
+    datos.append("opc", 4);
+    datos.append("idUDN", $(this).val());
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Equipos.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      success: function (respuesta) {
+        $("#salectAreaUDN").html(respuesta);
+      },
+    });
+  });
+
+  $(function () {
+    let datos = new FormData();
+    datos.append("opc", 5);
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Equipos.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      success: function (respuesta) {
+        $("#checkComponentes").html(respuesta);
+      },
+    });
+  });
   

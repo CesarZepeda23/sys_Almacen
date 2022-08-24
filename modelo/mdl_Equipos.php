@@ -21,8 +21,7 @@ Class Equipos extends CRUD {
         return $sql;
     }
 
-    function ultimoNumeroEquipo()
-    {
+    function ultimoNumeroEquipo() {
         $query = "SELECT MAX(idEquipo) AS id FROM equipo";
         $sql = $this->_Select($query, null, "2");
         foreach ($sql as $row);
@@ -32,6 +31,22 @@ Class Equipos extends CRUD {
     function UDNS() {
         $query = "SELECT * FROM udn WHERE Stado = 1";
         $sql = $this->_Select($query, null, "1");
+        return $sql;
+    }
+
+    function mostrarAreaUDN($idUDN) {
+        $query = "SELECT * FROM area_udn 
+        INNER JOIN  areas ON area_udn.id_UDN = '" . $idUDN . "' AND  area_udn.id_Area = areas.idArea";
+        $sql = $this->_Select($query, null, "2");
+        return $sql;
+    }
+
+    function mostrarComponentesCheck () {
+        $query = "SELECT 
+        * FROM componentes AS com  
+        JOIN caracteristicas AS car 
+        ON com.idComponente = car.idCaracteristica AND com.id_Equipo IS NULL";
+        $sql = $this->_Select($query,null,"2");
         return $sql;
     }
 }
