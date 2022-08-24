@@ -62,14 +62,20 @@ require("../vistas/navbar.php"); ?>
                                             <div class="card-text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                        <select class="form-select" id="udn" aria-label="Unidades de Negocio">
+                                                        </select>
                                                         <label for="floatingInput"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-5"></div>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                                        <select class="form-select" id="areas" aria-label="Floating label select example">
+                                                            <option selected>Open this select menu</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
                                                         <label for="floatingInput"><i class="fa-solid fa-share-nodes me-2"></i>
                                                             Areas</label>
                                                     </div>
