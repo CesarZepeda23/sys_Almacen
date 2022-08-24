@@ -73,8 +73,8 @@
         <div class="navbar-nav w-100">
             <a href="./index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
             <a href="./vistas/componentes.php" class="nav-item nav-link"><i class="fa fa-mouse me-2"></i>Componentes</a>
-            <a href="./vistas/areas.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Areas</a>
             <a href="./vistas/equipos.php" class="nav-item nav-link"><i class="fa fa-computer me-2"></i>Equipos</a>
+            <a href="./vistas/areas.php" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Areas</a>
         </div>
     </nav>
 </div>
@@ -136,7 +136,6 @@
                                                 <th scope="col">Id Del Equipo</th>
                                                 <th scope="col">Fecha De Alta</th>
                                                 <th scope="col">Encargado Del Equipo</th>
-                                                <th scope="col">Id Del Componente</th>
                                             </tr>
                                         </thead>
                                         <tbody id="tablasEquiposindex">
@@ -189,7 +188,7 @@
         <script src="./recursos/lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="./recursos/lib/tempusdominus/js/moment.min.js"></script>
         <script src="./recursos/lib/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="./recursos/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="./recursos/lib/tempusdominus/js/tempusdominus-bootstrap-5.min.js"></script>
 
         <script src="./recursos/js/index.js" <?php echo time(); ?>"></script>
         <script src="./recursos/js/dashboard.js"=<?php echo time(); ?>"></script>

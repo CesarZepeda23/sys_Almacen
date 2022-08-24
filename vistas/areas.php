@@ -10,7 +10,7 @@ require("../vistas/navbar.php"); ?>
                 <div class="row g-4">
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">UDN - Areas</h6>
+                            <h4 class="mb-4">UDN - Areas</h4>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -30,7 +30,7 @@ require("../vistas/navbar.php"); ?>
 
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Area</h6>
+                            <h4 class="mb-4">Area</h4>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -50,7 +50,7 @@ require("../vistas/navbar.php"); ?>
 
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">UDN</h6>
+                            <h4 class="mb-4">UDN</h4>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>

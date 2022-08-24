@@ -39,15 +39,15 @@ switch($opc){
             $tablasAreas = null;
             $sql = $obj -> mostrarArea(); 
             foreach($sql as $row){
-                $tablasAreas = '
+                $tablasAreas .= '
                 <tr>
                     <td>' . $row['idArea'] . ' </td>
                     <td>' . $row['nombre'] . ' </td>
                     <td>' . $row['abreviatura'] . ' </td>
                 </tr>
                 ';  
-                echo $tablasAreas;
             }
+            echo $tablasAreas;
             break;
 }   
 

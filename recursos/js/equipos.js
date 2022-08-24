@@ -1,3 +1,7 @@
+$("#btnAgregarEquipos").click(function () {
+  $("#modalRegistroEquipos").modal("show");
+});
+
 $(function () {
     let datos = new FormData();
     datos.append("opc", 1);

@@ -20,8 +20,8 @@ switch($opc){
                                 <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button> </td>
                             </tr>
             ';  
-            echo $tablaEquipos;
         }
+        echo $tablaEquipos;
         break;
 }   
 ?>
