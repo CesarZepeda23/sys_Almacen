@@ -189,7 +189,7 @@
         <script src="./recursos/lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="./recursos/lib/tempusdominus/js/moment.min.js"></script>
         <script src="./recursos/lib/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="./recursos/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="./recursos/lib/tempusdominus/js/tempusdominus-bootstrap-5.min.js"></script>
 
         <script src="./recursos/js/index.js" <?php echo time(); ?>"></script>
         <script src="./recursos/js/dashboard.js"=<?php echo time(); ?>"></script>
