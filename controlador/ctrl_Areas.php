@@ -12,8 +12,8 @@ switch($opc){
             $tablasAreaUDN .= '
             <tr>
                 <td>' . $row['idAreaUdn'] . ' </td>
-                <td>' . $row['id_Area'] . ' </td>
-                <td>' . $row['id_UDN'] . ' </td>
+                <td>' . $row['nombre'] . ' </td>
+                <td>' . $row['UDN'] . ' </td>
             </tr>
             ';  
         }

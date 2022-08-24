@@ -15,12 +15,32 @@ require("../vistas/navbar.php"); ?>
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nombre UDN</th>
+                                            <th scope="col">ID</th>
                                             <th scope="col">Nombre Area</th>
-                                            <th scope="col">Acciones</th>
+                                            <th scope="col">Nombre UDN</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tablasAreaUDN">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Area</h6>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Abreviatura</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablasAreas">
 
                                     </tbody>
                                 </table>
@@ -35,32 +55,12 @@ require("../vistas/navbar.php"); ?>
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Id UDN</th>
+                                            <th scope="col">ID</th>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Abreviatura</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tablasUDN">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Areas</h6>
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Id Area</th>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Abreviatura</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tablasAreas">
 
                                     </tbody>
                                 </table>
