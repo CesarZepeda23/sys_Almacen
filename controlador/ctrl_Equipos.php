@@ -1,5 +1,6 @@
 <?php
 include_once("../modelo/mdl_Equipos.php");
+
 $obj = new Equipos;
 
 $opc    = $_POST['opc'];
@@ -16,8 +17,8 @@ switch($opc){
                     <td>' . $row['numeroEquipo'] . ' </td>
                     <td>' . $row['responsableEquipo'] . ' </td>
                     <td>' . $row['fechaAlta'] . ' </td>
-                    <td>  <button type="button" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button> </td>
+                    <td>  <button type="button" id="btnEditarEquipos" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
+                    <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
                 </tr>
                 ';  
                            }
@@ -48,12 +49,27 @@ switch($opc){
                     echo $selectAreaUDN;
         break;
     case 5://CHECKBOX COMPONENTES
-                    $checkcomp = '<option class="text-uppercase  fw-bold"  disabled selected value="0">ELIJA UN COMPONENTE</option>';
-                    $sql = $obj->mostrarComponentesCheck();
+                    $tablacomp = '';
+                    $sql = $obj->mostrarComponentesTabla();
                     foreach ($sql as $row) {
-                        $checkcomp .= '<option value="' . $row['idComponente'] . '">' . $row['nombre'] . ' ' . $row['modelo'] . '</option>';
+                        $tablacomp .= '
+                        <tr>
+                            <td>' . $row['idComponente'] . ' </td>
+                            <td>' . $row['nombre'] . ' </td>
+                            <td>' . $row['marca'] . ' </td>
+                            <td>' . $row['modelo'] . ' </td>
+                            <td>' . $row['UDN'] . ' </td>
+                            <td>' . $row['NomArea'] . ' </td>
+                            <td>' . $row['condicion'] . ' </td>
+                            <td>$ '  . number_format($row['costo'], 2, '.',',') . ' </td>
+                            <td> <input class="form-check-input" type="checkbox" value="' . $row['idComponente'] . ' " id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Agregar
+                            </label></td>
+                        </tr>
+                        ';
                     }
-                    echo $checkcomp;
+                    echo $tablacomp;
         break;
-}   
+} 
 ?>

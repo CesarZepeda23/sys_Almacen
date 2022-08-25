@@ -2,6 +2,10 @@ $("#btnAgregarEquipos").click(function () {
   $("#modalRegistroEquipos").modal("show");
 });
 
+$("#btnEditarEquipos").click(function () {
+  $("#modalEditarEquipos").modal("show");
+});
+
 $(function () {
     let datos = new FormData();
     datos.append("opc", 1);
@@ -14,6 +18,7 @@ $(function () {
       cache: false,
       success: function (respuesta) {
         $("#tablasequipos").html(respuesta);
+        
     },
     });
   });
@@ -29,7 +34,7 @@ $(function () {
       processData: false,
       cache: false,
       success: function (res) {
-        $("#numeroEquipo").val(res.trim().padStart(2, "0"));
+        $("#numeroEquipo").val(res);
       },
     });
   });
@@ -78,8 +83,9 @@ $(function () {
       processData: false,
       cache: false,
       success: function (respuesta) {
-        $("#checkComponentes").html(respuesta);
+        $("#tablascomponentesE").html(respuesta);
       },
     });
   });
+  
   
