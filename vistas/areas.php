@@ -43,6 +43,7 @@ require("../vistas/navbar.php"); ?>
                                             <th scope="col">ID</th>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Abreviatura</th>
+                                            <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tablasAreas">
@@ -94,26 +95,20 @@ require("../vistas/navbar.php"); ?>
                                         <!-- CARD BODY -->
                                         <div class="card-body">
                                             <div class="card-text row">
-                                            <div class="card-text row">
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="nombre"
-                                                            placeholder="Juan Perez Lopez" />
-                                                        <label for="nombre" aria-label="Nombre Completo"><i
-                                                            class="icon-user"></i>
-                                                            Área
-                                                        </label>
+                                                        <select class="form-select" id="udn" aria-label="Unidades de Negocio"> 
+
+                                                        </select>
+                                                        <label for="udn"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
                                                     </div>
-                                                </div>
-                                                
-                                                <div class="col-12">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="nombre"
-                                                            placeholder="Juan Perez Lopez" />
-                                                        <label for="nombre" aria-label="Nombre Completo"><i
-                                                            class="icon-user"></i>
-                                                            UDN
-                                                        </label>
+                                                    <div class="col-12">
+                                                        <div class="form-floating mb-3">
+                                                            <select class="form-select" id="areas" aria-label="Areas">
+                                                                <option selected value="0" disabled>Seleccione una Opción</option>
+                                                            </select>
+                                                            <label for="areas"><i class="fa-solid fa-briefcase"></i> Areas</label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,7 +126,8 @@ require("../vistas/navbar.php"); ?>
                     </div>
                 </div>
             </div>
-
+        </section>
+        <section>
             <!-- Modal -->
             <div class="modal fade " id="modalAreas" data-bs-backdrop="static" tabindex="-1"
                 aria-labelledby="modalProductos" aria-hidden="true">
@@ -140,7 +136,7 @@ require("../vistas/navbar.php"); ?>
                         <div class="modal-header">
                             <div class="col">
                                 <div class="card-text row">
-                                    <h4 class="modal-title fw-bold text-center">Registro UDN - Area</h4>
+                                    <h4 class="modal-title fw-bold text-center">Registro Area</h4>
                                 </div>
                             </div>
                         </div>
