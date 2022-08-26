@@ -49,8 +49,8 @@ class Componentes extends CRUD
     function insertarComponente($array)
     {
         $query = "INSERT INTO componentes
-        (nombre, id_Caracteristica, id_TipoComponente, id_Equipo, id_AreaUDN) 
-        VALUES (?,?,?,?,?)";
+        (nombre, id_Caracteristica, id_TipoComponente, id_AreaUDN) 
+        VALUES (?,?,?,?)";
         $this->_DIU($query, $array, "2");
     }
 }
