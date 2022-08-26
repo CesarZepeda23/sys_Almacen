@@ -6,7 +6,7 @@ $("#btnEditarEquipos").click(function () {//MODAL EDITAR
   $("#modalEditarEquipos").modal("show");
 });
 
-$(function () {//MOSTRAR TABLA EQUIPOS
+$(function mostrar() {//MOSTRAR TABLA EQUIPOS
     let datos = new FormData();
     datos.append("opc", 1);
     $.ajax({
@@ -34,7 +34,7 @@ $(function ultimoNumeroEquipo() {//MOSTRAR ULTIMO NUMERO DE EQUIPO
       processData: false,
       cache: false,
       success: function (res) {
-        $("#numeroEquipo").val(res);
+        $("#numeroEquipo").val(parseInt(res));
       },
     });
   });
@@ -96,7 +96,7 @@ $("#salectUDN").change(function () {//SELECT AREAS
           showConfirmButton: false,
           timer: 1500
         });
-        $("#modalRegistroEquipos").modal("hide");
+        $("#modalRegistroEquipos").modal("hide"); 
       },
     });
   }); 
