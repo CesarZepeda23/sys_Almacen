@@ -71,5 +71,17 @@ switch($opc){
                     }
                     echo $tablacomp;
         break;
+
+    case 6://SELECT UDN
+        $infoEquipo = array(
+            $fechaAlta = $_POST['fechaAlta'],
+            $numeroEquipo = $_POST['numeroEquipo'],
+            $responsableEquipo = $_POST['responsableEquipo'],
+            $estado = $_POST['estado'],
+            $sistemaOperativo = $_POST['sistemaOperativo'],
+            $id_AreaUDN = $_POST['id_AreaUDN'],
+        );
+        $obj->insertarEquipo($infoEquipo);
+    break;
 } 
 ?>
