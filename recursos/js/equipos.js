@@ -1,12 +1,12 @@
-$("#btnAgregarEquipos").click(function () {
+$("#btnAgregarEquipos").click(function () { //MMODAL REGISTRO
   $("#modalRegistroEquipos").modal("show");
 });
 
-$("#btnEditarEquipos").click(function () {
+$("#btnEditarEquipos").click(function () {//MODAL EDITAR
   $("#modalEditarEquipos").modal("show");
 });
 
-$(function () {
+$(function () {//MOSTRAR TABLA EQUIPOS
     let datos = new FormData();
     datos.append("opc", 1);
     $.ajax({
@@ -23,7 +23,7 @@ $(function () {
     });
   });
 
-$(function ultimoNumeroEquipo() {
+$(function ultimoNumeroEquipo() {//MOSTRAR ULTIMO NUMERO DE EQUIPO
     let datos = new FormData();
     datos.append("opc", 2);
     $.ajax({
@@ -39,7 +39,7 @@ $(function ultimoNumeroEquipo() {
     });
   });
 
-$(function () {
+$(function () {//SELECT UDN
     let datos = new FormData();
     datos.append("opc", 3);
     $.ajax({
@@ -55,7 +55,7 @@ $(function () {
     });
   });
 
-$("#salectUDN").change(function () {
+$("#salectUDN").change(function () {//SELECT AREAS
     let datos = new FormData();
     datos.append("opc", 4);
     datos.append("idUDN", $(this).val());
@@ -72,7 +72,7 @@ $("#salectUDN").change(function () {
     });
   });
 
- $("#btnRegistrarEquipo").click(function () {
+ $("#btnRegistrarEquipo").click(function () {//REGISTRO
     let datos = new FormData();
     datos.append("opc", 5);
     datos.append("fechaAlta", $("#fechaAlta").val());

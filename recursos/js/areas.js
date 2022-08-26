@@ -100,6 +100,7 @@ $("#btnRegistrarAreaUDN").click(function () {
     cache: false,
     success: function (respuesta) {
       console.log("exito",respuesta);
+      window.location.href="../vistas/areas.php"
     },
   });
 });

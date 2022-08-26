@@ -63,7 +63,7 @@ require("../vistas/navbar.php"); ?>
                                                 
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3" >
-                                                        <input type="text" class="form-control text-center"  name="numeroEquipo"  disabled id="numeroEquipo" placeholder="" required="required"/>
+                                                        <input type="text" class="form-control"  name="numeroEquipo"  disabled id="numeroEquipo" placeholder="" required="required"/>
                                                             <label for="numeroEquipo" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
                                                                 Numero De Equipo
                                                             </label>
