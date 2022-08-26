@@ -126,10 +126,8 @@ $("#btnRegistrarArea").click(function () {
 $("#btnEliminarArea").click(function () {
   let datos = new FormData();
   datos.append("opc", 8);
-  datos.append("nombre", $("#nombre").val());
-  datos.append("abreviatura", $("#abreviatura").val());
   $.ajax({
-    type: "POST",
+    type: "DELET",
     url: "../controlador/ctrl_Areas.php",
     contentType: false,
     data: datos,
