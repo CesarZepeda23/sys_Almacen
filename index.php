@@ -133,7 +133,7 @@
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Id Del Equipo</th>
+                                                <th scope="col">Numero Del Equipo</th>
                                                 <th scope="col">Fecha De Alta</th>
                                                 <th scope="col">Encargado Del Equipo</th>
                                             </tr>

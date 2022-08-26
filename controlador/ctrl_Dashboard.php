@@ -26,9 +26,9 @@ switch($opc){
             $tablaindexEquipos = null;
             $sql = $obj -> mostrarEquiposDashboard(); 
             foreach($sql as $row){
-                $tablaindexEquipos = '
+                $tablaindexEquipos .= '
                 <tr>
-                                    <td>' . $row['idEquipo'] . ' </td>
+                                    <td>' . $row['numeroEquipo'] . ' </td>
                                     <td>' . $row['fechaAlta'] . ' </td>
                                     <td>' . $row['responsableEquipo'] . ' </td>
                                 </tr>

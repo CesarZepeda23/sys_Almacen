@@ -52,7 +52,7 @@ require("../vistas/navbar.php"); ?>
                                             <div class="text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="date" class="form-control" name="fechaAlta" id="fechaAlta" />
+                                                        <input type="date" class="form-control" name="fechaAlta" id="fechaAlta" required="required"/>
                                                             <label for="fecha" aria-label="Fecha">
                                                                 <i class="fa-solid fa-calendar me-2"></i class=>Fecha
                                                             </label>
@@ -63,7 +63,7 @@ require("../vistas/navbar.php"); ?>
                                                 
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3" >
-                                                        <input type="text" class="form-control text-center"  name="numeroEquipo"  disabled id="numeroEquipo" placeholder="" />
+                                                        <input type="text" class="form-control text-center"  name="numeroEquipo"  disabled id="numeroEquipo" placeholder="" required="required"/>
                                                             <label for="numeroEquipo" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
                                                                 Numero De Equipo
                                                             </label>
@@ -74,7 +74,7 @@ require("../vistas/navbar.php"); ?>
                                             <div class="text row">
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" name="responsableEquipo" id="responsableEquipo" placeholder="" />
+                                                            <input type="text" class="form-control" name="responsableEquipo" id="responsableEquipo" placeholder="" required="required"/>
                                                             <label for="responsableEquipo"  aria-label="Nombre De Encargado"><i class="fa-solid fa-user"></i>
                                                                 Nombre De Encargado</label>
                                                         </div>
@@ -82,7 +82,7 @@ require("../vistas/navbar.php"); ?>
                                                     
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" name="sistemaOperativo" id="sistemaOperativo" placeholder="" />
+                                                            <input type="text" class="form-control" name="sistemaOperativo" id="sistemaOperativo" placeholder="" required="required"/>
                                                                 <label for="sistemaOperativo" aria-label="Sistema Operativo"><i class="fa-brands fa-windows"></i>
                                                                     Sistema Operativo
                                                                 </label>
@@ -91,7 +91,7 @@ require("../vistas/navbar.php"); ?>
 
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" name="estado" id="estado" placeholder="" />
+                                                            <input type="text" class="form-control" name="estado" id="estado" />
                                                                 <label for="estado"  aria-label="Estado"><i class="fa-solid fa-circle-exclamation"></i>
                                                                     Estado
                                                                 </label>
@@ -101,7 +101,7 @@ require("../vistas/navbar.php"); ?>
                                                     <div class="col-12 col-sm-4">
                                                     
                                                     <div class="form-floating mb-3">
-                                                        <select id="salectUDN" class="form-select" name="salectUDN" placeholder="Selecciona una Opción">
+                                                        <select id="salectUDN" class="form-select" name="salectUDN" placeholder="Selecciona una Opción" required="required">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             
                                                             </option>
@@ -114,7 +114,7 @@ require("../vistas/navbar.php"); ?>
                                                 
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <select id="salectAreaUDN" class="form-select" name="id_AreaUDN" placeholder="Selecciona una Opción">
+                                                        <select id="salectAreaUDN" class="form-select" name="salectAreaUDN" placeholder="Selecciona una Opción" required="required">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             
                                                             </option>
@@ -130,7 +130,7 @@ require("../vistas/navbar.php"); ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>
-                            <button type="button" id="btnRegistrarEquipo"  value="btnRegistrarEquipo" class="btn btn-success m-2">Crear Equipo<i class="fa-solid fa-computer ms-2"></i></button>
+                            <button type="button" id="btnRegistrarEquipo"  class="btn btn-success m-2">Crear Equipo<i class="fa-solid fa-computer ms-2"></i></button>
                         </div>
                     </div>
                 </div>
