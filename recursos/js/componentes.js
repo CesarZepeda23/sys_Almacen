@@ -1,3 +1,4 @@
+let idcaracteristica;
 $("#btnAgregarComp").click(function () {
   $("#modalRegistro").modal("show");
   $("#voltajeDiv").hide();
@@ -144,6 +145,7 @@ $("#udn").change(function () {
   let datos = new FormData();
   datos.append("opc", 2);
   datos.append("idUDN", $(this).val());
+  alert($(this).val());
 
   $.ajax({
     type: "POST",
@@ -192,17 +194,16 @@ $(function mostrarComponentes() {
 
 $("#agregar").click(function () {
   let datos = new FormData();
+
   datos.append("opc", 5);
-
-  datos.append("nombre", "prueba");
-  datos.append("id_Caracteristica", 1);
-  datos.append("id_TipoComponente", 1);
-  datos.append("id_AreaUDN", 1);
-
-  // $nombre = $_POST['nombre'],
-  //             $id_Caracteristica = $_POST['id_Caracteristica'],
-  //             $id_TipoComponente = $_POST['id_TipoComponente'],
-  //             $id_AreaUDN = $_POST['id_AreaUDN']
+  datos.append("nombre", $("#nombreComp").val());
+  alert($("#nombreComp").val());
+  datos.append("id_Caracteristica");
+  alert(idcaracteristica);
+  datos.append("id_TipoComponente", $("#categoria").val());
+  alert($("#categoria").val());
+  datos.append("id_AreaUDN", $("#areas").val());
+  alert($("#areas").val());
 
   $.ajax({
     type: "POST",
@@ -212,13 +213,6 @@ $("#agregar").click(function () {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Componente Agregado Con Exito",
-        showConfirmButton: false,
-        timer: 4000,
-      });
       window.location.href = "../vistas/componentes.php";
     },
   });
