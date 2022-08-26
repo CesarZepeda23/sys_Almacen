@@ -1,6 +1,5 @@
 $("#btnAgregarComp").click(function () {
-  // $("#modalRegistro").modal("show");
-  $("#modalEditar").modal("show");
+  $("#modalRegistro").modal("show");
   $("#voltajeDiv").hide();
   $("#velocidadDiv").hide();
   $("#contactosDiv").hide();
@@ -191,13 +190,19 @@ $(function mostrarComponentes() {
   });
 });
 
-$(function insertarDatos() {
+$("#agregar").click(function () {
   let datos = new FormData();
   datos.append("opc", 5);
-  datos.append("nombre", "Juan");
+
+  datos.append("nombre", "prueba");
   datos.append("id_Caracteristica", 1);
   datos.append("id_TipoComponente", 1);
   datos.append("id_AreaUDN", 1);
+
+  // $nombre = $_POST['nombre'],
+  //             $id_Caracteristica = $_POST['id_Caracteristica'],
+  //             $id_TipoComponente = $_POST['id_TipoComponente'],
+  //             $id_AreaUDN = $_POST['id_AreaUDN']
 
   $.ajax({
     type: "POST",
@@ -207,7 +212,14 @@ $(function insertarDatos() {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      console.log("exito");
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Componente Agregado Con Exito",
+        showConfirmButton: false,
+        timer: 4000,
+      });
+      window.location.href = "../vistas/componentes.php";
     },
   });
 });

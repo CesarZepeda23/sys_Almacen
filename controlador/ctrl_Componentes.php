@@ -56,13 +56,11 @@ switch ($opc) {
         echo $tablaComponentes;
         break;
     case 5:
-
         $infoComponente = array(
-            'nombre' => $_POST['nombre'],
-            'id_Caracteristica' => $_POST['id_Caracteristica'],
-            'id_TipoComponente' => $_POST['id_TipoComponente'],
-            'id_Equipo' => "NULL",
-            'id_AreaUDN' => $_POST['id_AreaUDN'],
+            $nombre = $_POST['nombre'],
+            $id_Caracteristica = $_POST['id_Caracteristica'],
+            $id_TipoComponente = $_POST['id_TipoComponente'],
+            $id_AreaUDN = $_POST['id_AreaUDN']
         );
 
         $obj->insertarComponente($infoComponente);
