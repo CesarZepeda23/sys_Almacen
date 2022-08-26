@@ -72,8 +72,7 @@ $("#salectUDN").change(function () {
     });
   });
 
-  
-$("#btnRegistrarEquipo").click(function () {
+ $("#btnRegistrarEquipo").click(function () {
     let datos = new FormData();
     datos.append("opc", 5);
     datos.append("fechaAlta", $("#fechaAlta").val());
@@ -82,7 +81,6 @@ $("#btnRegistrarEquipo").click(function () {
     datos.append("estado", $("#estado").val());
     datos.append("sistemaOperativo", $("#sistemaOperativo").val());
     datos.append("id_AreaUDN", $("#salectAreaUDN").val());
-    
     $.ajax({
       type: "POST",
       url: "../controlador/ctrl_Equipos.php",
@@ -101,4 +99,4 @@ $("#btnRegistrarEquipo").click(function () {
           window.location.href = "../vistas/equipos.php";
       },
     });
-  });
+  }); 
