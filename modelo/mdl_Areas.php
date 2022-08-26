@@ -28,8 +28,5 @@ Class Areas extends CRUD {
         return $sql;
     }
 
-    function (){
-        $query = "INSERT INTO "
-    }
 }
 ?>
