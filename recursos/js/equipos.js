@@ -95,8 +95,9 @@ $("#salectUDN").change(function () {//SELECT AREAS
           title: 'Equipo Agregado Con Exito',
           showConfirmButton: false,
           timer: 1500
-        })
-          window.location.href = "../vistas/equipos.php";
+        });
+        $("#modalRegistroEquipos").modal("hide");
+
       },
     });
   }); 
