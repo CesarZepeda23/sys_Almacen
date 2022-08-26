@@ -42,5 +42,11 @@ Class Areas extends CRUD {
         $this->_DIU($query, $array, "2");
     }
 
+    function eliminarAreaUDN ($array) {
+        $query = "DELETE * FROM areas WHERE WHERE id =" . $array;
+        $sql = $this->_Select($query,null,"2");
+        return $sql;
+    }
+
 }
 ?>

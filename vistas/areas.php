@@ -119,7 +119,7 @@ require("../vistas/navbar.php"); ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
-                            <button type="button" id="btnRegistrarAreaUDN" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Componente</button>
+                            <button type="button" id="btnRegistrarAreaUDN" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Area-UDN</button>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ require("../vistas/navbar.php"); ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
-                            <button type="button" id="btnRegistrarArea" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Componente</button>
+                            <button type="button" id="btnRegistrarArea" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Area</button>
                         </div>
                     </div>
                 </div>
