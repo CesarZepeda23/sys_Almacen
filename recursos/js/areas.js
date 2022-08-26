@@ -99,8 +99,14 @@ $("#btnRegistrarAreaUDN").click(function () {
     processData: false,
     cache: false,
     success: function (respuesta) {
-      console.log("exito",respuesta);
-      window.location.href="../vistas/areas.php"
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Relacion De UDN Y Area Agregada Con Exito',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      $("#modalAreaUDN").modal("hide");
     },
   });
 });
@@ -118,7 +124,14 @@ $("#btnRegistrarArea").click(function () {
     processData: false,
     cache: false,
     success: function (respuesta) {
-    window.location.href="../vistas/areas.php"
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Area Agregada Con Exito',
+        showConfirmButton: false,
+        timer: 1500
+      });
+      $("#modalAreas").modal("hide");
     },
   });
 });

@@ -97,7 +97,6 @@ $("#salectUDN").change(function () {//SELECT AREAS
           timer: 1500
         });
         $("#modalRegistroEquipos").modal("hide");
-
       },
     });
   }); 
