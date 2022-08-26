@@ -2,6 +2,7 @@
 include_once("_CRUD.php");
 
 Class Areas extends CRUD {
+
     function mostrarAreaUDN () {
         $query = "SELECT
         rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn,
@@ -25,6 +26,10 @@ Class Areas extends CRUD {
         $query = "SELECT * FROM areas";
         $sql = $this->_Select($query,null,"2");
         return $sql;
+    }
+
+    function (){
+        $query = "INSERT INTO "
     }
 }
 ?>

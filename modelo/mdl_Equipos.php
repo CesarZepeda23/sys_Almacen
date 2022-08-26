@@ -8,10 +8,11 @@ Class Equipos extends CRUD {
         rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn,
         rfwsmqex_gvsl_sys_almacen.areas.nombre,
         rfwsmqex_gvsl.udn.UDN,
-        rfwsmqex_gvsl_sys_almacen.equipo.idEquipo,
-        rfwsmqex_gvsl_sys_almacen.equipo.fechaAlta,
         rfwsmqex_gvsl_sys_almacen.equipo.numeroEquipo,
-        rfwsmqex_gvsl_sys_almacen.equipo.responsableEquipo
+        rfwsmqex_gvsl_sys_almacen.equipo.responsableEquipo,
+        rfwsmqex_gvsl_sys_almacen.equipo.fechaAlta,
+        rfwsmqex_gvsl.udn.idUDN,
+        rfwsmqex_gvsl_sys_almacen.equipo.idEquipo
         FROM
         rfwsmqex_gvsl_sys_almacen.area_udn
         INNER JOIN rfwsmqex_gvsl_sys_almacen.areas ON rfwsmqex_gvsl_sys_almacen.area_udn.id_Area = rfwsmqex_gvsl_sys_almacen.areas.idArea
@@ -21,8 +22,7 @@ Class Equipos extends CRUD {
         return $sql;
     }
 
-    function ultimoNumeroEquipo()
-    {
+    function ultimoNumeroEquipo() {
         $query = "SELECT MAX(idEquipo) AS id FROM equipo";
         $sql = $this->_Select($query, null, "2");
         foreach ($sql as $row);
@@ -34,6 +34,51 @@ Class Equipos extends CRUD {
         $sql = $this->_Select($query, null, "1");
         return $sql;
     }
+
+    function mostrarAreaUDN($idUDN) {
+        $query = "SELECT * FROM area_udn 
+        INNER JOIN  areas ON area_udn.id_UDN = '" . $idUDN . "' AND  area_udn.id_Area = areas.idArea";
+        $sql = $this->_Select($query, null, "2");
+        return $sql;
+    }
+
+    function mostrarComponentesTabla () {
+        $query = "SELECT
+        rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn,
+        rfwsmqex_gvsl_sys_almacen.areas.nombre AS NomArea,
+        rfwsmqex_gvsl.udn.UDN,
+        rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN,
+        rfwsmqex_gvsl_sys_almacen.componentes.nombre,
+        rfwsmqex_gvsl_sys_almacen.componentes.idComponente,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.marca,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.modelo,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.costo,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.condicion
+        FROM
+        rfwsmqex_gvsl_sys_almacen.area_udn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.areas ON rfwsmqex_gvsl_sys_almacen.area_udn.id_Area = rfwsmqex_gvsl_sys_almacen.areas.idArea
+        INNER JOIN rfwsmqex_gvsl.udn ON rfwsmqex_gvsl_sys_almacen.area_udn.id_UDN = rfwsmqex_gvsl.udn.idUDN
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.componentes ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica AND id_Equipo IS NULL;
+        ";
+        $sql = $this->_Select($query,null,"2");
+        return $sql;
+    }
+
+    /* function nuevoEquipo($fechaAlta,$numeroEquipo,$resultado,$estado,$sistemaOperativo,$id_AreaUDN) {
+      $fechaAlta = $_POST['fechaAlta'];
+      $numeroEquipo = $_POST['numeroEquipo'];
+      $responsableEquipo = $_POST['nombreEncargado'];
+      $estado = $_POST['estado'];
+      $sistemaOperativo = $_POST['SO'];
+      $id_AreaUDN = $_POST['selectIdAreaUdn'];
+      $array = array([$fechaAlta,$numeroEquipo,$resultado,$estado,$sistemaOperativo,$id_AreaUDN]);
+      $query = "INSERT INTO equipo(fechaAlta,numeroEquipo,responsableEquipo,estado,sistemaOperativo,id_AreaUDN) 
+      VALUES (?,?,?,?,?,?);"
+      $sql = $this->_DIU($query, $array, "2");
+      return $sql;
+    } */
 }
 
 ?>
