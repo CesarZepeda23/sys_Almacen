@@ -124,34 +124,7 @@ require("../vistas/navbar.php"); ?>
                                                         </label>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="col-12 col-sm-4"></div>
-                                                
-                                                <div class="col-sm-12">
-                                                    <div class="bg-light rounded h-100 p-4">
-                                                        <h5 class="mb-4">Componentes</h5>
-                                                            <div class="table-responsive">
-                                                                <table class="table table-striped" >
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th scope="col">ID</th>
-                                                                            <th scope="col">Nombre</th>
-                                                                            <th scope="col">Marca</th>
-                                                                            <th scope="col">Modelo</th>
-                                                                            <th scope="col">UDN</th>
-                                                                            <th scope="col">Area</th>
-                                                                            <th scope="col">Condición</th>
-                                                                            <th scope="col">Costo</th>
-                                                                            <th scope="col">Acciones</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                        <tbody id="tablascomponentesE">
-                                                                        
-                                                                        </tbody>
-                                                                </table>
-                                                            </div>
-                                                    </div>
-                                            </div> 
+                                    </div>            
                                 </form>
                             </div>
                         </div>

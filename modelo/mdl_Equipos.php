@@ -23,7 +23,7 @@ Class Equipos extends CRUD {
     }
 
     function ultimoNumeroEquipo() {
-        $query = "SELECT MAX(idEquipo) AS id FROM equipo";
+        $query = "SELECT (numeroEquipo) AS numeroEquipo FROM equipo";
         $sql = $this->_Select($query, null, "2");
         foreach ($sql as $row);
         return  $row[0];

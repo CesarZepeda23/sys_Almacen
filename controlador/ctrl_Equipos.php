@@ -48,31 +48,9 @@ switch($opc){
                     }
                     echo $selectAreaUDN;
         break;
-    case 5://CHECKBOX COMPONENTES
-                    $tablacomp = '';
-                    $sql = $obj->mostrarComponentesTabla();
-                    foreach ($sql as $row) {
-                        $tablacomp .= '
-                        <tr>
-                            <td>' . $row['idComponente'] . ' </td>
-                            <td>' . $row['nombre'] . ' </td>
-                            <td>' . $row['marca'] . ' </td>
-                            <td>' . $row['modelo'] . ' </td>
-                            <td>' . $row['UDN'] . ' </td>
-                            <td>' . $row['NomArea'] . ' </td>
-                            <td>' . $row['condicion'] . ' </td>
-                            <td>$ '  . number_format($row['costo'], 2, '.',',') . ' </td>
-                            <td> <input class="form-check-input" type="checkbox" value="' . $row['idComponente'] . ' " id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Agregar
-                            </label></td>
-                        </tr>
-                        ';
-                    }
-                    echo $tablacomp;
-        break;
 
-    case 6://SELECT UDN
+
+    case 5://REGISTRO
         $infoEquipo = array(
             $fechaAlta = $_POST['fechaAlta'],
             $numeroEquipo = $_POST['numeroEquipo'],
