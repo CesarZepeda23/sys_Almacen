@@ -88,15 +88,15 @@ $(function () {
     });
   });
   
-  $(function () {
+$("#btnRegistrarEquipo").click(function () {
     let datos = new FormData();
     datos.append("opc", 6);
-    datos.append("fechaAlta", "2021-01-01");
-    datos.append("numeroEquipo", "s");
-    datos.append("responsableEquipo", "responsssableEquipo");
-    datos.append("estado", "essstado");
-    datos.append("sistemaOperativo", "s");
-    datos.append("id_AreaUDN", 1);
+    datos.append("fechaAlta", $("#fechaAlta").val());
+    datos.append("numeroEquipo", $("#numeroEquipo").val());
+    datos.append("responsableEquipo", $("#responsableEquipo").val());
+    datos.append("estado", $("#estado").val());
+    datos.append("sistemaOperativo", $("#sistemaOperativo").val());
+    datos.append("id_AreaUDN", $("#salectAreaUDN").val());
     $.ajax({
       type: "POST",
       url: "../controlador/ctrl_Equipos.php",

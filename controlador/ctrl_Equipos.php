@@ -10,7 +10,7 @@ switch($opc){
         $tablaEquipos = null;
         $sql = $obj -> mostrarEquipos(); 
         foreach($sql as $row){
-            $tablaEquipos = '
+            $tablaEquipos .= '
                 <tr>
                     <td>' . $row['UDN'] . ' </td>
                     <td>' . $row['nombre'] . ' </td>
