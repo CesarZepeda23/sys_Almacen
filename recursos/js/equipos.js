@@ -23,7 +23,7 @@ $(function () {
     });
   });
 
-  $(function ultimoNumeroEquipo() {
+$(function ultimoNumeroEquipo() {
     let datos = new FormData();
     datos.append("opc", 2);
     $.ajax({
@@ -39,7 +39,7 @@ $(function () {
     });
   });
 
-  $(function () {
+$(function () {
     let datos = new FormData();
     datos.append("opc", 3);
     $.ajax({
@@ -55,7 +55,7 @@ $(function () {
     });
   });
 
-  $("#salectUDN").change(function () {
+$("#salectUDN").change(function () {
     let datos = new FormData();
     datos.append("opc", 4);
     datos.append("idUDN", $(this).val());
@@ -72,7 +72,7 @@ $(function () {
     });
   });
 
-  $(function () {
+$(function () {
     let datos = new FormData();
     datos.append("opc", 5);
     $.ajax({
@@ -88,4 +88,24 @@ $(function () {
     });
   });
   
-  
+$("#btnRegistrarEquipo").click(function () {
+    let datos = new FormData();
+    datos.append("opc", 6);
+    datos.append("fechaAlta", $("#fechaAlta").val());
+    datos.append("numeroEquipo", $("#numeroEquipo").val());
+    datos.append("responsableEquipo", $("#responsableEquipo").val());
+    datos.append("estado", $("#estado").val());
+    datos.append("sistemaOperativo", $("#sistemaOperativo").val());
+    datos.append("id_AreaUDN", $("#salectAreaUDN").val());
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Equipos.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      success: function (respuesta) {
+        console.log("exito",respuesta);
+      },
+    });
+  });

@@ -10,7 +10,7 @@ switch($opc){
         $tablaEquipos = null;
         $sql = $obj -> mostrarEquipos(); 
         foreach($sql as $row){
-            $tablaEquipos = '
+            $tablaEquipos .= '
                 <tr>
                     <td>' . $row['UDN'] . ' </td>
                     <td>' . $row['nombre'] . ' </td>
@@ -71,5 +71,17 @@ switch($opc){
                     }
                     echo $tablacomp;
         break;
+
+    case 6://SELECT UDN
+        $infoEquipo = array(
+            $fechaAlta = $_POST['fechaAlta'],
+            $numeroEquipo = $_POST['numeroEquipo'],
+            $responsableEquipo = $_POST['responsableEquipo'],
+            $estado = $_POST['estado'],
+            $sistemaOperativo = $_POST['sistemaOperativo'],
+            $id_AreaUDN = $_POST['id_AreaUDN'],
+        );
+        $obj->insertarEquipo($infoEquipo);
+    break;
 } 
 ?>

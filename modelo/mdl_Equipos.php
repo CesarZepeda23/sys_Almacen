@@ -66,19 +66,12 @@ Class Equipos extends CRUD {
         return $sql;
     }
 
-    /* function nuevoEquipo($fechaAlta,$numeroEquipo,$resultado,$estado,$sistemaOperativo,$id_AreaUDN) {
-      $fechaAlta = $_POST['fechaAlta'];
-      $numeroEquipo = $_POST['numeroEquipo'];
-      $responsableEquipo = $_POST['nombreEncargado'];
-      $estado = $_POST['estado'];
-      $sistemaOperativo = $_POST['SO'];
-      $id_AreaUDN = $_POST['selectIdAreaUdn'];
-      $array = array([$fechaAlta,$numeroEquipo,$resultado,$estado,$sistemaOperativo,$id_AreaUDN]);
-      $query = "INSERT INTO equipo(fechaAlta,numeroEquipo,responsableEquipo,estado,sistemaOperativo,id_AreaUDN) 
-      VALUES (?,?,?,?,?,?);"
-      $sql = $this->_DIU($query, $array, "2");
-      return $sql;
-    } */
+    function insertarEquipo($array) {
+        $query = "INSERT INTO equipo
+        (fechaAlta,numeroEquipo,responsableEquipo,estado,sistemaOperativo,id_AreaUDN) 
+        VALUES (?,?,?,?,?,?)";
+        $this->_DIU($query, $array, "2");
+    }
 }
 
 ?>
