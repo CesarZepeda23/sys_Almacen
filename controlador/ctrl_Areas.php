@@ -67,16 +67,24 @@ switch($opc){
                 $diseño = '<option selected value="0" disabled >Seleccione una Opción</option>';
                 $sql = $obj->mostrarArea();
                 foreach ($sql as $row) {
-                    $diseño .= '<option value="' . $row['idAreaUdn'] . '">' . $row['nombre'] . '</option>';
+                    $diseño .= '<option value="' . $row['idArea'] . '">' . $row['nombre'] . '</option>';
                 }
                 echo $diseño;
                 break;
-                case 6:
-                    $idUDN = $_POST['idUDN'];
-                    $idUDN = $_POST['idUDN'];
-                    $idUDN = $_POST['idUDN'];
-                    
-                    break; 
+            case 6:
+                $infoAreaUDN = array(
+                $id_Area = $_POST['id_Area'],
+                $id_UDN = $_POST['id_UDN'],
+                );
+                $obj->insertarAreaUDN($infoAreaUDN);
+                break;
+            case 7:
+                $infoArea = array(
+                $nombre = $_POST['nombre'],
+                $abreviatura = $_POST['abreviatura'],
+                );
+                $obj->insertarArea($infoArea);
+                break;
 }   
 
 ?>

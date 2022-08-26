@@ -118,10 +118,8 @@ require("../vistas/navbar.php"); ?>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i
-                                    class="fa-solid fa-ban me-2"></i>Cancelar</button>
-                            <button type="button" class="btn btn-success m-2"><i
-                                    class="fa-solid fa-briefcase me-2"></i>Agregar Componente</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
+                            <button type="button" id="btnRegistrarAreaUDN" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Componente</button>
                         </div>
                     </div>
                 </div>
@@ -150,10 +148,8 @@ require("../vistas/navbar.php"); ?>
                                             <div class="card-text row">
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="nombre"
-                                                            placeholder="Juan Perez Lopez" />
-                                                        <label for="nombre" aria-label="Nombre Completo"><i
-                                                            class="icon-user"></i>
+                                                        <input type="text" class="form-control" id="nombre" required/>
+                                                        <label for="nombre" aria-label="Nombre Completo"><i class="icon-user"></i>
                                                             Nombre
                                                         </label>
                                                     </div>
@@ -161,10 +157,8 @@ require("../vistas/navbar.php"); ?>
                                                 
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control text-center" id="nombre"
-                                                            placeholder="Juan Perez Lopez" />
-                                                        <label for="nombre" aria-label="Nombre Completo"><i
-                                                            class="icon-user"></i>
+                                                        <input type="text" class="form-control" id="abreviatura" required/>
+                                                        <label for="nombre" aria-label="Nombre Completo"><i class="icon-user"></i>
                                                             Abreviatura
                                                         </label>
                                                     </div>
@@ -176,10 +170,8 @@ require("../vistas/navbar.php"); ?>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i
-                                    class="fa-solid fa-ban me-2"></i>Cancelar</button>
-                            <button type="button" class="btn btn-success m-2"><i
-                                    class="fa-solid fa-briefcase me-2"></i>Agregar Componente</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
+                            <button type="button" id="btnRegistrarArea" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Componente</button>
                         </div>
                     </div>
                 </div>

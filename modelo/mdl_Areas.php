@@ -28,5 +28,19 @@ Class Areas extends CRUD {
         return $sql;
     }
 
+    function insertarAreaUDN($array) {
+        $query = "INSERT INTO area_udn
+        (id_Area,id_UDN) 
+        VALUES (?,?)";
+        $this->_DIU($query, $array, "2");
+    }
+
+    function insertarArea($array) {
+        $query = "INSERT INTO areas
+        (nombre,abreviatura) 
+        VALUES (?,?)";
+        $this->_DIU($query, $array, "2");
+    }
+
 }
 ?>
