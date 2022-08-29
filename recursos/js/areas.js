@@ -6,25 +6,10 @@ $("#btnArea").click(function () {
   $("#modalAreas").modal("show");
 });
 
-$(function mostrarAreaUDN() {
-  let datos = new FormData();
-  datos.append("opc", 1);
-  $.ajax({
-    type: "POST",
-    url: "../controlador/ctrl_Areas.php",
-    contentType: false,
-    data: datos,
-    processData: false,
-    cache: false,
-    success: function (respuesta) {
-      $("#tablasAreaUDN").html(respuesta);
-    },
-  });
-});
 
 $(function mostrarUDN() {
   let datos = new FormData();
-  datos.append("opc", 2);
+  datos.append("opc", 1);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Areas.php",
@@ -40,7 +25,7 @@ $(function mostrarUDN() {
 
 $(function mostrarAreas() {
   let datos = new FormData();
-  datos.append("opc", 3);
+  datos.append("opc", 2);
   $.ajax({
     type: "POST",
     url: "../controlador/ctrl_Areas.php",
@@ -54,41 +39,10 @@ $(function mostrarAreas() {
   });
 });
 
-$(function mostrarUDN() {
-  let datos = new FormData();
-  datos.append("opc", 4);
-  $.ajax({
-    type: "POST",
-    url: "../controlador/ctrl_Areas.php",
-    contentType: false,
-    data: datos,
-    processData: false,
-    cache: false,
-    success: function (respuesta) {
-      $("#udn").html(respuesta);
-    },
-  });
-});
-
-$(function mostrarArea() {
-  let datos = new FormData();
-  datos.append("opc", 5);
-  $.ajax({
-    type: "POST",
-    url: "../controlador/ctrl_Areas.php",
-    contentType: false,
-    data: datos,
-    processData: false,
-    cache: false,
-    success: function (respuesta) {
-      $("#areas").html(respuesta);
-    },
-  });
-});
 
 $("#btnRegistrarAreaUDN").click(function () {
   let datos = new FormData();
-  datos.append("opc", 6);
+  datos.append("opc", 3);
   datos.append("id_Area", $("#areas").val());
   datos.append("id_UDN", $("#udn").val());
   $.ajax({
@@ -113,7 +67,7 @@ $("#btnRegistrarAreaUDN").click(function () {
 
 $("#btnRegistrarArea").click(function () {
   let datos = new FormData();
-  datos.append("opc", 7);
+  datos.append("opc", 4);
   datos.append("nombre", $("#nombre").val());
   datos.append("abreviatura", $("#abreviatura").val());
   $.ajax({
@@ -132,22 +86,6 @@ $("#btnRegistrarArea").click(function () {
         timer: 1500
       });
       $("#modalAreas").modal("hide");
-    },
-  });
-});
-
-$("#btnEliminarArea").click(function () {
-  let datos = new FormData();
-  datos.append("opc", 8);
-  $.ajax({
-    type: "GET",
-    url: "../controlador/ctrl_Areas.php",
-    contentType: false,
-    data: datos,
-    processData: false,
-    cache: false,
-    success: function (respuesta) {
-    window.location.href="../vistas/areas.php"
     },
   });
 });

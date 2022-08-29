@@ -297,6 +297,10 @@ $("table #tablaComponentes").on("click", "td", function () {
         $("#modalEditar").modal("show");
       } else if ($(this).attr("id") == "print") {
         alert("impr");
+
+
+
+        
       } else if ($(this).attr("id") == "delete") {
         alert("delete");
       }

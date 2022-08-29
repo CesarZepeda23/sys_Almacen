@@ -7,32 +7,7 @@ require("../vistas/navbar.php"); ?>
     <main>
         <section class="container">
             <div class="container-fluid pt-4 px-4">
-                <button type="button" id="btnAgregarArea" class="btn btn-success m-2"><i
-                        class="fa-solid fa-briefcase me-2"></i>Agregar UDN - Area</button>
                 <div class="row g-4">
-                    <div class="col-sm-12">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h4 class="mb-4">UDN - Areas</h4>
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Nombre Area</th>
-                                            <th scope="col">Nombre UDN</th>
-                                            <th scope="col">Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tablasAreaUDN">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                    <button type="button" id="btnArea" class="btn btn-success m-2"><i class="fa-solid fa-briefcase me-2"></i>Agregar Area</button>
-                    </div>
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-light rounded h-100 p-4">
                             <h4 class="mb-4">Area</h4>
