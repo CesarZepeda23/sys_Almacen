@@ -203,7 +203,13 @@ $("#agregar").click(function () {
     $("#precio").val().length < 1 ||
     $("#condicion").val().length < 1
   ) {
-    alert("Falta llenar datos obligatorios");
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Falta llenar datos obligatorios',
+      showConfirmButton: false,
+      timer: 1500
+    });
   } else {
     let id_Caracteristica;
     let datos = new FormData();
@@ -252,7 +258,13 @@ $("#agregar").click(function () {
       processData: false,
       cache: false,
       success: function (respuesta) {
-        alert("agregado con exito");
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Agregado Con Exito',
+          showConfirmButton: false,
+          timer: 1500
+        });
       },
     });
   }
