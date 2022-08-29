@@ -91,11 +91,7 @@ switch($opc){
         break;
     
     case 8:
-        $infoAreaUDN = array(
-        $id_Area = $_DELETE['id_Area'],
-        $id_UDN = $_DELETE['id_UDN'],
-        );
-        $obj->eliminarAreaUDN($infoAreaUDN);
+        $obj->eliminarArea();
         break;
 
 }   
