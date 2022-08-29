@@ -308,19 +308,6 @@ $("tbody").on("click", "button", function () {
           $("#udnEditar").html(respuesta);
         },
       });
-
-    $("table").on("click", "button", function () {
-      if ($(this).attr("id") == "edit") {
-        $("#modalEditar").modal("show");
-      } else if ($(this).attr("id") == "print") {
-        alert("impr");
-
-
-
-        
-      } else if ($(this).attr("id") == "delete") {
-        alert("delete");
-      }
     });
 
     $("#udnEditar").change(function () {
