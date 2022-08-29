@@ -29,22 +29,19 @@ Class Areas extends CRUD {
     }
 
     function insertarAreaUDN($array) {
-        $query = "INSERT INTO area_udn
-        (id_Area,id_UDN) 
-        VALUES (?,?)";
+        $query = "INSERT INTO area_udn (id_Area,id_UDN) VALUES (?,?)";
         $this->_DIU($query, $array, "2");
     }
 
     function insertarArea($array) {
-        $query = "INSERT INTO areas
-        (nombre,abreviatura) 
-        VALUES (?,?)";
+        $query = "INSERT INTO areas (nombre,abreviatura) VALUES (?,?)";
         $this->_DIU($query, $array, "2");
     }
 
-    function eliminarAreaUDN ($array) {
-        $query = "DELETE * FROM areas WHERE WHERE id =" . $array;
-        $sql = $this->_Select($query,null,"2");
+    function eliminarArea() {
+        $id = $_GET['idArea'];
+        $sql = "DELETE FROM areas WHERE id = '$id'";
+        $sql = $this->_DIU($query,null,"2");
         return $sql;
     }
 

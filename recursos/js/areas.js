@@ -140,7 +140,7 @@ $("#btnEliminarArea").click(function () {
   let datos = new FormData();
   datos.append("opc", 8);
   $.ajax({
-    type: "DELET",
+    type: "GET",
     url: "../controlador/ctrl_Areas.php",
     contentType: false,
     data: datos,
