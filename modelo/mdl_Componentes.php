@@ -74,4 +74,17 @@ class Componentes extends CRUD
         foreach ($sql as $row);
         return  $row[0];
     }
+
+    function mostrarInfoComponentes($id_componente)
+    {
+        $query = "SELECT * FROM
+        rfwsmqex_gvsl_sys_almacen.area_udn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.componentes
+        ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn 
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas 
+        ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica
+        AND rfwsmqex_gvsl_sys_almacen.componentes.idComponente =  '" . $id_componente . "'";
+        $sql = $this->_Select($query, null, "2");
+        return $sql;
+    }
 }

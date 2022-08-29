@@ -6,7 +6,7 @@ $opc    = $_POST['opc'];
 
 switch ($opc) {
     case 1: //Select unidades de negocio
-        $diseño = '<option selected value="0" disabled >Seleccione una Opción</option>';
+        $diseño = '<option selected value="0">Seleccione una Opción</option>';
         $sql = $obj->mostrarUDN();
         foreach ($sql as $row) {
             $diseño .= '<option value="' . $row['idUDN'] . '">' . $row['UDN'] . '</option>';
@@ -14,7 +14,7 @@ switch ($opc) {
         echo $diseño;
         break;
     case 2: //select mostrar areas de udn
-        $diseño = '<option selected value="0" disabled >Seleccione una Opción</option>';
+        $diseño = '<option selected value="0"  >Seleccione una Opción</option>';
         $idUDN = $_POST['idUDN'];
         $sql = $obj->mostrarAreaUDN($idUDN);
         foreach ($sql as $row) {
@@ -23,7 +23,7 @@ switch ($opc) {
         echo $diseño;
         break;
     case 3: // mostrar categorias de productos
-        $diseño = '<option selected value="0" disabled >Seleccione una Opción</option>';
+        $diseño = '<option selected value="0" >Seleccione una Opción</option>';
         $sql = $obj->mostrarCategoria();
         foreach ($sql as $row) {
             $diseño .= '<option value="' . $row['idTipoComponente'] . '">' . $row['nombre'] . '</option>';
@@ -46,7 +46,7 @@ switch ($opc) {
                         <td>' . $row['condicion'] . ' </td>
                         <td>$ ' . number_format($row['costo'], 2, '.', ',') . ' </td>
                         <td>
-                            <button type="button" class="btn btn-square btn-primary m-1 id="editar""><i class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-square btn-primary m-1" id="editar"><i class="fa fa-edit"></i></button>
                             <button type="button" class="btn btn-square btn-warning m-1"><i class="fa fa-print"></i></button>
                             <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button>
                         </td>
@@ -88,5 +88,35 @@ switch ($opc) {
         );
 
         $obj->insertarComponente($infoComponente);
+        break;
+    case 7:
+        $id_componente = $_POST['id_componente'];
+        $sql = $obj->mostrarInfoComponentes($id_componente);
+        foreach ($sql as $row) {
+            $infoComponente = array(
+                'idAreaUdn' => $row['idAreaUdn'],
+                'id_UDN' => $row['id_UDN'],
+                'idComponente' => $row['idComponente'],
+                'nombre' => $row['nombre'],
+                'id_Caracteristica ' => $row['id_Caracteristica '],
+                'id_TipoComponente ' => $row['id_TipoComponente '],
+                'tipo' => $row['tipo'],
+                'marca' => $row['marca'],
+                'modelo' => $row['modelo'],
+                'voltaje' => $row['voltaje'],
+                'velocidad' => $row['velocidad'],
+                'contactos' => $row['contactos'],
+                'entrada' => $row['entrada'],
+                'salida	' => $row['salida'],
+                'amperaje' => $row['amperaje'],
+                'costo' => $row['costo'],
+                'condicion' => $row['condicion'],
+                'capacidad' => $row['capacidad'],
+                'resolucion' => $row['resolucion'],
+                'tamaño' => $row['tamaño'],
+                'aplicacion' => $row['aplicacion']
+            );
+        }
+        echo json_encode($infoComponente);
         break;
 }

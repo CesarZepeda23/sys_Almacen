@@ -3,6 +3,8 @@
 require("../vistas/navbar.php"); ?>
 <!-- INDEX -->
 
+
+
 <body style="min-height: 100vh;">
     <main>
         <section class="container">
@@ -12,7 +14,7 @@ require("../vistas/navbar.php"); ?>
                 <div class="row g-4">
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h4 class="mb-4">Componentes</h4>
+                            <h4 class="mb-4">Perifericos</h4>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -39,6 +41,7 @@ require("../vistas/navbar.php"); ?>
             </div>
         </section>
     </main>
+
 
     <section>
         <!-- Modal -->
@@ -276,9 +279,9 @@ require("../vistas/navbar.php"); ?>
                                             <div class="col-12 col-sm-3" id="appDiv">
                                                 <div class="form-floating mb-3">
                                                     <select class="form-select" id="app" aria-label="Aplicación Movil">
-                                                        <option selected disabled>Seleccione una Opción</option>
-                                                        <option value="Si">Si</option>
-                                                        <option value="No">No</option>
+                                                        <option selected value="0">Seleccione una Opción</option>
+                                                        <option value="1">Si</option>
+                                                        <option value="0">No</option>
                                                     </select>
                                                     <label for="app" aria-label="Aplicacion Movil"><i class="fa-solid fa-mobile-screen-button me-2"></i>
                                                         Aplicacion Movil</label>
@@ -299,9 +302,6 @@ require("../vistas/navbar.php"); ?>
         </div>
 
     </section>
-
-
-
 
     <section>
         <!-- Modal -->
@@ -398,8 +398,80 @@ require("../vistas/navbar.php"); ?>
                                             </div>
                                         </div>
 
+                                        <br>
                                         <div class="card-text row">
-                                            <div class="col-12 col-sm-3" id="voltajeDiv">
+                                            <div class="card-text text-center">
+                                                <p class="text-muted"><i class="fa-solid fa-clipboard-check me-2"></i> Seleccione las Caracteristicas que Aplican</p>
+                                            </div>
+
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="voltajeSwitchEditar">
+                                                    <label class="form-check-label" for="voltajeSwitch">Voltaje</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="velocidadSwitchtEditar">
+                                                    <label class="form-check-label" for="velocidadSwitcht">Velocidad</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="contactosSwitchtEditar">
+                                                    <label class="form-check-label" for="contactosSwitcht">Contactos</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="entradasSwitchtEditar">
+                                                    <label class="form-check-label" for="entradasSwitcht">Entradas</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="salidasSwitchtEditar">
+                                                    <label class="form-check-label" for="salidasSwitcht">Salidas</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="amperajeSwitchtEditar">
+                                                    <label class="form-check-label" for="amperajeSwitcht">Amperaje</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="capacidadSwitchtEditar">
+                                                    <label class="form-check-label" for="capacidadSwitcht">Capacidad</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="resolucionSwitchtEditar">
+                                                    <label class="form-check-label" for="resolucionSwitcht">Resolución</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="tamañoSwitchtEditar">
+                                                    <label class="form-check-label" for="tamañoSwitcht">Tamaño</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-2">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" role="switch" id="appSwitchtEditar">
+                                                    <label class="form-check-label" for="appSwitcht">Aplicación Movil</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="card-text row">
+                                            <div class="col-12 col-sm-3" id="voltajeDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="voltajeEditar" placeholder="Voltaje">
                                                     <label for="voltajeEditar" aria-label="Voltaje"><i class="fa-solid fa-bolt me-2"></i>
@@ -407,63 +479,63 @@ require("../vistas/navbar.php"); ?>
                                                 </div>
                                             </div>
 
-                                            <div class="col-12 col-sm-3" id="velocidadDiv">
+                                            <div class="col-12 col-sm-3" id="velocidadDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="velocidadEditar" placeholder="Velocidad">
                                                     <label for="velocidadEditar" aria-label="Velocidad"><i class="fa-solid fa-arrow-right-arrow-left me-2"></i>
                                                         Velocidad</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="contactosDiv">
+                                            <div class="col-12 col-sm-3" id="contactosDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="contactosEditar" placeholder="Contactos">
                                                     <label for="contactosEditar" aria-label="Contactos"><i class="fa-solid fa-plug me-2"></i>
                                                         Contactos</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="entradasDiv">
+                                            <div class="col-12 col-sm-3" id="entradasDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="entradasEditar" placeholder="Entradas">
                                                     <label for="entradasEditar" aria-label="Entradas"><i class="fa-brands fa-usb me-2"></i>
                                                         Entradas</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="salidasDiv">
+                                            <div class="col-12 col-sm-3" id="salidasDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="salidasEditar" placeholder="Salidas">
                                                     <label for="salidasEditar" aria-label="Salidas"><i class="fa-solid fa-arrow-up-right-from-square me-2"></i>
                                                         Salidas</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="amperajeDiv">
+                                            <div class="col-12 col-sm-3" id="amperajeDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="amperajeEditar" placeholder="Amperaje">
                                                     <label for="amperajeEditar" aria-label="Amperaje"><i class="fa-solid fa-plug-circle-bolt me-2"></i>
                                                         Amperaje</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="capacidadDiv">
+                                            <div class="col-12 col-sm-3" id="capacidadDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="capacidadEditar" placeholder="Capacidad">
                                                     <label for="capacidadEditar" aria-label="Capacidad"><i class="fa-solid fa-hard-drive me-2"></i>
                                                         Capacidad</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="resolucionDiv">
+                                            <div class="col-12 col-sm-3" id="resolucionDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="resolucionEditar" placeholder="Resolucion">
                                                     <label for="resolucionEditar" aria-label="Resolucion"><i class="fa-solid fa-display me-2"></i>
                                                         Resolución</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="tamañoDiv">
+                                            <div class="col-12 col-sm-3" id="tamañoDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="tamañoEditar" placeholder="Tamaño">
                                                     <label for="tamañoEditar" aria-label="Tamaño"><i class="fa-solid fa-maximize me-2"></i>
                                                         Tamaño</label>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-sm-3" id="appDiv">
+                                            <div class="col-12 col-sm-3" id="appDivEditar">
                                                 <div class="form-floating mb-3">
                                                     <select class="form-select" id="appEditar" aria-label="Aplicación Movil">
                                                         <option selected disabled>Seleccione una Opción</option>
@@ -482,7 +554,7 @@ require("../vistas/navbar.php"); ?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
-                        <button type="button" class="btn btn-success m-2"><i class="fa-solid fa-computer-mouse me-2"></i>Agregar Componente</button>
+                        <button type="button" class="btn btn-success m-2"><i class="fa-solid fa-computer-mouse me-2"></i>Editar Componente</button>
                     </div>
                 </div>
             </div>
@@ -497,7 +569,7 @@ require("../vistas/navbar.php"); ?>
 
     <?php include("../vistas/footer.php"); ?>
 
-    <!--ARCHIVOS PHP -->
+
     <!--ARCHIVOS SCRIPTS -->
     <script src="../recursos/js/componentes.js"=<?php echo time(); ?>"></script>
     <script src="../recursos/js/index.js"=<?php echo time(); ?>"></script>
