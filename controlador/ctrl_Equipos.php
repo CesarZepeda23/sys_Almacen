@@ -63,3 +63,9 @@ switch($opc){
         break;
 } 
 ?>
+
+<script>
+$("#btnEditarEquipos").click(function () {//MODAL EDITAR
+  $("#modalEditarEquipos").modal("show");
+});
+</script>

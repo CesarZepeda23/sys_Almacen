@@ -38,10 +38,14 @@ class Componentes extends CRUD
         rfwsmqex_gvsl_sys_almacen.caracteristicas.costo
         FROM
         rfwsmqex_gvsl_sys_almacen.area_udn
-        INNER JOIN rfwsmqex_gvsl_sys_almacen.areas ON rfwsmqex_gvsl_sys_almacen.area_udn.id_Area = rfwsmqex_gvsl_sys_almacen.areas.idArea
-        INNER JOIN rfwsmqex_gvsl.udn ON rfwsmqex_gvsl_sys_almacen.area_udn.id_UDN = rfwsmqex_gvsl.udn.idUDN
-        INNER JOIN rfwsmqex_gvsl_sys_almacen.componentes ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn
-        INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica";
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.areas 
+        ON rfwsmqex_gvsl_sys_almacen.area_udn.id_Area = rfwsmqex_gvsl_sys_almacen.areas.idArea
+        INNER JOIN rfwsmqex_gvsl.udn 
+        ON rfwsmqex_gvsl_sys_almacen.area_udn.id_UDN = rfwsmqex_gvsl.udn.idUDN
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.componentes 
+        ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas 
+        ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica";
         $sql = $this->_Select($query, null, "2");
         return $sql;
     }
@@ -52,5 +56,22 @@ class Componentes extends CRUD
         (nombre, id_Caracteristica, id_TipoComponente, id_AreaUDN) 
         VALUES (?,?,?,?)";
         $this->_DIU($query, $array, "2");
+    }
+
+    function insertarCaracteristicas($array)
+    {
+        $query = "INSERT INTO caracteristicas
+        (tipo, marca, modelo, voltaje, velocidad, contactos, entrada, salida, 
+        amperaje, estado, costo, condicion, capacidad, resolucion, tamaño, aplicacion) 
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $this->_DIU($query, $array, "2");
+    }
+
+    function ultimoIDCategoria()
+    {
+        $query = "SELECT MAX(idCaracteristica) AS id FROM caracteristicas";
+        $sql = $this->_Select($query, null, "2");
+        foreach ($sql as $row);
+        return  $row[0];
     }
 }
