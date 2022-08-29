@@ -18,7 +18,6 @@ require("../vistas/navbar.php"); ?>
                                             <th scope="col">ID</th>
                                             <th scope="col">Nombre</th>
                                             <th scope="col">Abreviatura</th>
-                                            <th scope="col">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody id="tablasAreas">
