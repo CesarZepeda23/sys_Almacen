@@ -14,6 +14,11 @@ $(function mostrarTodosUDN() {
     });
   });
 
+  $("table #tablasUDNindex").on("click", "tr", function () {
+   alert($(this).attr("id"));
+  });
+  
+
   $(function mostrarTodosEquipos() {
     let datos = new FormData();
     datos.append("opc", 2);

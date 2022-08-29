@@ -73,6 +73,22 @@ $("#salectUDN").change(function () {//SELECT AREAS
   });
 
  $("#btnRegistrarEquipo").click(function () {//REGISTRO
+  if (
+    $("#fechaAlta").val() < 1 ||
+    $("#numeroEquipo").val() < 1 ||
+    $("#responsableEquipo").val().length < 1 ||
+    $("#estado").val().length < 1 ||
+    $("#sistemaOperativo").val().length < 1||
+    $("#salectAreaUDN").val() .length== 0 
+  ) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Falta llenar datos obligatorios',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  } else {
     let datos = new FormData();
     datos.append("opc", 5);
     datos.append("fechaAlta", $("#fechaAlta").val());
@@ -96,7 +112,15 @@ $("#salectUDN").change(function () {//SELECT AREAS
           showConfirmButton: false,
           timer: 1500
         });
-        $("#modalRegistroEquipos").modal("hide"); 
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Agregado Con Exito',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        window.location.reload()
       },
     });
+  }
   }); 

@@ -10,7 +10,7 @@ switch($opc){
         $sql = $obj -> mostrarUDNDashboard(); 
         foreach($sql as $row){
             $tablaindexUDN .= '
-                             <tr>
+                             <tr id="' . $row['idUDN'] . ' ">
                                 <td>' . $row['idUDN'] . ' </td>
                                 <td>' . $row['UDN'] . ' </td>
                                 <td>' . $row['Abreviatura'] . ' </td>
