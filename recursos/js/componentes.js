@@ -288,127 +288,83 @@ $("#agregar").click(function () {
   }
 });
 
-$("table #tablaComponentes").on("click", "td", function () {
-  if ($(this).attr("id") != undefined) {
-    let id_componente = $(this).attr("id");
+$("tbody").on("click", "button", function () {
+  if ($(this).attr("id") == "edit") {
+    let id_componente = parseInt($(this).val());
 
-    $("table").on("click", "button", function () {
-      if ($(this).attr("id") == "edit") {
-        $("#modalEditar").modal("show");
-      } else if ($(this).attr("id") == "print") {
-        alert("impr");
-      } else if ($(this).attr("id") == "delete") {
-        alert("delete");
-      }
+    $("#modalEditar").modal("show");
+
+    $(function mostrarUDNEditar() {
+      let datos = new FormData();
+      datos.append("opc", 1);
+      $.ajax({
+        type: "POST",
+        url: "../controlador/ctrl_Componentes.php",
+        contentType: false,
+        data: datos,
+        processData: false,
+        cache: false,
+        success: function (respuesta) {
+          $("#udnEditar").html(respuesta);
+        },
+      });
     });
+
+    $("#udnEditar").change(function () {
+      let datos = new FormData();
+      datos.append("opc", 2);
+      datos.append("idUDN", $(this).val());
+
+      $.ajax({
+        type: "POST",
+        url: "../controlador/ctrl_Componentes.php",
+        contentType: false,
+        data: datos,
+        processData: false,
+        cache: false,
+        success: function (respuesta) {
+          $("#areasEditar").html(respuesta);
+        },
+      });
+    });
+
+    $(function mostrarCategoriasEditar() {
+      let datos = new FormData();
+      datos.append("opc", 3);
+      $.ajax({
+        type: "POST",
+        url: "../controlador/ctrl_Componentes.php",
+        contentType: false,
+        data: datos,
+        processData: false,
+        cache: false,
+        success: function (respuesta) {
+          $("#categoriaEditar").html(respuesta);
+        },
+      });
+    });
+
+    $(function mostrarInfoComponente() {
+      let datos = new FormData();
+      datos.append("opc", 7);
+      datos.append("id_componente", id_componente);
+
+      $.ajax({
+        type: "POST",
+        url: "../controlador/ctrl_Componentes.php",
+        contentType: false,
+        data: datos,
+        processData: false,
+        cache: false,
+        dataType: "JSON",
+        success: function (data) {
+          $("#nombreCompEditar").val(data["nombre"]);
+        },
+      });
+    });
+  } else if ($(this).attr("id") == "print") {
+    alert("impr");
+  } else if ($(this).attr("id") == "delete") {
+    alert("delete");
   }
 });
-
-// $("#editar").click(function () {
-//   $("#modalEditar").modal("show");
-
-//   $(function mostrarUDN() {
-//     let datos = new FormData();
-//     datos.append("opc", 1);
-//     $.ajax({
-//       type: "POST",
-//       url: "../controlador/ctrl_Componentes.php",
-//       contentType: false,
-//       data: datos,
-//       processData: false,
-//       cache: false,
-//       success: function (respuesta) {
-//         $("#udnEditar").html(respuesta);
-//       },
-//     });
-//   });
-
-//   $(function mostrarCategorias() {
-//     let datos = new FormData();
-//     datos.append("opc", 3);
-//     $.ajax({
-//       type: "POST",
-//       url: "../controlador/ctrl_Componentes.php",
-//       contentType: false,
-//       data: datos,
-//       processData: false,
-//       cache: false,
-//       success: function (respuesta) {
-//         $("#categoriaEditar").html(respuesta);
-//       },
-//     });
-//   });
-// });
-
-// $("#btnAgregarComp").click(function () {
-//   $(function mostrarModalRegistro_OcultarCampos() {
-//     $("#modalEditar").modal("show");
-
-//     $.ajax({
-//       type: "POST",
-//       url: "../controlador/ctrl_Pedidos.php",
-//       contentType: false,
-//       data: datos,
-//       processData: false,
-//       cache: false,
-//       dataType: "JSON",
-//       success: function (data) {
-//         $("#divMensajePro").hide();
-//         $("#modalProductos").modal("hide");
-//         $("#divProducto").show();
-//         $("#divRelleno").show();
-//         $("#divObservaciones").show();
-//         $("#divBtnAgregar").show();
-
-//         if (data["id_categoria"] == 1) {
-//           $("#divInfoPastel").show();
-//         }
-
-//         $("#NombreProducto").val(data["titulo"]);
-//       },
-//     });
-
-//     $("#voltajeDiv").hide();
-//     $("#velocidadDiv").hide();
-//     $("#contactosDiv").hide();
-//     $("#entradasDiv").hide();
-//     $("#salidasDiv").hide();
-//     $("#amperajeDiv").hide();
-//     $("#capacidadDiv").hide();
-//     $("#resolucionDiv").hide();
-//     $("#tamañoDiv").hide();
-//     $("#appDiv").hide();
-//   });
-
-//   $(function mostrarUDNEditar() {
-//     let datos = new FormData();
-//     datos.append("opc", 1);
-//     $.ajax({
-//       type: "POST",
-//       url: "../controlador/ctrl_Componentes.php",
-//       contentType: false,
-//       data: datos,
-//       processData: false,
-//       cache: false,
-//       success: function (respuesta) {
-//         $("#udnEditar").html(respuesta);
-//       },
-//     });
-//   });
-
-//   $(function mostrarCategoriasEditar() {
-//     let datos = new FormData();
-//     datos.append("opc", 3);
-//     $.ajax({
-//       type: "POST",
-//       url: "../controlador/ctrl_Componentes.php",
-//       contentType: false,
-//       data: datos,
-//       processData: false,
-//       cache: false,
-//       success: function (respuesta) {
-//         $("#categoriaEditar").html(respuesta);
-//       },
-//     });
-//   });
-// });

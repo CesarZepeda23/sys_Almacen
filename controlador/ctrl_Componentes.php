@@ -45,8 +45,8 @@ switch ($opc) {
                         <td>' . $row['nombre'] . ' </td>
                         <td>' . $row['condicion'] . ' </td>
                         <td>$ ' . number_format($row['costo'], 2, '.', ',') . ' </td>
-                        <td id="' . $row['idComponente'] . '">
-                            <button type="button" class="btn btn-square btn-primary m-1" id="edit"><i class="fa fa-edit"></i></button>
+                        <td>
+                            <button type="button" class="btn btn-square btn-primary m-1" id="edit" value="' . $row['idComponente'] . '"><i class="fa fa-edit"></i></button>
                             <button type="button" class="btn btn-square btn-warning m-1" id="print"><i class="fa fa-print"></i></button>
                             <button type="button" class="btn btn-square btn-danger m-1" id="delete"><i class="fa fa-trash"></i></button>
                         </td>
@@ -98,8 +98,8 @@ switch ($opc) {
                 'id_UDN' => $row['id_UDN'],
                 'idComponente' => $row['idComponente'],
                 'nombre' => $row['nombre'],
-                'id_Caracteristica ' => $row['id_Caracteristica '],
-                'id_TipoComponente ' => $row['id_TipoComponente '],
+                'id_Caracteristica' => $row['id_Caracteristica'],
+                'id_TipoComponente' => $row['id_TipoComponente'],
                 'tipo' => $row['tipo'],
                 'marca' => $row['marca'],
                 'modelo' => $row['modelo'],

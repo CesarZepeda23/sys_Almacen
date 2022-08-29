@@ -41,8 +41,8 @@ require("../vistas/navbar.php"); ?>
         </section>
     </main>
 
+    <!-- Modal Registrar Componente-->
     <section>
-        <!-- Modal -->
         <div class="modal fade " id="modalRegistro" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalProductos" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">
@@ -301,8 +301,8 @@ require("../vistas/navbar.php"); ?>
 
     </section>
 
+    <!-- Modal Editar Componente-->
     <section>
-        <!-- Modal -->
         <div class="modal fade " id="modalEditar" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalProductos" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-scrollable">
                 <div class="modal-content">
