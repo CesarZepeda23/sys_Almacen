@@ -204,14 +204,13 @@ $("#agregar").click(function () {
     $("#condicion").val().length < 1
   ) {
     Swal.fire({
-      position: 'top-end',
-      icon: 'error',
-      title: 'Falta llenar datos obligatorios',
+      position: "center",
+      icon: "error",
+      title: "Error, Falta Llenar Campos Obligatorios",
       showConfirmButton: false,
-      timer: 1500
+      timer: 2000,
     });
   } else {
-    let id_Caracteristica;
     let datos = new FormData();
 
     datos.append("opc", 5);
@@ -240,32 +239,67 @@ $("#agregar").click(function () {
       processData: false,
       cache: false,
       success: function (respuesta) {
-        id_Caracteristica = parseInt(respuesta);
-      },
-    });
+        datos.append("opc", 6);
 
-    datos.append("opc", 6);
-    datos.append("nombre", $("#nombreComp").val());
-    datos.append("id_Caracteristica", id_Caracteristica);
-    datos.append("id_TipoComponente", $("#categoria").val());
-    datos.append("id_AreaUDN", $("#areas").val());
+        datos.append("nombre", $("#nombreComp").val());
+        datos.append("id_Caracteristica", parseInt(respuesta));
+        datos.append("id_TipoComponente", $("#categoria").val());
+        datos.append("id_AreaUDN", $("#areas").val());
 
-    $.ajax({
-      type: "POST",
-      url: "../controlador/ctrl_Componentes.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      success: function (respuesta) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Agregado Con Exito',
-          showConfirmButton: false,
-          timer: 1500
+        $.ajax({
+          type: "POST",
+          url: "../controlador/ctrl_Componentes.php",
+          contentType: false,
+          data: datos,
+          processData: false,
+          cache: false,
+          success: function (respuesta) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Agregado Con Exito",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+
+            $("#modalRegistro").modal("hide");
+          },
+          error: function () {
+            Swal.fire({
+              position: "center",
+              icon: "error",
+              title: "Error, Datos no Almancenados",
+              showConfirmButton: false,
+              timer: 2000,
+            });
+          },
         });
       },
+      error: function () {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Error, Datos no Almancenados",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      },
+    });
+  }
+});
+
+$("table #tablaComponentes").on("click", "td", function () {
+  if ($(this).attr("id") != undefined) {
+    let id_componente = $(this).attr("id");
+
+    $("table").on("click", "button", function () {
+      if ($(this).attr("id") == "edit") {
+        $("#modalEditar").modal("show");
+      } else if ($(this).attr("id") == "print") {
+        alert("impr");
+      } else if ($(this).attr("id") == "delete") {
+        alert("delete");
+      }
     });
   }
 });

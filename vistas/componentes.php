@@ -9,7 +9,6 @@ require("../vistas/navbar.php"); ?>
     <main>
         <section class="container">
             <div class="container-fluid pt-4 px-4">
-
                 <button type="button" id="btnAgregarComp" class="btn btn-success m-2"><i class="fa-solid fa-computer-mouse me-2"></i>Agregar Componente</button>
                 <div class="row g-4">
                     <div class="col-sm-12">
@@ -42,7 +41,6 @@ require("../vistas/navbar.php"); ?>
         </section>
     </main>
 
-
     <section>
         <!-- Modal -->
         <div class="modal fade " id="modalRegistro" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalProductos" aria-hidden="true">
@@ -65,7 +63,7 @@ require("../vistas/navbar.php"); ?>
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-floating mb-3">
                                                     <select class="form-select" id="udn" aria-label="Unidades de Negocio" required> </select>
-                                                    <label for="udn"><i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
+                                                    <label for="udn">* <i class="fa-solid fa-building me-2"></i>Unidad de Negocio</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-4"></div>
@@ -74,7 +72,7 @@ require("../vistas/navbar.php"); ?>
                                                     <select class="form-select" id="areas" aria-label="Areas UDN" required>
                                                         <option selected value="0" disabled>Seleccione una Opción</option>
                                                     </select>
-                                                    <label for="areas"><i class="fa-solid fa-share-nodes me-2"></i>
+                                                    <label for="areas">* <i class="fa-solid fa-share-nodes me-2"></i>
                                                         Areas</label>
                                                 </div>
                                             </div>
@@ -84,20 +82,20 @@ require("../vistas/navbar.php"); ?>
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
-                                                    <label for="nombreComp" aria-label="Nombre del Componente"><i class="fa-solid fa-rectangle-list me-2"></i>
+                                                    <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
                                                         Nombre del Componente</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="marca" placeholder="Marca del Componente" required />
-                                                    <label for="marca" aria-label="Marca del Componente"><i class="fa-solid fa-copyright me-2"></i> Marca</label>
+                                                    <label for="marca" aria-label="Marca del Componente">* <i class="fa-solid fa-copyright me-2"></i> Marca</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-4">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="modelo" placeholder="Modelo del Componente" required />
-                                                    <label for="modelo" aria-label="Modelo del Componente"><i class="fa-solid fa-laptop-file me-2"></i>
+                                                    <label for="modelo" aria-label="Modelo del Componente">* <i class="fa-solid fa-laptop-file me-2"></i>
                                                         Modelo</label>
                                                 </div>
                                             </div>
@@ -119,20 +117,20 @@ require("../vistas/navbar.php"); ?>
                                                     <select class="form-select" id="categoria" aria-label="Categoria Componente" required>
                                                         <option selected value="0" disabled>Seleccione una Opción</option>
                                                     </select>
-                                                    <label for="categoria"><i class="fa-solid fa-certificate me-2"></i>
+                                                    <label for="categoria">* <i class="fa-solid fa-certificate me-2"></i>
                                                         Categoria del Componente</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-3">
                                                 <div class="form-floating mb-3">
                                                     <input type="number" class="form-control text-center" id="precio" placeholder="Precio del Componente" required />
-                                                    <label for="precio" aria-label="Precio del Componente"><i class="fa-solid fa-dollar-sign me-2"></i> Precio</label>
+                                                    <label for="precio" aria-label="Precio del Componente">* <i class="fa-solid fa-dollar-sign me-2"></i> Precio</label>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-3">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control text-center" id="condicion" placeholder="Condicion del Componente" required />
-                                                    <label for="condicion" aria-label="Condicion del Componente"><i class="fa-solid fa-thumbs-up me-2"></i>
+                                                    <label for="condicion" aria-label="Condicion del Componente">* <i class="fa-solid fa-thumbs-up me-2"></i>
                                                         Condición Fisica</label>
                                                 </div>
                                             </div>
@@ -554,7 +552,7 @@ require("../vistas/navbar.php"); ?>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa-solid fa-ban me-2"></i>Cancelar</button>
-                        <button type="button" class="btn btn-success m-2"><i class="fa-solid fa-computer-mouse me-2"></i>Editar Componente</button>
+                        <button type="button" id="actualizarComponente" class="btn btn-success m-2"><i class="fa-solid fa-computer-mouse me-2"></i>Editar Componente</button>
                     </div>
                 </div>
             </div>

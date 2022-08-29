@@ -45,17 +45,17 @@ switch ($opc) {
                         <td>' . $row['nombre'] . ' </td>
                         <td>' . $row['condicion'] . ' </td>
                         <td>$ ' . number_format($row['costo'], 2, '.', ',') . ' </td>
-                        <td>
-                            <button type="button" class="btn btn-square btn-primary m-1" id="editar"><i class="fa fa-edit"></i></button>
-                            <button type="button" class="btn btn-square btn-warning m-1"><i class="fa fa-print"></i></button>
-                            <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button>
+                        <td id="' . $row['idComponente'] . '">
+                            <button type="button" class="btn btn-square btn-primary m-1" id="edit"><i class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-square btn-warning m-1" id="print"><i class="fa fa-print"></i></button>
+                            <button type="button" class="btn btn-square btn-danger m-1" id="delete"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                 ';
         }
         echo $tablaComponentes;
         break;
-    case 5:
+    case 5: //Almacenar en tabla Caracteristias
         $infoCaracteristica = array(
             $tipo = $_POST['tipo'],
             $marca = $_POST['marca'],
@@ -79,7 +79,7 @@ switch ($opc) {
 
         echo $obj->ultimoIDCategoria();
         break;
-    case 6:
+    case 6: //Almacenar en tabla componentes
         $infoComponente = array(
             $nombre = $_POST['nombre'],
             $id_Caracteristica = $_POST['id_Caracteristica'],
