@@ -158,8 +158,8 @@ require("../vistas/navbar.php"); ?>
                                             <div class="text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="date" class="form-control" id="fecha" />
-                                                            <label for="fecha" aria-label="Fecha" name="fecha">
+                                                        <input type="date" class="form-control" id="fechAltaEditar"/>
+                                                            <label for="fechAltaEditar" aria-label="Fecha" name="fechAltaEditar">
                                                                 <i class="fa-solid fa-calendar me-2"></i class=>Fecha
                                                             </label>
                                                     </div>
@@ -169,8 +169,8 @@ require("../vistas/navbar.php"); ?>
                                                 
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3" >
-                                                        <input type="text" class="form-control text-center"  disabled id="numeroEquipo" placeholder="" />
-                                                            <label for="numeroEquipo" name="numeroEquipo" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
+                                                        <input type="text" class="form-control text-center"  disabled id="numeroEquipoEditar" placeholder="" />
+                                                            <label for="numeroEquipoEditar" name="numeroEquipoEditar" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
                                                                 Numero De Equipo
                                                             </label>
                                                     </div>
@@ -180,16 +180,16 @@ require("../vistas/navbar.php"); ?>
                                             <div class="text row">
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="numeroEncargado" placeholder="" />
-                                                            <label for="numeroEncargado" name="numeroEncargado" aria-label="Nombre De Encargado"><i class="fa-solid fa-user"></i>
+                                                            <input type="text" class="form-control" id="responsableEquipoEditar" placeholder="" />
+                                                            <label for="responsableEquipoEditar" name="responsableEquipoEditar" aria-label="Nombre De Encargado"><i class="fa-solid fa-user"></i>
                                                                 Nombre De Encargado</label>
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="SO" placeholder="" />
-                                                                <label for="SO" name="SO" aria-label="Sistema Operativo"><i class="fa-brands fa-windows"></i>
+                                                            <input type="text" class="form-control" id="sistemaOperativoEditar" placeholder="" />
+                                                                <label for="sistemaOperativoEditar" name="sistemaOperativoEditar" aria-label="Sistema Operativo"><i class="fa-brands fa-windows"></i>
                                                                     Sistema Operativo
                                                                 </label>
                                                         </div>
@@ -197,8 +197,8 @@ require("../vistas/navbar.php"); ?>
 
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="" placeholder="" />
-                                                                <label for="estado" name="estado" aria-label="Estado"><i class="fa-solid fa-circle-exclamation"></i>
+                                                            <input type="text" class="form-control" id="estadoEditar" placeholder="" />
+                                                                <label for="estadoEditar" name="estadoEditar" aria-label="Estado"><i class="fa-solid fa-circle-exclamation"></i>
                                                                     Estado
                                                                 </label>
                                                         </div>
@@ -207,12 +207,12 @@ require("../vistas/navbar.php"); ?>
                                                     <div class="col-12 col-sm-4">
                                                     
                                                     <div class="form-floating mb-3">
-                                                        <select id="salectUDN" class="form-select" placeholder="Selecciona una Opción">
+                                                        <select id="salectUDNEditar" class="form-select" placeholder="Selecciona una Opción">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             
                                                             </option>
                                                         </select>
-                                                            <label for="salectUDN" aria-label="UDN"><i class="fa-solid fa-building"></i>
+                                                            <label for="salectUDNEditar" aria-label="UDN"><i class="fa-solid fa-building"></i>
                                                                 Unidad De Negocio
                                                             </label>
                                                     </div>
@@ -220,51 +220,23 @@ require("../vistas/navbar.php"); ?>
                                                 
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3">
-                                                        <select id="salectAreaUDN" class="form-select" placeholder="Selecciona una Opción">
+                                                        <select id="salectAreaUDNEditar" class="form-select" placeholder="Selecciona una Opción">
                                                             <option selected value="Selecciona una Opción">Seleccione una Opción
                                                             
                                                             </option>
                                                         </select>
-                                                        <label for="salectAreaUDN" aria-label="Areas"><i class="fa-solid fa-briefcase"></i>
+                                                        <label for="salectAreaUDNEditar" aria-label="Areas"><i class="fa-solid fa-briefcase"></i>
                                                             Areas
                                                         </label>
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="col-12 col-sm-4"></div>
-                                                
-                                                <div class="col-sm-12">
-                                                    <div class="bg-light rounded h-100 p-4">
-                                                        <h5 class="mb-4">Componentes</h5>
-                                                            <div class="table-responsive">
-                                                                <table class="table table-striped" >
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th scope="col">ID</th>
-                                                                            <th scope="col">Nombre</th>
-                                                                            <th scope="col">Marca</th>
-                                                                            <th scope="col">Modelo</th>
-                                                                            <th scope="col">UDN</th>
-                                                                            <th scope="col">Area</th>
-                                                                            <th scope="col">Condición</th>
-                                                                            <th scope="col">Costo</th>
-                                                                            <th scope="col">Acciones</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                        <tbody id="tablascomponentesE">
-                                                                        
-                                                                        </tbody>
-                                                                </table>
-                                                            </div>
-                                                    </div>
-                                            </div> 
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>
-                            <button type="submit" name="btnEditarEquipo" class="btn btn-success m-2">Crear Equipo<i class="fa-solid fa-computer ms-2"></i></button>
+                            <button type="submit" name="btnEditarEquipo" class="btn btn-success m-2">Editar Equipo<i class="fa-solid fa-computer ms-2"></i></button>
                         </div>
                     </div>
                 </div>

@@ -17,8 +17,9 @@ switch($opc){
                     <td>' . $row['numeroEquipo'] . ' </td>
                     <td>' . $row['responsableEquipo'] . ' </td>
                     <td>' . $row['fechaAlta'] . ' </td>
-                    <td>  <button type="button" id="btnEditarEquipos" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
-                    <button type="button" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
+                    <td>  
+                    <button type="button" id="btnEditarEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
+                    <button type="button" id="btnEliminarEquipos" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
                 </tr>
                 ';  
                            }
@@ -51,7 +52,7 @@ switch($opc){
 
 
     case 5://REGISTRO
-            $infoEquipo = array(
+            $infoEquipo .= array(
                 $fechaAlta = $_POST['fechaAlta'],
                 $numeroEquipo = $_POST['numeroEquipo'],
                 $responsableEquipo = $_POST['responsableEquipo'],
@@ -61,11 +62,21 @@ switch($opc){
             );
             $obj->insertarEquipo($infoEquipo);
         break;
+
+    case 6://MOSTRAR INFO EDITAR
+            $id_Equipo = $_POST['id_Equipo'];
+            $sql = $obj->mostrarInfoEquipos($id_Equipo);
+            foreach ($sql as $row) {
+                $infoEquipo .= array(
+                    'id_AreaUDN' => $row['id_AreaUDN'],
+                    'fechaAlta' => $row['fechaAlta'],
+                    'numeroEquipo' => $row['numeroEquipo'],
+                    'responsableEquipo' => $row['responsableEquipo'],
+                    'estado' => $row['estado'],
+                    'sistemaOperativo' => $row['sistemaOperativo'],
+                );
+            };
+            echo json_encode($infoEquipo);
+        break;
 } 
 ?>
-
-<script>
-$("#btnEditarEquipos").click(function () {//MODAL EDITAR
-  $("#modalEditarEquipos").modal("show");
-});
-</script>

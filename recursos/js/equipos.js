@@ -124,3 +124,69 @@ $("#salectUDN").change(function () {//SELECT AREAS
     });
   }
   }); 
+
+  $("tbody").on("click", "button", function () {
+    if ($(this).attr("id") == "btnEditarEquipos") {
+      let id_Equipo = parseInt($(this).val());
+      $("#modalEditarEquipos").modal("show"); 
+
+      $(function () {//SELECT UDN
+        let datos = new FormData();
+        datos.append("opc", 3);
+        $.ajax({
+          type: "POST",
+          url: "../controlador/ctrl_Equipos.php",
+          contentType: false,
+          data: datos,
+          processData: false,
+          cache: false,
+          success: function (respuesta) {
+            $("#salectUDNEditar").html(respuesta);
+          },
+        });
+      });
+    
+    $("#salectUDNEditar").change(function () {//SELECT AREAS
+        let datos = new FormData();
+        datos.append("opc", 4);
+        datos.append("idUDN", $(this).val());
+        $.ajax({
+          type: "POST",
+          url: "../controlador/ctrl_Equipos.php",
+          contentType: false,
+          data: datos,
+          processData: false,
+          cache: false,
+          success: function (respuesta) {
+            $("#salectAreaUDNEditar").html(respuesta);
+          },
+        });
+      });
+
+      $(function mostrarInfoEquipos() {
+        let datos = new FormData();
+        datos.append("opc", 6);
+        datos.append("id_Equipo", id_Equipo);
+
+        $.ajax({
+          type: "POST",
+          url: "../controlador/ctrl_Equipos.php",
+          contentType: false,
+          data: datos,
+          processData: false,
+          cache: false,
+          dataType: "JSON",
+          success: function (data) {
+            $("#fechaAltaEditar").val(data["fechaAlta"]);
+            $("#numeroEquipoEditar").val(data["numeroEquipo"]);
+            $("#responsableEquipoEditar").val(data["responsableEquipo"]);
+            $("#estadoEditar").val(data["estado"]);
+            $("#sistemaOperativoEditar").val(data["sistemaOperativo"]);
+            $("#salectAreaUDNEditar").val(data["id_AreaUDN"]);
+          },
+        });
+      });
+    }else if ($(this).attr("id") == "btnEliminarEquipos") {
+          alert("delete");
+        }
+   });

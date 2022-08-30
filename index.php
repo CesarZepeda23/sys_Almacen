@@ -123,6 +123,9 @@
 
                                         </tbody>
                                     </table>
+                                    <a href="./vistas/areas.php">
+                                        <button type="button"  class="btn btn-success m-2"><i class="fa fa-building me-2"></i>Ver Mas</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +145,9 @@
 
                                         </tbody>
                                     </table>
+                                    <a href="./vistas/equipos.php">
+                                        <button type="button"  class="btn btn-success m-2"><i class="fa fa-computer me-2"></i>Ver Mas</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -164,10 +170,14 @@
 
                                         </tbody>
                                     </table>
+                                    <a href="./vistas/componentes.php">
+                                        <button type="button"  class="btn btn-success m-2"><i class="fa fa-computer-mouse me-2"></i>Ver Mas</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Table End -->
+                    </div>
+                </div> 
             </section>
         </main>
 

@@ -10,7 +10,7 @@ switch($opc){
         $sql = $obj -> mostrarUDNDashboard(); 
         foreach($sql as $row){
             $tablaindexUDN .= '
-                             <tr id="' . $row['idUDN'] . ' ">
+                                <tr id="' . $row['idUDN'] . ' ">
                                 <td>' . $row['idUDN'] . ' </td>
                                 <td>' . $row['UDN'] . ' </td>
                                 <td>' . $row['Abreviatura'] . ' </td>
@@ -22,7 +22,7 @@ switch($opc){
         echo $tablaindexUDN;
         break;
 
-        case 2://MOSTRAR UDN
+    case 2://MOSTRAR UDN
             $tablaindexEquipos = null;
             $sql = $obj -> mostrarEquiposDashboard(); 
             foreach($sql as $row){
@@ -38,7 +38,7 @@ switch($opc){
             echo $tablaindexEquipos;
             break;
 
-            case 3://MOSTRAR UDN
+    case 3://MOSTRAR UDN
                 $tablaindexComponentes = null;
                 $sql = $obj -> mostrarComponentesDashboard(); 
                 foreach($sql as $row){
