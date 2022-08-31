@@ -17,3 +17,11 @@ $(function mostrarTodosUDN() {
      },
     });
   });
+
+  $("tbody").on("click", "button", function () {
+    if ($(this).attr("id") == "btnEditarEquipos") {
+      let id_Equipos = parseInt($(this).val());
+    $("#modalEditarEquipos").modal("show"); 
+
+    };
+    });
