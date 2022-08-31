@@ -80,6 +80,7 @@ Class Equipos extends CRUD {
         rfwsmqex_gvsl_sys_almacen.equipo.numeroEquipo,
         rfwsmqex_gvsl_sys_almacen.equipo.responsableEquipo,
         rfwsmqex_gvsl_sys_almacen.equipo.fechaAlta,
+        rfwsmqex_gvsl_sys_almacen.equipo.condicion,
         rfwsmqex_gvsl.udn.idUDN,
         rfwsmqex_gvsl_sys_almacen.equipo.idEquipo
         FROM
@@ -158,6 +159,13 @@ Class Equipos extends CRUD {
         $this->_DIU($query, Null, "2");
     }
 
+    function editarEquipo($array)
+    {
+        $query = "INSERT INTO equipo
+         (fechaAlta,numeroEquipo,responsableEquipo,sistemaOperativo,id_AreaUDN,condicion)  
+         VALUES (?,?,?,?,?,?)";
+         $this->_DIU($query, $array, "2");
+    }
 }
 
 ?>

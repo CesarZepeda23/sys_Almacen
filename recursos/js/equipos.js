@@ -1,15 +1,3 @@
-$("#btnAgregarEquipos").click(function () { //MMODAL REGISTRO
-  $("#modalRegistroEquipos").modal("show");
-});
-
-$("#btnEditarEquipos").click(function () {//MODAL EDITAR
-  $("#modalEditarEquipos").modal("show");
-});
-
-$("#btnVerEquipos").click(function () {//MODAL EDITAR
-  $("#modalVerEquipos").modal("show");
-});
-
 $(function mostrar() {//MOSTRAR TABLA EQUIPOS
     let datos = new FormData();
     datos.append("opc", 1);
@@ -196,9 +184,56 @@ $("#salectUDN").change(function () {//SELECT AREAS
             $("#fechaAltaEditar").val(data["fechaAlta"]);
             $("#numeroEquipoEditar").val(data["numeroEquipo"]);
             $("#responsableEquipoEditar").val(data["responsableEquipo"]);
-            $("#estadoEditar").val(data["estado"]);
+            $("#condicionEditar").val(data["condicion"]);
             $("#sistemaOperativoEditar").val(data["sistemaOperativo"]);
             $("#salectAreaUDNEditar").val(data["id_AreaUDN"]);
+      
+            $("#btnEditarEquipo").click(function () {//REGISTRO
+              if (
+                $("#fechaAltaEditar").val() < 1 ||
+                $("#numeroEquipoEditar").val() < 1 ||
+                $("#responsableEquipoEditar").val().length < 1 ||
+                $("#condicionEditar").val().length < 1 ||
+                $("#sistemaOperativoEditar").val().length < 1||
+                $("#salectAreaUDNEditar").val() .length== 0 
+              ) {
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'error',
+                  title: 'Falta llenar datos obligatorios',
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+              } else {
+                let datos = new FormData();
+                datos.append("opc", 5);
+                datos.append("fechaAlta", $("#fechaAltaEditar").val());
+                datos.append("numeroEquipo", $("#numeroEquipoEditar").val());
+                datos.append("responsableEquipo", $("#responsableEquipoEditar").val());
+                datos.append("condicion", $("#condicionEditar").val());
+                datos.append("sistemaOperativo", $("#sistemaOperativoEditar").val());
+                datos.append("id_AreaUDN", $("#salectAreaUDNEditar").val());
+                $.ajax({
+                  type: "POST",
+                  url: "../controlador/ctrl_Equipos.php",
+                  contentType: false,
+                  data: datos,
+                  processData: false,
+                  cache: false,
+                  success: function (respuesta) {
+                    Swal.fire({
+                      position: 'top-end',
+                      icon: 'success',
+                      title: 'Editado Con Exito',
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    window.location.reload()
+                  },
+                });
+              }
+              });
+            
           },
         });
       });
@@ -211,14 +246,14 @@ $("#salectUDN").change(function () {//SELECT AREAS
         datos.append("id_Equipos", id_Equipos);
         
         $.ajax({
-          type: "POST",
-          url: "../controlador/ctrl_Equipos.php",
-          contentType: false,
-          data: datos,
-          processData: false,
-          cache: false,
-          dataType: "JSON",
-          success: function (data) {
+        type: "POST",
+        url: "../controlador/ctrl_Equipos.php",
+        contentType: false,
+        data: datos,
+        processData: false,
+        cache: false,
+        dataType: "JSON",
+        success: function (data) {
             $("#fechaAltaVer").html(data["fechaAlta"]);
             $("#udnVer").html(data["UDN"]);
             $("#areaVer").html(data["nombre"]);

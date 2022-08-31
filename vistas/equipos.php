@@ -180,8 +180,8 @@ require("../vistas/navbar.php"); ?>
                                             <div class="text row">
                                                 <div class="col-12 col-sm-3">
                                                     <div class="form-floating mb-3">
-                                                        <input type="date" class="form-control" id="fechAltaEditar"/>
-                                                            <label for="fechAltaEditar" aria-label="Fecha" name="fechAltaEditar">
+                                                        <input type="date" class="form-control" id="fechaAltaEditar"/>
+                                                            <label  aria-label="Fecha">
                                                                 <i class="fa-solid fa-calendar me-2"></i class=>Fecha
                                                             </label>
                                                     </div>
@@ -192,7 +192,7 @@ require("../vistas/navbar.php"); ?>
                                                 <div class="col-12 col-sm-4">
                                                     <div class="form-floating mb-3" >
                                                         <input type="text" class="form-control text-center"  disabled id="numeroEquipoEditar" placeholder="" />
-                                                            <label for="numeroEquipoEditar" name="numeroEquipoEditar" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
+                                                            <label for="numeroEquipoEditar" aria-label="Numero De Equipo"><i class="fa-solid fa-hashtag"></i>
                                                                 Numero De Equipo
                                                             </label>
                                                     </div>
@@ -203,7 +203,7 @@ require("../vistas/navbar.php"); ?>
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" class="form-control" id="responsableEquipoEditar" placeholder="" />
-                                                            <label for="responsableEquipoEditar" name="responsableEquipoEditar" aria-label="Nombre De Encargado"><i class="fa-solid fa-user"></i>
+                                                            <label for="responsableEquipoEditar"  aria-label="Nombre De Encargado"><i class="fa-solid fa-user"></i>
                                                                 Nombre De Encargado</label>
                                                         </div>
                                                     </div>
@@ -211,7 +211,7 @@ require("../vistas/navbar.php"); ?>
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
                                                             <input type="text" class="form-control" id="sistemaOperativoEditar" placeholder="" />
-                                                                <label for="sistemaOperativoEditar" name="sistemaOperativoEditar" aria-label="Sistema Operativo"><i class="fa-brands fa-windows"></i>
+                                                                <label for="sistemaOperativoEditar"  aria-label="Sistema Operativo"><i class="fa-brands fa-windows"></i>
                                                                     Sistema Operativo
                                                                 </label>
                                                         </div>
@@ -219,9 +219,9 @@ require("../vistas/navbar.php"); ?>
 
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="estadoEditar" placeholder="" />
-                                                                <label for="estadoEditar" name="estadoEditar" aria-label="Estado"><i class="fa-solid fa-circle-exclamation"></i>
-                                                                    Estado
+                                                            <input type="text" class="form-control" name="condicionEditar" id="condicionEditar" />
+                                                                <label for="condicionEditar"  aria-label="Condicion"><i class="fa-solid fa-thumbs-up"></i>
+                                                                    Condicion Fisica
                                                                 </label>
                                                         </div>
                                                     </div>

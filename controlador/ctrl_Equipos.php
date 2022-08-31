@@ -68,13 +68,13 @@ switch($opc){
     case 6://MOSTRAR INFO EDITAR
             $id_Equipos = $_POST['id_Equipos'];
             $sql = $obj->mostrarInfoEquipos($id_Equipos);
-                foreach ($sql as $row) {    
-                    $infoEquipoEditar = array(
+            foreach ($sql as $row) {    
+            $infoEquipoEditar = array(
                         'id_AreaUDN' => $row['id_AreaUDN'],
                         'fechaAlta' => $row['fechaAlta'],
                         'numeroEquipo' => $row['numeroEquipo'],
                         'responsableEquipo' => $row['responsableEquipo'],
-                        'estado' => $row['estado'],
+                        'condicion' => $row['condicion'],
                         'sistemaOperativo' => $row['sistemaOperativo']
                     );
                 };
@@ -140,7 +140,7 @@ switch($opc){
     case 11://REGRESAR EQUIPO
                 $id_Equipos = $_POST['id_Equipos'];
                 $sql = $obj->regresarEquipo($id_Equipos);
-                break;           
+                break;     
         
 } 
 ?>
