@@ -6,6 +6,10 @@ $("#btnEditarEquipos").click(function () {//MODAL EDITAR
   $("#modalEditarEquipos").modal("show");
 });
 
+$("#btnVerEquipos").click(function () {//MODAL EDITAR
+  $("#modalVerEquipos").modal("show");
+});
+
 $(function mostrar() {//MOSTRAR TABLA EQUIPOS
     let datos = new FormData();
     datos.append("opc", 1);
@@ -77,7 +81,7 @@ $("#salectUDN").change(function () {//SELECT AREAS
     $("#fechaAlta").val() < 1 ||
     $("#numeroEquipo").val() < 1 ||
     $("#responsableEquipo").val().length < 1 ||
-    $("#estado").val().length < 1 ||
+    $("#condicion").val().length < 1 ||
     $("#sistemaOperativo").val().length < 1||
     $("#salectAreaUDN").val() .length== 0 
   ) {
@@ -94,9 +98,10 @@ $("#salectUDN").change(function () {//SELECT AREAS
     datos.append("fechaAlta", $("#fechaAlta").val());
     datos.append("numeroEquipo", $("#numeroEquipo").val());
     datos.append("responsableEquipo", $("#responsableEquipo").val());
-    datos.append("estado", $("#estado").val());
+    datos.append("condicion", $("#condicion").val());
     datos.append("sistemaOperativo", $("#sistemaOperativo").val());
     datos.append("id_AreaUDN", $("#salectAreaUDN").val());
+    datos.append("estado", "1");
     $.ajax({
       type: "POST",
       url: "../controlador/ctrl_Equipos.php",
@@ -105,13 +110,6 @@ $("#salectUDN").change(function () {//SELECT AREAS
       processData: false,
       cache: false,
       success: function (respuesta) {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Equipo Agregado Con Exito',
-          showConfirmButton: false,
-          timer: 1500
-        });
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -127,10 +125,11 @@ $("#salectUDN").change(function () {//SELECT AREAS
 
   $("tbody").on("click", "button", function () {
     if ($(this).attr("id") == "btnEditarEquipos") {
-      let id_Equipo = parseInt($(this).val());
+      let id_Equipos = parseInt($(this).val());
+      
       $("#modalEditarEquipos").modal("show"); 
 
-      $(function () {//SELECT UDN
+      $(function () {
         let datos = new FormData();
         datos.append("opc", 3);
         $.ajax({
@@ -146,7 +145,7 @@ $("#salectUDN").change(function () {//SELECT AREAS
         });
       });
     
-    $("#salectUDNEditar").change(function () {//SELECT AREAS
+    $("#salectUDNEditar").change(function () {
         let datos = new FormData();
         datos.append("opc", 4);
         datos.append("idUDN", $(this).val());
@@ -166,7 +165,7 @@ $("#salectUDN").change(function () {//SELECT AREAS
       $(function mostrarInfoEquipos() {
         let datos = new FormData();
         datos.append("opc", 6);
-        datos.append("id_Equipo", id_Equipo);
+        datos.append("id_Equipos", id_Equipos);
 
         $.ajax({
           type: "POST",
@@ -186,7 +185,53 @@ $("#salectUDN").change(function () {//SELECT AREAS
           },
         });
       });
-    }else if ($(this).attr("id") == "btnEliminarEquipos") {
+    }else if ($(this).attr("id") == "btnVerEquipos") {
+      let id_Equipos = parseInt($(this).val());
+      $("#modalVerEquipos").modal("show");
+      $(function () {
+        let datos = new FormData();
+        datos.append("opc", 7);
+        datos.append("id_Equipos", id_Equipos);
+        
+        $.ajax({
+          type: "POST",
+          url: "../controlador/ctrl_Equipos.php",
+          contentType: false,
+          data: datos,
+          processData: false,
+          cache: false,
+          dataType: "JSON",
+          success: function (data) {
+            $("#fechaAltaVer").html(data["fechaAlta"]);
+            $("#udnVer").html(data["UDN"]);
+            $("#areaVer").html(data["nombre"]);
+            $("#numeroEquipoVer").html(data["numeroEquipo"]);
+            $("#responsableEquipoVer").html(data["responsableEquipo"]);
+            $("#sistemaOperativoVer").html(data["sistemaOperativo"]);
+            $("#estadoVer").html(data["condicion"]);
+          },
+        });
+      });
+
+      $(function () {
+        let datos = new FormData();
+        datos.append("opc", 8);
+        datos.append("id_Equipos", id_Equipos);
+        $.ajax({
+          type: "POST",
+          url: "../controlador/ctrl_Equipos.php",
+          contentType: false,
+          data: datos,
+          processData: false,
+          cache: false,
+          success: function (respuesta) {
+            $("#componenteEquipo").html(respuesta);
+          },
+        });
+      });
+
+        }else if ($(this).attr("id") == "btnEliminarEquipos") {
           alert("delete");
+
         }
    });

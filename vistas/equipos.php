@@ -91,9 +91,9 @@ require("../vistas/navbar.php"); ?>
 
                                                     <div class="col-12 col-sm-4">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" name="estado" id="estado" />
-                                                                <label for="estado"  aria-label="Estado"><i class="fa-solid fa-circle-exclamation"></i>
-                                                                    Estado
+                                                            <input type="text" class="form-control" name="condicion" id="condicion" />
+                                                                <label for="condicion"  aria-label="Condicion"><i class="fa-solid fa-thumbs-up"></i>
+                                                                    Condicion Fisica
                                                                 </label>
                                                         </div>
                                                     </div>
@@ -138,7 +138,7 @@ require("../vistas/navbar.php"); ?>
         </section>
     </main>
 
-    <section>
+    <section><!-- MODAL EDITAR -->
             <!-- Modal Editar -->
             <div class="modal fade " id="modalEditarEquipos" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalEquipo" aria-hidden="true">
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -237,6 +237,101 @@ require("../vistas/navbar.php"); ?>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>
                             <button type="submit" name="btnEditarEquipo" class="btn btn-success m-2">Editar Equipo<i class="fa-solid fa-computer ms-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section><!-- MODAL VER -->
+            
+            <div class="modal fade " id="modalVerEquipos" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalEquipo" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="col">
+                                <div class="card-text row">
+                                    <h4 class="modal-title fw-bold text-center">Ver Equipo</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="body p-sm-2 p-md-4 p-lg-4 p-xl-4">
+                                    <div class="text row">
+                                        <div class="col-12 col-sm-3">
+                                            <div class="bg-light rounded d-flex align-items-center p-3">
+                                                <i class="fa fa-calendar fa-3x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Fecha De Alta</p>
+                                                    <h6 class="mb-0" id="fechaAltaVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="bg-light rounded d-flex align-items-center p-3">
+                                                <i class="fa fa-building fa-3x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Unidad De Negocio</p>
+                                                    <h6 class="mb-0" id="udnVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="bg-light rounded d-flex align-items-center p-3">
+                                                <i class="fa fa-briefcase fa-3x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Area</p>
+                                                    <h6 class="mb-0" id="areaVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="bg-light rounded d-flex align-items-center p-3">
+                                                <i class="fa fa-hashtag fa-3x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Numero De Equipo</p>
+                                                    <h6 class="mb-0" id="numeroEquipoVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="rounded d-flex align-items-center p-3">
+                                                <i class="fa fa-user fa-2x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Nombre Del Encargado</p>
+                                                    <h6 class="mb-0" id="responsableEquipoVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="rounded d-flex align-items-center p-3">
+                                                <i class="fa-brands fa-windows fa-2x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Sistema Operativo</p>
+                                                    <h6 class="mb-0" id="sistemaOperativoVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <div class="col-12 col-sm-3">
+                                            <div class="rounded d-flex align-items-center p-3">
+                                                <i class="fa fa-thumbs-up fa-2x text-primary"></i>
+                                                <div class="ms-4">
+                                                    <p class="mb-0">Condicion</p>
+                                                    <h6 class="mb-0" id="estadoVer"></h6>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                        <h4>Componentes Que Tiene El Equipo</h4>
+                                        <div class="col-12 col-sm-4" id="componenteEquipo">
+                                            
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar<i class="fa-solid fa-ban ms-2"></i></button>
                         </div>
                     </div>
                 </div>
