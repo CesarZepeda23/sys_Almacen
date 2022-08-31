@@ -56,7 +56,7 @@ require("../vistas/navbar.php"); ?>
                     <div class="modal-header">
                         <div class="col">
                             <div class="card-text row">
-                                <h4 class="modal-title fw-bold text-center">Registro de Componentes</h4>
+                                <h4 class="modal-title fw-bold text-center">Registro de Perifericos</h4>
                             </div>
                         </div>
                     </div>
@@ -316,7 +316,7 @@ require("../vistas/navbar.php"); ?>
                     <div class="modal-header">
                         <div class="col">
                             <div class="card-text row">
-                                <h4 class="modal-title fw-bold text-center">Editar Componente</h4>
+                                <h4 class="modal-title fw-bold text-center">Editar Perifericos</h4>
                             </div>
                         </div>
                     </div>
