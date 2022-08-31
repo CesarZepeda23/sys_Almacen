@@ -11,7 +11,7 @@ require("../vistas/navbar.php"); ?>
                     <div class="row g-4">
                         <div class="col-sm-12">
                             <div class="bg-light rounded h-100 p-4">
-                                <h4 class="mb-4">Equipo</h4>
+                                <h4 class="mb-4">Equipos</h4>
                                     <div class="table-responsive">
                                         <table class="table table-striped" >
                                             <thead>
@@ -30,7 +30,29 @@ require("../vistas/navbar.php"); ?>
                                         </table>
                                     </div>
                             </div>
-                        </div> 
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="bg-light rounded h-100 p-4">
+                                <h4 class="mb-4">Equipos Eliminados</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" >
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">UDN</th>
+                                                    <th scope="col">Area</th>
+                                                    <th scope="col">Numero De Equipo</th>
+                                                    <th scope="col">Encargado Del Equipo</th>
+                                                    <th scope="col">Fecha De Alta</th>
+                                                    <th scope="col">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                                <tbody id="tablasequiposeliminados">
+                                                
+                                                </tbody>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>  
                     </div>
                 </div>
 

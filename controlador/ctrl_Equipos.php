@@ -20,7 +20,7 @@ switch($opc){
                     <td>  
                     <button type="button" id="btnVerEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-info m-1"><i class="fa-solid fa-eye"></i></button>
                     <button type="button" id="btnEditarEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
-                    <button type="button" id="btnEliminarEquipos" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
+                    <button type="button" id="btnEliminarEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
                 </tr>
                 ';  
                            }
@@ -113,6 +113,34 @@ switch($opc){
                       };
                 echo $modalEComponent;
             break;
+    case 9://ELIMINAR EQUIPO
+        $id_Equipos = $_POST['id_Equipos'];
+        $sql = $obj->eliminarEquipo($id_Equipos);
+        break;
+
+    case 10://MOSTRAR EQUIPOS ELIMINADOS
+            $tablaEquipos = null;
+            $sql = $obj -> mostrarEquiposEliminados(); 
+            foreach($sql as $row){
+                $tablaEquipos .= '
+                    <tr>
+                        <td>' . $row['UDN'] . ' </td>
+                        <td>' . $row['nombre'] . ' </td>
+                        <td>' . $row['numeroEquipo'] . ' </td>
+                        <td>' . $row['responsableEquipo'] . ' </td>
+                        <td>' . $row['fechaAlta'] . ' </td>
+                        <td>  
+                        <button type="button" id="btnVerEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-info m-1"><i class="fa-solid fa-eye"></i></button>
+                        <button type="button" id="btnRegresarEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-success m-1"><i class="fa-solid fa-upload"></i></button></td>
+                    </tr>
+                    ';  
+                               }
+                echo $tablaEquipos;
+            break;
+    case 11://REGRESAR EQUIPO
+                $id_Equipos = $_POST['id_Equipos'];
+                $sql = $obj->regresarEquipo($id_Equipos);
+                break;           
         
 } 
 ?>

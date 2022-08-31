@@ -27,6 +27,23 @@ $(function mostrar() {//MOSTRAR TABLA EQUIPOS
     });
   });
 
+  $(function mostrar() {//MOSTRAR TABLA EQUIPOS
+    let datos = new FormData();
+    datos.append("opc", 10);
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Equipos.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      success: function (respuesta) {
+        $("#tablasequiposeliminados").html(respuesta);
+        
+    },
+    });
+  });
+
 $(function ultimoNumeroEquipo() {//MOSTRAR ULTIMO NUMERO DE EQUIPO
     let datos = new FormData();
     datos.append("opc", 2);
@@ -231,7 +248,57 @@ $("#salectUDN").change(function () {//SELECT AREAS
       });
 
         }else if ($(this).attr("id") == "btnEliminarEquipos") {
-          alert("delete");
+          let id_Equipos = parseInt($(this).val());
+          $(function () {
+            let datos = new FormData();
+            datos.append("opc", 9);
+            datos.append("id_Equipos", id_Equipos);
 
+            $.ajax({
+              type: "POST",
+              url: "../controlador/ctrl_Equipos.php",
+              contentType: false,
+              data: datos,
+              processData: false,
+              cache: false,
+              success: function (respuesta) {
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "Equipo Eliminado Con Exito",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                window.location.reload()
+              },
+            });
+          });
+
+        }else if ($(this).attr("id") == "btnRegresarEquipos") {
+          let id_Equipos = parseInt($(this).val());
+          $(function () {
+            let datos = new FormData();
+            datos.append("opc", 11);
+            datos.append("id_Equipos", id_Equipos);
+
+            $.ajax({
+              type: "POST",
+              url: "../controlador/ctrl_Equipos.php",
+              contentType: false,
+              data: datos,
+              processData: false,
+              cache: false,
+              success: function (respuesta) {
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: "Equipo Regresado De Nuevo Con Exito",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                window.location.reload()
+              },
+            });
+          });
         }
    });
