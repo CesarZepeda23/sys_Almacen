@@ -52,6 +52,7 @@ function limpiarDivRegistro(idSwtich, idDiv, idInput, idSelect) {
   $(idDiv).hide();
   $(idSelect).prop("selectedIndex", 0);
 }
+
 function validarSwitch(idSwtich, idDiv, idCampo, idSelect) {
   $(idSwtich).click(function () {
     if ($(idSwtich).is(":checked")) {
@@ -65,23 +66,66 @@ function validarSwitch(idSwtich, idDiv, idCampo, idSelect) {
     }
   });
 }
-function changeUDN(idUDN, idArea) {
-  $(idUDN).change(function () {
-    let datos = new FormData();
-    datos.append("opc", 2);
-    datos.append("idUDN", $(this).val());
 
-    $.ajax({
-      type: "POST",
-      url: "../controlador/ctrl_Componentes.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      success: function (respuesta) {
-        $(idArea).html(respuesta);
-      },
-    });
+function changeUDNArea(idArea, idUDN) {
+  let datos = new FormData();
+  datos.append("opc", 2);
+  datos.append("idUDN", $(idUDN).val());
+
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Componentes.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      $(idArea).html(respuesta);
+    },
+  });
+}
+
+function ocultarInputVacios(idInput, idDiv, idSwitch) {
+  if ($(idInput).val().length < 1) {
+    $(idDiv).hide();
+    $(idSwitch).prop("checked", false);
+  } else {
+    $(idSwitch).prop("checked", true);
+    $(idDiv).show();
+  }
+}
+
+function eliminarComponente(idCaracteristica) {
+  let datos = new FormData();
+  datos.append("opc", 7);
+  datos.append("idCaracteristica", idCaracteristica);
+
+  $.ajax({
+    type: "POST",
+    url: "../controlador/ctrl_Componentes.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function () {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Componente Eliminado Con Exito",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      mostrarComponentes();
+    },
+    error: function () {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Error al Eliminar el Componente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    },
   });
 }
 
@@ -100,8 +144,69 @@ $(function Inicio() {
   validarSwitch("#tamañoSwitcht", "#tamañoDiv", "#tamaño", "");
   validarSwitch("#appSwitcht", "#appDiv", "", "app");
 
-  changeUDN("#udn", "#areas");
-  changeUDN("#udnEditar", "#areasEditar");
+  validarSwitch(
+    "#voltajeSwitchEditar",
+    "#voltajeDivEditar",
+    "#voltajeEditar",
+    ""
+  );
+  validarSwitch(
+    "#velocidadSwitchtEditar",
+    "#velocidadDivEditar",
+    "#velocidadEditar",
+    ""
+  );
+  validarSwitch(
+    "#contactosSwitchtEditar",
+    "#contactosDivEditar",
+    "#contactosEditar",
+    ""
+  );
+  validarSwitch(
+    "#entradasSwitchtEditar",
+    "#entradasDivEditar",
+    "#entradasEditar",
+    ""
+  );
+  validarSwitch(
+    "#salidasSwitchtEditar",
+    "#salidasDivEditar",
+    "#salidasEditar",
+    ""
+  );
+  validarSwitch(
+    "#amperajeSwitchtEditar",
+    "#amperajeDivEditar",
+    "#amperajeEditar",
+    ""
+  );
+  validarSwitch(
+    "#capacidadSwitchtEditar",
+    "#capacidadDivEditar",
+    "#capacidadEditar",
+    ""
+  );
+  validarSwitch(
+    "#resolucionSwitchtEditar",
+    "#resolucionDivEditar",
+    "#resolucionEditar",
+    ""
+  );
+  validarSwitch(
+    "#tamañoSwitchtEditar",
+    "#tamañoDivEditar",
+    "#tamañoEditar",
+    ""
+  );
+  validarSwitch("#appSwitchtEditar", "#appDivEditar", "", "appEditar");
+});
+
+$("#udn").change(function () {
+  changeUDNArea("#areas", "#udn");
+});
+
+$("#udnEditar").change(function () {
+  changeUDNArea("#areasEditar", "#udnEditar");
 });
 
 $("#filtroCategoria").change(function () {
@@ -202,271 +307,159 @@ $("#agregar").click(function () {
 
 $("tbody").on("click", "button", function () {
   if ($(this).attr("id") == "edit") {
-    let id_componente = parseInt($(this).val());
-
     $("#modalEditar").modal("show");
 
     selectUDN("#udnEditar");
     selectTipoComponentes("#categoriaEditar", "");
 
-    // $(function mostrarInfoComponente() {
-    //   let datos = new FormData();
-    //   datos.append("opc", 6);
-    //   datos.append("id_componente", id_componente);
-    //
-    //   $.ajax({
-    //     type: "POST",
-    //     url: "../controlador/ctrl_Componentes.php",
-    //     contentType: false,
-    //     data: datos,
-    //     processData: false,
-    //     cache: false,
-    //     dataType: "JSON",
-    //     success: function (data) {
-    //       $("#udnEditar option[value=" + data["id_UDN"] + "]").attr(
-    //         "selected",
-    //         true
-    //       );
-    //
-    //       $(function () {
-    //         let datos = new FormData();
-    //         datos.append("opc", 2);
-    //         datos.append("idUDN", $("#udnEditar").val());
+    let datos = new FormData();
+    datos.append("opc", 6);
+    datos.append("id_componente", parseInt($(this).val()));
 
-    //         $.ajax({
-    //           type: "POST",
-    //           url: "../controlador/ctrl_Componentes.php",
-    //           contentType: false,
-    //           data: datos,
-    //           processData: false,
-    //           cache: false,
-    //           success: function (respuesta) {
-    //             $("#areasEditar").html(respuesta);
-    //             $("#areasEditar option[value=" + data["idAreaUdn"] + "]").attr(
-    //               "selected",
-    //               true
-    //             );
-    //           },
-    //         });
-    //       });
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Componentes.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      dataType: "JSON",
+      success: function (data) {
+        $("#udnEditar option[value=" + data["id_UDN"] + "]").attr(
+          "selected",
+          true
+        );
 
-    //       $("#nombreCompEditar").val(data["nombre"]);
+        changeUDNArea("#areasEditar", "#udnEditar");
 
-    //       $("#marcaEditar").val(data["marca"]);
-    //       $("#modeloEditar").val(data["modelo"]);
-    //       $("#tipoEditar").val(data["tipo"]);
-    //       $("#categoriaEditar").prop(
-    //         "selectedIndex",
-    //         parseInt(data["id_TipoComponente"])
-    //       );
-    //       $("#precioEditar").val(data["costo"]);
-    //       $("#condicionEditar").val(data["condicion"]);
-    //       $("#voltajeEditar").val(data["voltaje"]);
-    //       $("#velocidadEditar").val(data["velocidad"]);
-    //       $("#contactosEditar").val(data["contactos"]);
-    //       $("#entradasEditar").val(data["entrada"]);
-    //       $("#salidasEditar").val(data["salida"]);
-    //       $("#amperajeEditar").val(data["amperaje"]);
-    //       $("#capacidadEditar").val(data["capacidad"]);
-    //       $("#resolucionEditar").val(data["resolucion"]);
-    //       $("#tamañoEditar").val(data["tamaño"]);
+        $("#areasEditar option[value=" + data["idAreaUdn"] + "]").attr(
+          "selected",
+          true
+        );
 
-    //       if ($("#voltajeEditar").val().length < 1) {
-    //         $("#voltajeDivEditar").hide();
-    //         $("#voltajeSwitchEditar").prop("checked", false);
-    //       } else {
-    //         $("#voltajeSwitchEditar").prop("checked", true);
-    //       }
+        $("#nombreCompEditar").val(data["nombre"]);
+        $("#marcaEditar").val(data["marca"]);
+        $("#modeloEditar").val(data["modelo"]);
+        $("#tipoEditar").val(data["tipo"]);
+        $("#categoriaEditar").prop(
+          "selectedIndex",
+          parseInt(data["id_TipoComponente"])
+        );
 
-    //       if ($("#velocidadEditar").val().length < 1) {
-    //         $("#velocidadDivEditar").hide();
-    //         $("#velocidadSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#velocidadSwitchtEditar").prop("checked", true);
-    //       }
+        $("#precioEditar").val(data["costo"]);
+        $("#condicionEditar").val(data["condicion"]);
+        $("#voltajeEditar").val(data["voltaje"]);
+        $("#velocidadEditar").val(data["velocidad"]);
+        $("#contactosEditar").val(data["contactos"]);
+        $("#entradasEditar").val(data["entrada"]);
+        $("#salidasEditar").val(data["salida"]);
+        $("#amperajeEditar").val(data["amperaje"]);
+        $("#capacidadEditar").val(data["capacidad"]);
+        $("#resolucionEditar").val(data["resolucion"]);
+        $("#tamañoEditar").val(data["tamaño"]);
 
-    //       if ($("#contactosEditar").val().length < 1) {
-    //         $("#contactosDivEditar").hide();
-    //         $("#contactosSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#contactosSwitchtEditar").prop("checked", true);
-    //       }
+        $("#appEditar option[value=" + data["aplicacion"] + "]").attr(
+          "selected",
+          true
+        );
 
-    //       if ($("#entradasEditar").val().length < 1) {
-    //         $("#entradasDivEditar").hide();
-    //         $("#entradasSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#entradasSwitchtEditar").prop("checked", true);
-    //       }
+        ocultarInputVacios(
+          "#voltajeEditar",
+          "#voltajeDivEditar",
+          "#voltajeSwitchEditar"
+        );
+        ocultarInputVacios(
+          "#velocidadEditar",
+          "#velocidadDivEditar",
+          "#velocidadSwitchtEditar"
+        );
 
-    //       if ($("#salidasEditar").val().length < 1) {
-    //         $("#salidasDivEditar").hide();
-    //         $("#salidasSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#salidasSwitchtEditar").prop("checked", true);
-    //       }
+        ocultarInputVacios(
+          "#contactosEditar",
+          "#contactosDivEditar",
+          "#contactosSwitchtEditar"
+        );
 
-    //       if ($("#amperajeEditar").val().length < 1) {
-    //         $("#amperajeDivEditar").hide();
-    //         $("#amperajeSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#amperajeSwitchtEditar").prop("checked", true);
-    //       }
+        ocultarInputVacios(
+          "#entradasEditar",
+          "#entradasDivEditar",
+          "#entradasSwitchtEditar"
+        );
 
-    //       if ($("#capacidadEditar").val().length < 1) {
-    //         $("#capacidadDivEditar").hide();
-    //         $("#capacidadSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#capacidadSwitchtEditar").prop("checked", true);
-    //       }
+        ocultarInputVacios(
+          "#salidasEditar",
+          "#salidasDivEditar",
+          "#salidasSwitchtEditar"
+        );
 
-    //       if ($("#resolucionEditar").val().length < 1) {
-    //         $("#resolucionDivEditar").hide();
-    //         $("#resolucionSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#resolucionSwitchtEditar").prop("checked", true);
-    //       }
+        ocultarInputVacios(
+          "#amperajeEditar",
+          "#amperajeDivEditar",
+          "#amperajeSwitchtEditar"
+        );
 
-    //       if ($("#tamañoEditar").val().length < 1) {
-    //         $("#tamañoDivEditar").hide();
-    //         $("#tamañoSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#tamañoSwitchtEditar").prop("checked", true);
-    //       }
+        ocultarInputVacios(
+          "#capacidadEditar",
+          "#capacidadDivEditar",
+          "#capacidadSwitchtEditar"
+        );
 
-    //       if (data["aplicacion"] == 0) {
-    //         $("#appDivEditar").hide();
-    //         $("#appSwitchtEditar").prop("checked", false);
-    //       } else {
-    //         $("#appSwitchtEditar").prop("checked", true);
-    //         $("#appEditar option[value=" + data["aplicacion"] + "]").attr(
-    //           "selected",
-    //           true
-    //         );
-    //       }
-    //     },
-    //   });
-    // });
+        ocultarInputVacios(
+          "#resolucionEditar",
+          "#resolucionDivEditar",
+          "#resolucionSwitchtEditar"
+        );
 
-    $(function mostrarCamposSeleccionadoEditar() {
-      // Mostrar/Ocultar campo voltaje
-      $("#voltajeSwitchEditar").click(function () {
-        if ($("#voltajeSwitchEditar").is(":checked")) {
-          $("#voltajeDivEditar").show();
-          $("#voltajeEditar").val("");
-        } else {
-          $("#voltajeDivEditar").hide();
-          $("#voltajeEditar").val("");
-        }
-      });
+        ocultarInputVacios(
+          "#tamañoEditar",
+          "#tamañoDivEditar",
+          "#tamañoSwitchtEditar"
+        );
 
-      // Mostrar/Ocultar campo velocidad
-      $("#velocidadSwitchtEditar").click(function () {
-        if ($("#velocidadSwitchtEditar").is(":checked")) {
-          $("#velocidadDivEditar").show();
-          $("#velocidadEditar").val("");
-        } else {
-          $("#velocidadDivEditar").hide();
-          $("#velocidadEditar").val("");
-        }
-      });
+        ocultarInputVacios(
+          "#tamañoEditar",
+          "#tamañoDivEditar",
+          "#tamañoSwitchtEditar"
+        );
 
-      //Mostrar/Ocultar campo contactos
-      $("#contactosSwitchtEditar").click(function () {
-        if ($("#contactosSwitchtEditar").is(":checked")) {
-          $("#contactosDivEditar").show();
-          $("#contactosEditar").val("");
-        } else {
-          $("#contactosDivEditar").hide();
-          $("#contactosEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo entradas
-      $("#entradasSwitchtEditar").click(function () {
-        if ($("#entradasSwitchtEditar").is(":checked")) {
-          $("#entradasDivEditar").show();
-          $("#entradasEditar").val("");
-        } else {
-          $("#entradasDivEditar").hide();
-          $("#entradasEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo salidas
-      $("#salidasSwitchtEditar").click(function () {
-        if ($("#salidasSwitchtEditar").is(":checked")) {
-          $("#salidasDivEditar").show();
-          $("#salidasEditar").val("");
-        } else {
-          $("#salidasDivEditar").hide();
-          $("#salidasEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo amperajes
-      $("#amperajeSwitchtEditar").click(function () {
-        if ($("#amperajeSwitchtEditar").is(":checked")) {
-          $("#amperajeDivEditar").show();
-          $("#amperajeEditar").val("");
-        } else {
-          $("#amperajeDivEditar").hide();
-          $("#amperajeEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo capacidad
-      $("#capacidadSwitchtEditar").click(function () {
-        if ($("#capacidadSwitchtEditar").is(":checked")) {
-          $("#capacidadDivEditar").show();
-          $("#capacidadEditar").val("");
-        } else {
-          $("#capacidadDivEditar").hide();
-          $("#capacidadEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo resolucion
-      $("#resolucionSwitchtEditar").click(function () {
-        if ($("#resolucionSwitchtEditar").is(":checked")) {
-          $("#resolucionDivEditar").show();
-          $("#resolucionEditar").val("");
-        } else {
-          $("#resolucionDivEditar").hide();
-          $("#resolucionEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo tamaño
-      $("#tamañoSwitchtEditar").click(function () {
-        if ($("#tamañoSwitchtEditar").is(":checked")) {
-          $("#tamañoDivEditar").show();
-          $("#tamañoEditar").val("");
-        } else {
-          $("#tamañoDivEditar").hide();
-          $("#tamañoEditar").val("");
-        }
-      });
-
-      //Mostrar/Ocultar campo app
-      $("#appSwitchtEditar").click(function () {
-        if ($("#appSwitchtEditar").is(":checked")) {
-          $("#appDivEditar").show();
-          $("#appEditar").prop("selectedIndex", 0);
-        } else {
+        if (data["aplicacion"] == 0) {
           $("#appDivEditar").hide();
-          $("#appEditar").prop("selectedIndex", 0);
+          $("#appSwitchtEditar").prop("checked", false);
+        } else {
+          $("#appSwitchtEditar").prop("checked", true);
+          $("#appEditar option[value=" + data["aplicacion"] + "]").attr(
+            "selected",
+            true
+          );
         }
-      });
+      },
     });
   } else if ($(this).attr("id") == "print") {
     alert("impr");
   } else if ($(this).attr("id") == "delete") {
-    let id_componente = parseInt($(this).val());
+    let datos = new FormData();
 
-    $(function recuperarInfoComponente() {
+    datos.append("opc", 6);
+    datos.append("id_componente", parseInt($(this).val()));
+
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Componentes.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      dataType: "JSON",
+      success: function (data) {
+        eliminarComponente(parseInt(data["id_Caracteristica"]));
+      },
+    });
+  } else if ($(this).attr("id") == "info") {
+    let id_componente = parseInt($(this).val());
+    $("#modalInfo").modal("show");
+    $(function () {
       let datos = new FormData();
-      datos.append("opc", 6);
+      datos.append("opc", 8);
       datos.append("id_componente", id_componente);
 
       $.ajax({
@@ -478,33 +471,25 @@ $("tbody").on("click", "button", function () {
         cache: false,
         dataType: "JSON",
         success: function (data) {
-          let id_Caracteristica = parseInt(data["id_Caracteristica"]);
-
-          $(function () {
-            let datos = new FormData();
-            datos.append("opc", 7);
-            datos.append("idCaracteristica", id_Caracteristica);
-
-            $.ajax({
-              type: "POST",
-              url: "../controlador/ctrl_Componentes.php",
-              contentType: false,
-              data: datos,
-              processData: false,
-              cache: false,
-              success: function (respuesta) {
-                Swal.fire({
-                  position: "center",
-                  icon: "success",
-                  title: "Componente Eliminado Con Exito",
-                  showConfirmButton: false,
-                  timer: 1500,
-                });
-
-                mostrarComponentes();
-              },
-            });
-          });
+          $("#areasInfo").html(data["nomArea"]);
+          $("#udnInfo").html(data["UDN"]);
+          $("#nomPerifericoInfo").html(data["nombre"]);
+          $("#tipoInfo").html(data["tipo"]);
+          $("#categoriaInfo").html(data["nomTipo"]);
+          $("#marcaInfo").html(data["marca"]);
+          $("#modeloInfo").html(data["modelo"]);
+          $("#voltajeInfo").html(data["voltaje"]);
+          $("#velocidadInfo").html(data["velocidad"]);
+          $("#contactosInfo").html(data["contactos"]);
+          $("#entradasInfo").html(data["entrada"]);
+          $("#salidaInfo").html(data["salida"]);
+          $("#amperajeInfo").html(data["amperaje"]);
+          $("#precioInfo").html(data["costo"]);
+          $("#condicionInfo").html(data["condicion"]);
+          $("#capacidadInfo").html(data["capacidad"]);
+          $("#resolucionInfo").html(data["resolucion"]);
+          $("#tamañoInfo").html(data["tamaño"]);
+          $("#aplicacionInfo").html(data["aplicacion"]);
         },
       });
     });
