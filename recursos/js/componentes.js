@@ -67,7 +67,7 @@ function validarSwitch(idSwtich, idDiv, idCampo, idSelect) {
   });
 }
 
-function changeUDNArea(idArea, idUDN) {
+function changeUDNArea(idArea, idUDN, num) {
   let datos = new FormData();
   datos.append("opc", 2);
   datos.append("idUDN", $(idUDN).val());
@@ -335,10 +335,9 @@ $("tbody").on("click", "button", function () {
 
         changeUDNArea("#areasEditar", "#udnEditar");
 
-        $("#areasEditar option[value=" + data["idAreaUdn"] + "]").attr(
-          "selected",
-          true
-        );
+        $(
+          "#areasEditar option[value =" + parseInt(data["idAreaUdn"]) + "]"
+        ).attr("selected", true);
 
         $("#nombreCompEditar").val(data["nombre"]);
         $("#marcaEditar").val(data["marca"]);
@@ -438,22 +437,21 @@ $("tbody").on("click", "button", function () {
       },
     });
   } else if ($(this).attr("id") == "print") {
-    $(function () {
-      let id_componente = parseInt($(this).val());
-      let datos = new FormData();
-      datos.append("opc", 10);
-      $.ajax({
-        type: "POST",
-        url: "../controlador/ctrl_Componentes.php",
-        contentType: false,
-        data: datos,
-        processData: false,
-        cache: false,
-        success: function (respuesta) {
-         
-          
-      },
-      });
+    alert("impr");
+    let datos = new FormData();
+
+    datos.append("opc", 10);
+    datos.append("id_componente", parseInt($(this).val()));
+
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Componentes.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      dataType: "JSON",
+      success: function (data) {},
     });
   } else if ($(this).attr("id") == "delete") {
     let datos = new FormData();
