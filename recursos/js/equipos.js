@@ -188,7 +188,7 @@ $("#salectUDN").change(function () {//SELECT AREAS
             $("#sistemaOperativoEditar").val(data["sistemaOperativo"]);
             $("#salectAreaUDNEditar").val(data["id_AreaUDN"]);
       
-            $("#btnEditarEquipo").click(function () {//REGISTRO
+            $("#btnEditarEquipoE").click(function () {//REGISTRO
               if (
                 $("#fechaAltaEditar").val() < 1 ||
                 $("#numeroEquipoEditar").val() < 1 ||

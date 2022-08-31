@@ -438,7 +438,23 @@ $("tbody").on("click", "button", function () {
       },
     });
   } else if ($(this).attr("id") == "print") {
-    alert("impr");
+    $(function () {
+      let id_componente = parseInt($(this).val());
+      let datos = new FormData();
+      datos.append("opc", 10);
+      $.ajax({
+        type: "POST",
+        url: "../controlador/ctrl_Componentes.php",
+        contentType: false,
+        data: datos,
+        processData: false,
+        cache: false,
+        success: function (respuesta) {
+         
+          
+      },
+      });
+    });
   } else if ($(this).attr("id") == "delete") {
     let datos = new FormData();
 

@@ -3,8 +3,6 @@
 require("../vistas/navbar.php"); ?>
 <!-- INDEX -->
 
-
-
 <body style="min-height: 100vh;">
     <main>
         <section class="container">

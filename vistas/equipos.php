@@ -258,7 +258,7 @@ require("../vistas/navbar.php"); ?>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar<i class="fa-solid fa-ban ms-2"></i></button>
-                            <button type="submit" name="btnEditarEquipo" class="btn btn-success m-2">Editar Equipo<i class="fa-solid fa-computer ms-2"></i></button>
+                            <button type="submit" name="btnEditarEquipoE" class="btn btn-success m-2">Editar Equipo<i class="fa-solid fa-computer ms-2"></i></button>
                         </div>
                     </div>
                 </div>

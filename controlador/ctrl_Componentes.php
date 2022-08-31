@@ -188,4 +188,42 @@ switch ($opc) {
         $obj->actualizarCaracteristicas($infoCaracteristica, $idCaracteristica);
 
         break;
+
+    case 10:
+         //Agregamos la libreria para genera códigos QR
+         require "../recursos/phpqrcode/qrlib.php";
+         require '../recursos/fpdf/fpdf.php';    
+         
+         //Declaramos una carpeta temporal para guardar la imagenes generadas
+         $dir = 'temp/';
+         
+         //Si no existe la carpeta la creamos
+         if (!file_exists($dir))
+             mkdir($dir);
+         
+         //Declaramos la ruta y nombre del archivo a generar
+         $filename = $dir.'test.png';
+        
+         $id_componente = $_POST['id_componente'];
+         $sql = $obj->InfoComponentesModal($id_componente);
+         foreach ($sql as $row) {
+             $contenido = '
+                ' . $row['comNom'] . '
+                ' . $row['marca'] . ' 
+                ' . $row['modelo'] . ' 
+             ';
+         };
+         //Parametros de Condiguración
+         $tamaño = 10; //Tamaño de Pixel
+         $level = 'L'; //Precisión Baja
+         $framSize = 3; //Tamaño en blanco
+         $contenido = "Hola"; //Texto
+        
+         //Enviamos los parametros a la Función para generar código QR 
+         QRcode::png($contenido, $filename, $level, $tamaño, $framSize); 
+        
+         //Mostramos la imagen generada
+         echo '<img src="'.$dir.basename($filename).'" /><hr/>';  
+            
+        break;
 }
