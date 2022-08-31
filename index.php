@@ -106,7 +106,7 @@
             <section class="container">
                 <div class="container-fluid pt-4 px-4">
                     <div class="row g-4">
-                        <div class="col-sm-12 col-xl-6">
+                        <div class="col-sm-12">
                             <div class="bg-light rounded h-100 p-4">
                                 <h4 class="mb-4">Unidades De Negocio</h4>
                                 <div class="table-responsive">
@@ -115,69 +115,63 @@
                                             <tr>
                                                 <th scope="col">Id De UDN</th>
                                                 <th scope="col">Nombre</th>
-                                                <th scope="col">Abreviatura</th>
-                                                <th scope="col">ColorUDN</th>
+                                                <th scope="col">Detalle</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tablasUDNindex">
-
-                                        </tbody>
+                                        <tbody id="tablasUDNindex"> </tbody>
                                     </table>
-                                    <a href="./vistas/areas.php">
-                                        <button type="button"  class="btn btn-success m-2"><i class="fa fa-building me-2"></i>Ver Mas</button>
-                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-xl-6">
-                            <div class="bg-light rounded h-100 p-4">
-                                <h4 class="mb-4">Equipo</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Numero Del Equipo</th>
-                                                <th scope="col">Fecha De Alta</th>
-                                                <th scope="col">Encargado Del Equipo</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tablasEquiposindex">
 
-                                        </tbody>
-                                    </table>
-                                    <a href="./vistas/equipos.php">
-                                        <button type="button"  class="btn btn-success m-2"><i class="fa fa-computer me-2"></i>Ver Mas</button>
-                                    </a>
+                    </div>
+                </div>
+                <!-- MODAL -->
+                <div class="modal fade " id="modalVerUDN" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalEquipo" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="col">
+                                <div class="card-text row">
+                                    <h4 class="modal-title fw-bold text-center">Ver Equipo</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12">
-                            <div class="bg-light rounded h-100 p-4">
-                                <h4 class="mb-4">Componentes</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">ID Del Componente</th>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Marca</th>
-                                                <th scope="col">Modelo</th>
-                                                <th scope="col">Estado</th>
-                                                <th scope="col">Costo</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tablascomponentesindex">
-
-                                        </tbody>
-                                    </table>
-                                    <a href="./vistas/componentes.php">
-                                        <button type="button"  class="btn btn-success m-2"><i class="fa fa-computer-mouse me-2"></i>Ver Mas</button>
-                                    </a>
-                                </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="body p-sm-2 p-md-4 p-lg-4 p-xl-4">
+                                    <div class="text row">
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
+                                                <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
+                                                Cantidad de Areas</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
+                                                <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
+                                                Cantidad de Equipos</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-4">
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
+                                                <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
+                                                Cantidad de Perifericos</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
                             </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar<i class="fa-solid fa-ban ms-2"></i></button>
                         </div>
                     </div>
-                </div> 
+                </div>
+            </div>
             </section>
         </main>
 

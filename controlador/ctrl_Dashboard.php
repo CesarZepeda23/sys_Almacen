@@ -10,52 +10,17 @@ switch($opc){
         $sql = $obj -> mostrarUDNDashboard(); 
         foreach($sql as $row){
             $tablaindexUDN .= '
-                                <tr id="' . $row['idUDN'] . ' ">
-                                <td>' . $row['idUDN'] . ' </td>
-                                <td>' . $row['UDN'] . ' </td>
-                                <td>' . $row['Abreviatura'] . ' </td>
-                                <td>' . $row['colorUDN'] . ' </td>
-                            </tr>
+                <tr>
+                    <td>' . $row['idUDN'] . ' </td>
+                    <td>' . $row['UDN'] . ' </td>
+                    <td>
+                    <button type="button" id="btnVerUDN" value="' . $row['idUDN'] . '" class="btn btn-square btn-info m-1"><i class="fa-solid fa-eye"></i></button>
+                    </td>
+                </tr>
             ';  
         
         }
         echo $tablaindexUDN;
         break;
-
-    case 2://MOSTRAR UDN
-            $tablaindexEquipos = null;
-            $sql = $obj -> mostrarEquiposDashboard(); 
-            foreach($sql as $row){
-                $tablaindexEquipos .= '
-                <tr>
-                                    <td>' . $row['numeroEquipo'] . ' </td>
-                                    <td>' . $row['fechaAlta'] . ' </td>
-                                    <td>' . $row['responsableEquipo'] . ' </td>
-                                </tr>
-                ';  
-                
-            }
-            echo $tablaindexEquipos;
-            break;
-
-    case 3://MOSTRAR UDN
-                $tablaindexComponentes = null;
-                $sql = $obj -> mostrarComponentesDashboard(); 
-                foreach($sql as $row){
-                    $tablaindexComponentes .= '
-                        <tr>
-                                        <td>' . $row['idComponente'] . ' </td>
-                                        <td>' . $row['nombre'] . ' </td>
-                                        <td>' . $row['marca'] . ' </td>
-                                        <td>' . $row['modelo'] . ' </td>
-                                        <td>' . $row['estado'] . ' </td>
-                                        <td>$ ' . number_format($row['costo'], 2, '.',',') . ' </td>
-        
-                                    </tr>
-                    ';  
-                    
-                }
-                echo $tablaindexComponentes;
-                break;
 }   
 ?>

@@ -1,3 +1,7 @@
+$("#btnVerUDN").click(function () {
+  $("#modalVerUDN").modal("show");
+});
+
 $(function mostrarTodosUDN() {
     let datos = new FormData();
     datos.append("opc", 1);
@@ -13,37 +17,11 @@ $(function mostrarTodosUDN() {
      },
     });
   });
-  
-  $(function mostrarTodosEquipos() {
-    let datos = new FormData();
-    datos.append("opc", 2);
-    $.ajax({
-      type: "POST",
-      url: "./controlador/ctrl_Dashboard.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      success: function (respuesta) {
-        $("#tablasEquiposindex").html(respuesta);
-/*         console.log("Hola");
- */      },
-    });
-  });
 
-  $(function mostrarTodosComponentes() {
-    let datos = new FormData();
-    datos.append("opc", 3);
-      $.ajax({
-      type: "POST",
-      url: "./controlador/ctrl_Dashboard.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      success: function (respuesta) {
-        $("#tablascomponentesindex").html(respuesta);
-        /* console.log("Holaa") */
-      },
+  $("tbody").on("click", "button", function () {
+    if ($(this).attr("id") == "btnEditarEquipos") {
+      let id_Equipos = parseInt($(this).val());
+    $("#modalEditarEquipos").modal("show"); 
+
+    };
     });
-  });
