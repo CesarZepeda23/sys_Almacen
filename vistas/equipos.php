@@ -146,7 +146,7 @@ require("../vistas/navbar.php"); ?>
                                                         </label>
                                                     </div>
                                                 </div>
-                                            <h3>Componentes</h3>
+                                            <h3>Perifericos</h3>
                                                         <div class="col-sm-12">
                                     <div class="bg-light rounded h-100 p-4">
                                         <h4 class="mb-4">Equipos</h4>
@@ -365,7 +365,7 @@ require("../vistas/navbar.php"); ?>
                                                 </div>
                                             </div>   
                                         </div>
-                                        <h4>Componentes Que Tiene El Equipo</h4>
+                                        <h4>Perifericos Que Tiene El Equipo</h4>
                                         <div class="col-12 col-sm-4" id="componenteEquipo">
                                             
                                         </div>
