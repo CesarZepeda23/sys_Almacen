@@ -88,6 +88,7 @@ switch ($opc) {
             $nombre = $_POST['nombre'],
             $id_Caracteristica = $obj->ultimoIDCategoria(),
             $id_TipoComponente = $_POST['id_TipoComponente'],
+            $id_AreaUDN = $_POST['id_AreaUDN']
         );
 
         $obj->insertarComponente($infoComponente);

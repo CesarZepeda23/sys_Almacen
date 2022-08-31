@@ -133,7 +133,7 @@
                         <div class="modal-header">
                             <div class="col">
                                 <div class="card-text row">
-                                    <h4 class="modal-title fw-bold text-center">Ver Equipo</h4>
+                                    <h4 class="modal-title fw-bold text-center">Detalles</h4>
                                 </div>
                             </div>
                         </div>
@@ -141,27 +141,33 @@
                             <div class="row">
                                 <div class="body p-sm-2 p-md-4 p-lg-4 p-xl-4">
                                     <div class="text row">
-                                        <div class="col-12 col-sm-4">
-                                            <div class="form-floating mb-3">
-                                                <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
-                                                <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
-                                                Cantidad de Areas</label>
+                                    <div class="col-12 col-sm-4">
+                                        <div class="bg-light rounded d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-briefcase fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Areas</p>
+                                                <h6 class="mb-0" id="areas"></h6>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-4">
-                                            <div class="form-floating mb-3">
-                                                <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
-                                                <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
-                                                Cantidad de Equipos</label>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <div class="bg-light rounded d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-computer-mouse fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Perifericos</p>
+                                                <h6 class="mb-0" id="perifericos"></h6>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-sm-4">
-                                            <div class="form-floating mb-3">
-                                                <input type="text" class="form-control text-center" id="nombreComp" placeholder="Nombre del Componente" required>
-                                                <label for="nombreComp" aria-label="Nombre del Componente">* <i class="fa-solid fa-rectangle-list me-2"></i>
-                                                Cantidad de Perifericos</label>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <div class="bg-light rounded d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-computer fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Equipos</p>
+                                                <h6 class="mb-0" id="equipos"></h6>
                                             </div>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>   
                             </div>

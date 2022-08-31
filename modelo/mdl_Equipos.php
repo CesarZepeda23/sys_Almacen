@@ -159,14 +159,33 @@ Class Equipos extends CRUD {
         $this->_DIU($query, Null, "2");
     }
 
-    function editarEquipo($array)
+    function editarComponente($idEquipo,$id_Componente)
     {
-        $query = "INSERT INTO equipo
-         (fechaAlta,numeroEquipo,responsableEquipo,sistemaOperativo,id_AreaUDN,condicion)  
-         VALUES (?,?,?,?,?,?)";
-         $this->_DIU($query, $array, "2");
+        $query = "UPDATE componentes SET id_Equipo = '" . $idEquipo . "' 
+        WHERE idComponente = '" . $id_Componente . "'";
+        $this->_DIU($query, Null, "2");
     }
+    function componentesEquipo() {
+        $query = "SELECT
+        rfwsmqex_gvsl_sys_almacen.componentes.nombre,
+        rfwsmqex_gvsl_sys_almacen.componentes.idComponente,
+        rfwsmqex_gvsl_sys_almacen.caracteristicas.marca,
+        rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn,
+        rfwsmqex_gvsl_sys_almacen.areas.nombre AS nomArea,
+        rfwsmqex_gvsl.udn.UDN
+        FROM
+        rfwsmqex_gvsl_sys_almacen.componentes
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.area_udn ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn
+        INNER JOIN rfwsmqex_gvsl_sys_almacen.areas ON rfwsmqex_gvsl_sys_almacen.area_udn.id_Area = rfwsmqex_gvsl_sys_almacen.areas.idArea
+        INNER JOIN rfwsmqex_gvsl.udn ON rfwsmqex_gvsl_sys_almacen.area_udn.id_UDN = rfwsmqex_gvsl.udn.idUDN
+        WHERE
+        rfwsmqex_gvsl_sys_almacen.componentes.id_Equipo IS NULL	";
+        $sql = $this->_Select($query, null, "2");
+        return $sql;
+    }
+
 }
 
 ?>
-				
+			

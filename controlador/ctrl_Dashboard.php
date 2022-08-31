@@ -22,5 +22,35 @@ switch($opc){
         }
         echo $tablaindexUDN;
         break;
+    case 2:
+            $ID_UDN = $_POST['ID_UDN'];
+            $sql = $obj->mostrarCountUDN($ID_UDN);
+            foreach ($sql as $row) {
+            $infoUDN = array(
+                'CountEquipos' => $row['CountEquipos'],
+                                    );
+                                }; 
+            echo json_encode($infoUDN);
+            break;
+    case 3:
+                $ID_UDN = $_POST['ID_UDN'];
+                $sql = $obj->mostrarCountUDN($ID_UDN);
+                foreach ($sql as $row) {
+                $infoUDN = array(
+                    'CountAreas' => $row['CountAreas'],
+                                        );
+                                    }; 
+                echo json_encode($infoUDN);
+                break;
+    case 4:
+                $ID_UDN = $_POST['ID_UDN'];
+                $sql = $obj->mostrarCountComponentes($ID_UDN);
+                foreach ($sql as $row) {
+                $infoPeri = array(
+                    'CountPeri' => $row['CountPeri'],
+                                        );
+                                    }; 
+                echo json_encode($infoPeri);
+                break;
 }   
 ?>

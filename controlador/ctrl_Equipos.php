@@ -140,7 +140,27 @@ switch($opc){
     case 11://REGRESAR EQUIPO
                 $id_Equipos = $_POST['id_Equipos'];
                 $sql = $obj->regresarEquipo($id_Equipos);
-                break;     
+                break; 
+    case 12:
+                    $tablaEquiposCo = null;
+                    $sql = $obj -> componentesEquipo(); 
+                    foreach($sql as $row){
+                        $tablaEquiposCo .= '
+                            <tr>
+                                <td>' . $row['nombre'] . ' </td>
+                                <td>' . $row['marca'] . ' </td>
+                                <td>' . $row['nomArea'] . ' </td>
+                                <td>' . $row['UDN'] . ' </td>
+                                <td>
+                                <input class="form-check-input" type="checkbox" value="' . $row['idComponente'] . '" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Agregar
+                                </label></td>
+                            </tr>
+                            ';  
+                                       }
+                        echo $tablaEquiposCo;
+                    break;                
         
 } 
 ?>

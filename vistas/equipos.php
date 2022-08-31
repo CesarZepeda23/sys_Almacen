@@ -146,6 +146,27 @@ require("../vistas/navbar.php"); ?>
                                                         </label>
                                                     </div>
                                                 </div>
+                                            <h3>Componentes</h3>
+                                                        <div class="col-sm-12">
+                                    <div class="bg-light rounded h-100 p-4">
+                                        <h4 class="mb-4">Equipos</h4>
+                                            <div class="table-responsive">
+                                                <table class="table table-striped" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Periferico</th>
+                                                            <th scope="col">Marca</th>
+                                                            <th scope="col">Area</th>
+                                                            <th scope="col">Unidad De Negocio</th>
+                                                            <th scope="col">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                        <tbody id="tablasequiposCo">
+                                                        
+                                                        </tbody>
+                                                </table>
+                                            </div>
+                                    </div>
                                     </div>            
                                 </form>
                             </div>
