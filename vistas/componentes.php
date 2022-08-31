@@ -769,7 +769,28 @@ require("../vistas/navbar.php"); ?>
         </div>
     </section>
 
+    <section>
+        <!-- MODAL VER -->
 
+        <div class="modal fade " id="modalQr" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalEquipo" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="col">
+                            <div class="card-text row">
+                                <h4 class="modal-title fw-bold text-center">Ver QR</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body" id="QR">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button"  class="btn btn-danger" data-bs-dismiss="modal">Cerrar<i class="fa-solid fa-ban ms-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 

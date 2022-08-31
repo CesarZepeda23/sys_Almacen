@@ -437,7 +437,7 @@ $("tbody").on("click", "button", function () {
       },
     });
   } else if ($(this).attr("id") == "print") {
-    alert("impr");
+    $("#modalQr").modal("show");
     let datos = new FormData();
 
     datos.append("opc", 10);
@@ -445,13 +445,15 @@ $("tbody").on("click", "button", function () {
 
     $.ajax({
       type: "POST",
-      url: "../controlador/ctrl_Componentes.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      dataType: "JSON",
-      success: function (data) {},
+    url: "../controlador/ctrl_Componentes.php",
+    contentType: false,
+    data: datos,
+    processData: false,
+    cache: false,
+    success: function (respuesta) {
+      $("#QR").html(respuesta);
+
+    },
     });
   } else if ($(this).attr("id") == "delete") {
     let datos = new FormData();

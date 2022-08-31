@@ -218,16 +218,21 @@ switch ($opc) {
              ';
         };
         //Parametros de Condiguración
-        $tamaño = 10; //Tamaño de Pixel
+        $tamaño = 5; //Tamaño de Pixel
         $level = 'L'; //Precisión Baja
-        $framSize = 3; //Tamaño en blanco
+        $framSize = 2; //Tamaño en blanco
         $contenido = $info; //Texto
 
+        $fpdf = new FPDF('P','mm','A4');
+        $fpdf->AddPage();
         //Enviamos los parametros a la Función para generar código QR 
         QRcode::png($contenido, $filename, $level, $tamaño, $framSize);
 
+        $filename = "QR.pdf";   
+        $file_content = $fpdf->Image("../controlador/temp/test.png",10,10,50,0,'PNG');
+        $fpdf->Output('F', $filename);
         //Mostramos la imagen generada
-        echo '<img src="' . $dir . basename($filename) . '" /><hr/>';
-
+        echo '<iframe src="../controlador/QR.pdf" target="_blank"/>';
+        
         break;
 }
