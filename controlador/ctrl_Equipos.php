@@ -18,6 +18,7 @@ switch($opc){
                     <td>' . $row['responsableEquipo'] . ' </td>
                     <td>' . $row['fechaAlta'] . ' </td>
                     <td>  
+                    <button type="button" id="btnVerEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-info m-1"><i class="fa-solid fa-eye"></i></button>
                     <button type="button" id="btnEditarEquipos" value="' . $row['idEquipo'] . '" class="btn btn-square btn-primary m-1"><i class="fa fa-edit"></i></button>
                     <button type="button" id="btnEliminarEquipos" class="btn btn-square btn-danger m-1"><i class="fa fa-trash"></i></button></td>
                 </tr>
@@ -52,31 +53,66 @@ switch($opc){
 
 
     case 5://REGISTRO
-            $infoEquipo .= array(
+            $infoEquipo = array(
                 $fechaAlta = $_POST['fechaAlta'],
                 $numeroEquipo = $_POST['numeroEquipo'],
                 $responsableEquipo = $_POST['responsableEquipo'],
                 $estado = $_POST['estado'],
                 $sistemaOperativo = $_POST['sistemaOperativo'],
                 $id_AreaUDN = $_POST['id_AreaUDN'],
+                $condicion = $_POST['condicion']
             );
             $obj->insertarEquipo($infoEquipo);
         break;
 
     case 6://MOSTRAR INFO EDITAR
-            $id_Equipo = $_POST['id_Equipo'];
-            $sql = $obj->mostrarInfoEquipos($id_Equipo);
-            foreach ($sql as $row) {
-                $infoEquipo .= array(
-                    'id_AreaUDN' => $row['id_AreaUDN'],
-                    'fechaAlta' => $row['fechaAlta'],
-                    'numeroEquipo' => $row['numeroEquipo'],
-                    'responsableEquipo' => $row['responsableEquipo'],
-                    'estado' => $row['estado'],
-                    'sistemaOperativo' => $row['sistemaOperativo'],
-                );
-            };
-            echo json_encode($infoEquipo);
+            $id_Equipos = $_POST['id_Equipos'];
+            $sql = $obj->mostrarInfoEquipos($id_Equipos);
+                foreach ($sql as $row) {    
+                    $infoEquipoEditar = array(
+                        'id_AreaUDN' => $row['id_AreaUDN'],
+                        'fechaAlta' => $row['fechaAlta'],
+                        'numeroEquipo' => $row['numeroEquipo'],
+                        'responsableEquipo' => $row['responsableEquipo'],
+                        'estado' => $row['estado'],
+                        'sistemaOperativo' => $row['sistemaOperativo']
+                    );
+                };
+            echo json_encode($infoEquipoEditar);
         break;
+    case 7://MOSTRAR MODAL VER EQUIPOS
+            $id_Equipos = $_POST['id_Equipos'];
+            $sql = $obj->verEquipos($id_Equipos);
+            foreach ($sql as $row) {
+            $infoEquipoModal = array(
+                'fechaAlta' => $row['fechaAlta'],
+                'numeroEquipo' => $row['numeroEquipo'],
+                'UDN' => $row['UDN'],
+                'nombre' => $row['nombre'],
+                'responsableEquipo' => $row['responsableEquipo'],
+                'sistemaOperativo' => $row['sistemaOperativo'],
+                'condicion' => $row['condicion']
+                                    );
+                                }; 
+                    echo json_encode($infoEquipoModal);
+            break;
+    case 8://MOSTRAR COMPONENTES MODAL VER EQUIPOS
+            $modalEComponent = null;
+            $id_Equipos = $_POST['id_Equipos'];
+            $sql = $obj -> verEquiposYComponentes($id_Equipos); 
+            foreach($sql as $row){
+                $modalEComponent .= '
+                    <div class="rounded d-flex align-items-center p-3">
+                        <i class="fa fa-mouse fa-2x text-primary"></i>
+                            <div class="ms-4">
+                                <p class="mb-0">' . $row['nombre'] . '</p>
+                                <h6 class="mb-0">' . $row['marca'] . '</h6>
+                            </div>
+                    </div>   
+            ';  
+                      };
+                echo $modalEComponent;
+            break;
+        
 } 
 ?>
