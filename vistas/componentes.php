@@ -13,7 +13,16 @@ require("../vistas/navbar.php"); ?>
                 <div class="row g-4">
                     <div class="col-sm-12">
                         <div class="bg-light rounded h-100 p-4">
-                            <h4 class="mb-4">Perifericos</h4>
+                            <h4 class="mb-4 text-center">Perifericos</h4>
+                            <div class="col-12 col-sm-3">
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="filtroCategoria" aria-label="Categoria Componente">
+                                        <option selected value="0" disabled>Seleccione una Opción</option>
+                                    </select>
+                                    <label for="categoriaEditar"><i class="fa-solid fa-certificate me-2"></i>
+                                        Categoria</label>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
@@ -537,8 +546,8 @@ require("../vistas/navbar.php"); ?>
                                                 <div class="form-floating mb-3">
                                                     <select class="form-select" id="appEditar" aria-label="Aplicación Movil">
                                                         <option selected disabled>Seleccione una Opción</option>
-                                                        <option value="Si">Si</option>
-                                                        <option value="No">No</option>
+                                                        <option value="1">Si</option>
+                                                        <option value="0">No</option>
                                                     </select>
                                                     <label for="appEditar" aria-label="Aplicacion Movil"><i class="fa-solid fa-mobile-screen-button me-2"></i>
                                                         Aplicacion Movil</label>

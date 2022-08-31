@@ -13,20 +13,26 @@ class Componentes extends CRUD
     function mostrarAreaUDN($idUDN)
     {
         $query = "SELECT * FROM area_udn 
-        INNER JOIN  areas ON area_udn.id_UDN = '" . $idUDN . "' AND  area_udn.id_Area = areas.idArea";
+        INNER JOIN  areas ON area_udn.id_UDN = '" . $idUDN . "' 
+        AND  area_udn.id_Area = areas.idArea";
         $sql = $this->_Select($query, null, "2");
         return $sql;
     }
 
-    function mostrarCategoria()
+    function mostrarTipoComponente()
     {
         $query = "SELECT * FROM tipo_componente";
         $sql = $this->_Select($query, null, "2");
         return $sql;
     }
 
-    function mostrarComponentes()
+    function mostrarComponentes($id_tipo)
     {
+        $extra = '';
+        if (isset($id_tipo)) {
+            $extra = " AND rfwsmqex_gvsl_sys_almacen.componentes.id_TipoComponente = '" . $id_tipo . "'  ";
+        }
+
         $query = "SELECT
         rfwsmqex_gvsl_sys_almacen.componentes.idComponente,
         rfwsmqex_gvsl_sys_almacen.componentes.nombre AS comNom,
@@ -45,17 +51,11 @@ class Componentes extends CRUD
         INNER JOIN rfwsmqex_gvsl_sys_almacen.componentes 
         ON rfwsmqex_gvsl_sys_almacen.componentes.id_AreaUDN = rfwsmqex_gvsl_sys_almacen.area_udn.idAreaUdn
         INNER JOIN rfwsmqex_gvsl_sys_almacen.caracteristicas 
-        ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica";
+        ON rfwsmqex_gvsl_sys_almacen.componentes.id_Caracteristica = rfwsmqex_gvsl_sys_almacen.caracteristicas.idCaracteristica
+        AND rfwsmqex_gvsl_sys_almacen.caracteristicas.estado = '1'" . $extra . "
+        ORDER BY rfwsmqex_gvsl_sys_almacen.componentes.idComponente ASC";
         $sql = $this->_Select($query, null, "2");
         return $sql;
-    }
-
-    function insertarComponente($array)
-    {
-        $query = "INSERT INTO componentes
-        (nombre, id_Caracteristica, id_TipoComponente, id_AreaUDN) 
-        VALUES (?,?,?,?)";
-        $this->_DIU($query, $array, "2");
     }
 
     function insertarCaracteristicas($array)
@@ -67,6 +67,14 @@ class Componentes extends CRUD
         $this->_DIU($query, $array, "2");
     }
 
+    function insertarComponente($array)
+    {
+        $query = "INSERT INTO componentes
+        (nombre, id_Caracteristica, id_TipoComponente, id_AreaUDN) 
+        VALUES (?,?,?,?)";
+        $this->_DIU($query, $array, "2");
+    }
+
     function ultimoIDCategoria()
     {
         $query = "SELECT MAX(idCaracteristica) AS id FROM caracteristicas";
@@ -75,7 +83,7 @@ class Componentes extends CRUD
         return  $row[0];
     }
 
-    function mostrarInfoComponentes($id_componente)
+    function infoComponente($id_componente)
     {
         $query = "SELECT * FROM
         rfwsmqex_gvsl_sys_almacen.area_udn
@@ -87,4 +95,28 @@ class Componentes extends CRUD
         $sql = $this->_Select($query, null, "2");
         return $sql;
     }
+
+    function eliminarComponente($idCaracteristica)
+    {
+        $query = "UPDATE caracteristicas SET estado='0' 
+        WHERE idCaracteristica ='" . $idCaracteristica . "'";
+        $this->_DIU($query, Null, "2");
+    }
+
+    // function actualizarComponente($array)
+    // {
+    //     $query = "INSERT INTO componentes
+    //     (nombre, id_Caracteristica, id_TipoComponente, id_AreaUDN) 
+    //     VALUES (?,?,?,?)";
+    //     $this->_DIU($query, $array, "2");
+    // }
+
+    // function actualizarCaracteristicas($array, $idCaracteristica)
+    // {
+    //     $query = "UPDATE caracteristicas SET
+    //     tipo = ?, marca = ?, modelo = ?, voltaje = ?, velocidad = ?, contactos = ?, entrada = ?, salida = ?, 
+    //     amperaje = ?, costo = ?, condicion = ?, capacidad = ?, resolucion = ?, tamaño = ?, aplicacion  = ?
+    //     WHERE idCaracteristica = '" . $idCaracteristica . "' ";
+    //     $this->_DIU($query, $array, "2");
+    // }
 }
