@@ -88,7 +88,6 @@ switch ($opc) {
             $nombre = $_POST['nombre'],
             $id_Caracteristica = $obj->ultimoIDCategoria(),
             $id_TipoComponente = $_POST['id_TipoComponente'],
-            $id_AreaUDN = $_POST['id_AreaUDN']
         );
 
         $obj->insertarComponente($infoComponente);
@@ -210,6 +209,11 @@ switch ($opc) {
         foreach ($sql as $row) {
             $info = '
              id Componente: ' . $row['idComponente'] . '
+             Nombre De Perfiferico: ' . $row['nombre'] . '
+             Marca: ' . $row['marca'] . '
+             Unidad De Negocio: ' . $row['UDN'] . '
+             Area: ' . $row['nomArea'] . '
+             Tipo: ' . $row['nomTipo'] . '
              ';
         };
         //Parametros de Condiguración
