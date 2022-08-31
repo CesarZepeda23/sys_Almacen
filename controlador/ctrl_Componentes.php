@@ -232,7 +232,7 @@ switch ($opc) {
         $file_content = $fpdf->Image("../controlador/temp/test.png",10,10,50,0,'PNG');
         $fpdf->Output('F', $filename);
         //Mostramos la imagen generada
-        echo '<iframe src="../controlador/QR.pdf" target="_blank"/>';
+        echo '<iframe src="../controlador/QR.pdf" target="_blank" style="width:100%; height:700px;"/>';
         
         break;
 }
