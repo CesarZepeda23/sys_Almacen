@@ -158,12 +158,25 @@ class Componentes extends CRUD
         $this->_DIU($query, $array, "2");
     }
 
-    // function actualizarCaracteristicas($array, $idCaracteristica)
-    // {
-    //     $query = "UPDATE caracteristicas SET
-    //     tipo = ?, marca = ?, modelo = ?, voltaje = ?, velocidad = ?, contactos = ?, entrada = ?, salida = ?, 
-    //     amperaje = ?, costo = ?, condicion = ?, capacidad = ?, resolucion = ?, tamaño = ?, aplicacion  = ?
-    //     WHERE idCaracteristica = '" . $idCaracteristica . "' ";
-    //     $this->_DIU($query, $array, "2");
-    // }
+    function actualizarCaracteristicas($array, $idCaracteristica)
+    {
+        $query = "UPDATE caracteristicas SET
+        tipo = ?, 
+        marca = ?, 
+        modelo = ?, 
+        voltaje = ?, 
+        velocidad = ?, 
+        contactos = ?, 
+        entrada = ?, 
+        salida = ?, 
+        amperaje = ?, 
+        costo = ?, 
+        condicion = ?, 
+        capacidad = ?, 
+        resolucion = ?, 
+        tamaño = ?, 
+        aplicacion  = ?
+        WHERE idCaracteristica = '" . $idCaracteristica . "' ";
+        $this->_DIU($query, $array, "2");
+    }
 }

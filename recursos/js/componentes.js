@@ -303,57 +303,8 @@ $("#agregar").click(function () {
   }
 });
 
-$("#actualizarComponente").click(function () {
-  if (
-    $("#udnEditar").val() == 0 ||
-    $("#areasEditar").val() == 0 ||
-    $("#nombreCompEditar").val().length < 1 ||
-    $("#marcaEditar").val().length < 1 ||
-    $("#modeloEditar").val().length < 1 ||
-    $("#categoriaEditar").val() == 0 ||
-    $("#precioEditar").val().length < 1 ||
-    $("#condicionEditar").val().length < 1
-  ) {
-    Swal.fire({
-      position: "center",
-      icon: "error",
-      title: "Error, Falta Llenar Campos Obligatorios",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  } else {
-    let datos = new FormData();
-
-    datos.append("opc", 9);
-    datos.append("idComponente", idComponente);
-    datos.append("nombre", $("#nombreCompEditar").val());
-    datos.append("id_TipoComponente", $("#categoriaEditar").val());
-    datos.append("id_AreaUDN", $("#areasEditar").val());
-
-    $.ajax({
-      type: "POST",
-      url: "../controlador/ctrl_Componentes.php",
-      contentType: false,
-      data: datos,
-      processData: false,
-      cache: false,
-      success: function (respuesta) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Datos Actualizados Con Exito",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        $("#modalEditar").modal("hide");
-        mostrarComponentes();
-      },
-    });
-  }
-});
-
-//CORRECTO  ===================================================================================
 let idComponente;
+let idCaracteristica;
 $("tbody").on("click", "button", function () {
   if ($(this).attr("id") == "edit") {
     idComponente = parseInt($(this).val());
@@ -375,6 +326,8 @@ $("tbody").on("click", "button", function () {
       cache: false,
       dataType: "JSON",
       success: function (data) {
+        idCaracteristica = data["id_Caracteristica"];
+
         $("#udnEditar option[value=" + data["id_UDN"] + "]").attr(
           "selected",
           true
@@ -546,97 +499,78 @@ $("tbody").on("click", "button", function () {
   }
 });
 
-// $("#actualizarComponente").click(function () {
-//   if (
-//     $("#udnEditar").val() == 0 ||
-//     $("#areasEditar").val() == 0 ||
-//     $("#nombreCompEditar").val().length < 1 ||
-//     $("#marcaEditar").val().length < 1 ||
-//     $("#modeloEditar").val().length < 1 ||
-//     $("#categoriaEditar").val() == 0 ||
-//     $("#precioEditar").val().length < 1 ||
-//     $("#condicionEditar").val().length < 1
-//   ) {
-//     Swal.fire({
-//       position: "center",
-//       icon: "error",
-//       title: "Error, Falta Llenar Campos Obligatorios",
-//       showConfirmButton: false,
-//       timer: 2000,
-//     });
-//   } else {
-//     let datos = new FormData();
+$("#actualizarComponente").click(function () {
+  if (
+    $("#udnEditar").val() == 0 ||
+    $("#areasEditar").val() == 0 ||
+    $("#nombreCompEditar").val().length < 1 ||
+    $("#marcaEditar").val().length < 1 ||
+    $("#modeloEditar").val().length < 1 ||
+    $("#categoriaEditar").val() == 0 ||
+    $("#precioEditar").val().length < 1 ||
+    $("#condicionEditar").val().length < 1
+  ) {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Error, Falta Llenar Campos Obligatorios",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else {
+    let datos = new FormData();
 
-//     datos.append("opc", 8);
-//     datos.append("tipo", $("#tipoEditar").val());
-//     datos.append("marca", $("#marcaEditar").val());
-//     datos.append("modelo", $("#modeloEditar").val());
-//     datos.append("voltaje", $("#voltajeEditar").val());
-//     datos.append("velocidad", $("#velocidadEditar").val());
-//     datos.append("contactos", $("#contactosEditar").val());
-//     datos.append("entrada", $("#entradasEditar").val());
-//     datos.append("salida", $("#salidasEditar").val());
-//     datos.append("amperaje", $("#amperajeEditar").val());
-//     datos.append("costo", $("#precioEditar").val());
-//     datos.append("condicion", $("#condicionEditar").val());
-//     datos.append("capacidad", $("#capacidadEditar").val());
-//     datos.append("resolucion", $("#resolucionEditar").val());
-//     datos.append("tamaño", $("#tamañoEditar").val());
-//     datos.append("aplicacion", $("#appEditar").val());
+    datos.append("opc", 9);
+    datos.append("idComponente", idComponente);
+    datos.append("idCaracteristica", idCaracteristica);
 
-//     $.ajax({
-//       type: "POST",
-//       url: "../controlador/ctrl_Componentes.php",
-//       contentType: false,
-//       data: datos,
-//       processData: false,
-//       cache: false,
-//       success: function (respuesta) {
-//         datos.append("opc", 6);
+    datos.append("nombre", $("#nombreCompEditar").val());
+    datos.append("id_TipoComponente", $("#categoriaEditar").val());
+    datos.append("id_AreaUDN", $("#areasEditar").val());
 
-//         datos.append("nombre", $("#nombreComp").val());
-//         datos.append("id_Caracteristica", parseInt(respuesta));
-//         datos.append("id_TipoComponente", $("#categoria").val());
-//         datos.append("id_AreaUDN", $("#areas").val());
+    datos.append("tipo", $("#tipoEditar").val());
+    datos.append("marca", $("#marcaEditar").val());
+    datos.append("modelo", $("#modeloEditar").val());
+    datos.append("voltaje", $("#voltajeEditar").val());
+    datos.append("velocidad", $("#velocidadEditar").val());
+    datos.append("contactos", $("#contactosEditar").val());
+    datos.append("entrada", $("#entradasEditar").val());
+    datos.append("salida", $("#salidasEditar").val());
+    datos.append("amperaje", $("#amperajeEditar").val());
+    datos.append("costo", $("#precioEditar").val());
+    datos.append("condicion", $("#condicionEditar").val());
+    datos.append("capacidad", $("#capacidadEditar").val());
+    datos.append("resolucion", $("#resolucionEditar").val());
+    datos.append("tamaño", $("#tamañoEditar").val());
+    datos.append("aplicacion", $("#appEditar").val());
 
-//         $.ajax({
-//           type: "POST",
-//           url: "../controlador/ctrl_Componentes.php",
-//           contentType: false,
-//           data: datos,
-//           processData: false,
-//           cache: false,
-//           success: function (respuesta) {
-//             Swal.fire({
-//               position: "center",
-//               icon: "success",
-//               title: "Agregado Con Exito",
-//               showConfirmButton: false,
-//               timer: 1500,
-//             });
-
-//             $("#modalRegistro").modal("hide");
-//           },
-//           error: function () {
-//             Swal.fire({
-//               position: "center",
-//               icon: "error",
-//               title: "Error, Datos no Almancenados",
-//               showConfirmButton: false,
-//               timer: 2000,
-//             });
-//           },
-//         });
-//       },
-//       error: function () {
-//         Swal.fire({
-//           position: "center",
-//           icon: "error",
-//           title: "Error, Datos no Almancenados",
-//           showConfirmButton: false,
-//           timer: 2000,
-//         });
-//       },
-//     });
-//   }
-// });
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Componentes.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      success: function () {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Datos Actualizados Con Exito",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        $("#modalEditar").modal("hide");
+        mostrarComponentes();
+      },
+      error: function () {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Error al Actualizar los Datos",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      },
+    });
+  }
+});

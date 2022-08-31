@@ -158,6 +158,7 @@ switch ($opc) {
         break;
     case 9:
         $idComponente = $_POST['idComponente'];
+        $idCaracteristica = $_POST['idCaracteristica'];
 
         $infoComponente = array(
             $nombre = $_POST['nombre'],
@@ -165,31 +166,26 @@ switch ($opc) {
             $id_AreaUDN = $_POST['id_AreaUDN']
         );
 
+        $infoCaracteristica = array(
+            $tipo = $_POST['tipo'],
+            $marca = $_POST['marca'],
+            $modelo = $_POST['modelo'],
+            $voltaje = $_POST['voltaje'],
+            $velocidad = $_POST['velocidad'],
+            $contactos = $_POST['contactos'],
+            $entrada = $_POST['entrada'],
+            $salida = $_POST['salida'],
+            $amperaje = $_POST['amperaje'],
+            $costo = $_POST['costo'],
+            $condicion = $_POST['condicion'],
+            $capacidad = $_POST['capacidad'],
+            $resolucion = $_POST['resolucion'],
+            $tamaño = $_POST['tamaño'],
+            $aplicacion = $_POST['aplicacion']
+        );
+
         $obj->actualizarComponente($infoComponente, $idComponente);
+        $obj->actualizarCaracteristicas($infoCaracteristica, $idCaracteristica);
+
         break;
 }
-
-
-
-
-// $idCaracteristica = $_POST['idCaracteristica'];
-
-//         $infoCaracteristica = array(
-//             $tipo = $_POST['tipo'],
-//             $marca = $_POST['marca'],
-//             $modelo = $_POST['modelo'],
-//             $voltaje = $_POST['voltaje'],
-//             $velocidad = $_POST['velocidad'],
-//             $contactos = $_POST['contactos'],
-//             $entrada = $_POST['entrada'],
-//             $salida = $_POST['salida'],
-//             $amperaje = $_POST['amperaje'],
-//             $costo = $_POST['costo'],
-//             $condicion = $_POST['condicion'],
-//             $capacidad = $_POST['capacidad'],
-//             $resolucion = $_POST['resolucion'],
-//             $tamaño = $_POST['tamaño'],
-//             $aplicacion = $_POST['aplicacion']
-//         );
-
-//         $obj->actualizarCaracteristicas($infoCaracteristica, $idCaracteristica);
