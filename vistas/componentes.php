@@ -569,6 +569,208 @@ require("../vistas/navbar.php"); ?>
 
     </section>
 
+    <section>
+        <!-- MODAL VER -->
+
+        <div class="modal fade " id="modalInfo" data-bs-backdrop="static" tabindex="-1" aria-labelledby="modalEquipo" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="col">
+                            <div class="card-text row">
+                                <h4 class="modal-title fw-bold text-center">Ver Periferico</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="body p-sm-2 p-md-4 p-lg-4 p-xl-4">
+                                <div class="text row">
+                                    <div class="col-12 col-sm-3">
+                                        <div class="bg-light rounded d-flex align-items-center p-3">
+                                            <i class="fa fa-building fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Unidad De Negocio</p>
+                                                <h6 class="mb-0" id="udnInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6"></div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="bg-light rounded d-flex align-items-center p-3">
+                                            <i class="fa fa-briefcase fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Areas</p>
+                                                <h6 class="mb-0" id="areasInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa fa-computer-mouse fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Nombre Del Periferico</p>
+                                                <h6 class="mb-0" id="nomPerifericoInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-copyright fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Marca</p>
+                                                <h6 class="mb-0" id="marcaInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-laptop-file fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Modelo</p>
+                                                <h6 class="mb-0" id="modeloInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-object-ungroup fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Tipo</p>
+                                                <h6 class="mb-0" id="tipoInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-certificate fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Categoria</p>
+                                                <h6 class="mb-0" id="categoriaInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-dollar-sign fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Precio</p>
+                                                <h6 class="mb-0" id="precioInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-thumbs-up fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Condicion Fisica</p>
+                                                <h6 class="mb-0" id="condicionInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>Caracteristicas Que Tiene El Periferico</h4>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-bolt fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Voltaje</p>
+                                                <h6 class="mb-0" id="voltajeInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-arrow-right-arrow-left fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Velocidad</p>
+                                                <h6 class="mb-0" id="velocidadInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-plug fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Contactos</p>
+                                                <h6 class="mb-0" id="contactosInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-brands fa-usb fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Entradas</p>
+                                                <h6 class="mb-0" id="entradasInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-arrow-up-right-from-square fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Salidas</p>
+                                                <h6 class="mb-0" id="salidasInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-plug-circle-bolt fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Amperaje</p>
+                                                <h6 class="mb-0" id="amperajeInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-hard-drive fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Capacidad</p>
+                                                <h6 class="mb-0" id="capacidadInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-display fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Resolución</p>
+                                                <h6 class="mb-0" id="resolucionInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-maximize fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Tamaño</p>
+                                                <h6 class="mb-0" id="tamañoInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-3">
+                                        <div class="d-flex align-items-center p-3">
+                                            <i class="fa-solid fa-mobile-screen-button fa-2x text-primary"></i>
+                                            <div class="ms-4">
+                                                <p class="mb-0">Aplicación Movil</p>
+                                                <h6 class="mb-0" id="aplicacionmovilInfo"></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar<i class="fa-solid fa-ban ms-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 

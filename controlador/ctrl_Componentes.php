@@ -52,6 +52,7 @@ switch ($opc) {
                         <td>' . $row['condicion'] . ' </td>
                         <td>$ ' . number_format($row['costo'], 2, '.', ',') . ' </td>
                         <td>
+                            <button type="button" id="info" value="' . $row['idComponente'] . '" class="btn btn-square btn-info m-1"><i class="fa-solid fa-eye"></i></button>
                             <button type="button" class="btn btn-square btn-primary m-1" id="edit" value="' . $row['idComponente'] . '"><i class="fa fa-edit"></i></button>
                             <button type="button" class="btn btn-square btn-warning m-1" id="print" value="' . $row['idComponente'] . '"><i class="fa fa-print"></i></button>
                             <button type="button" class="btn btn-square btn-danger m-1" id="delete" value="' . $row['idComponente'] . '"><i class="fa fa-trash"></i></button>
@@ -125,6 +126,35 @@ switch ($opc) {
     case 7:
         $idCaracteristica = $_POST['idCaracteristica'];
         $sql = $obj->eliminarComponente($idCaracteristica);
+        break;
+    case 8:
+        $id_componente = $_POST['id_componente'];
+        $sql = $obj->InfoComponentesModal($id_componente);
+        foreach ($sql as $row) {
+            $infoComponenteModal = array(
+                'nomArea' => $row['nomArea'],
+                'UDN' => $row['UDN'],
+                'nombre' => $row['nombre'],
+                'nomTipo' => $row['nomTipo'],
+                'tipo' => $row['tipo'],
+                'marca' => $row['marca'],
+                'modelo' => $row['modelo'],
+                'voltaje' => $row['voltaje'],
+                'velocidad' => $row['velocidad'],
+                'contactos' => $row['contactos'],
+                'entrada' => $row['entrada'],
+                'salida	' => $row['salida'],
+                'amperaje' => $row['amperaje'],
+                'costo' => $row['costo'],
+                'condicion' => $row['condicion'],
+                'capacidad' => $row['capacidad'],
+                'resolucion' => $row['resolucion'],
+                'tamaño' => $row['tamaño'],
+                'aplicacion' => $row['aplicacion']
+            );
+        };
+        echo json_encode($infoComponenteModal);
+
         break;
 }
 
