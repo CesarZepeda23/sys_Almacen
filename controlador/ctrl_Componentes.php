@@ -156,6 +156,17 @@ switch ($opc) {
         echo json_encode($infoComponenteModal);
 
         break;
+    case 9:
+        $idComponente = $_POST['idComponente'];
+
+        $infoComponente = array(
+            $nombre = $_POST['nombre'],
+            $id_TipoComponente = $_POST['id_TipoComponente'],
+            $id_AreaUDN = $_POST['id_AreaUDN']
+        );
+
+        $obj->actualizarComponente($infoComponente, $idComponente);
+        break;
 }
 
 

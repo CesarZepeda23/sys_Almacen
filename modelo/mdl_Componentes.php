@@ -149,13 +149,14 @@ class Componentes extends CRUD
         return $sql;
     }
 
-    // function actualizarComponente($array)
-    // {
-    //     $query = "INSERT INTO componentes
-    //     (nombre, id_Caracteristica, id_TipoComponente, id_AreaUDN) 
-    //     VALUES (?,?,?,?)";
-    //     $this->_DIU($query, $array, "2");
-    // }
+    function actualizarComponente($array, $idComponente)
+    {
+        $query = "UPDATE componentes SET 
+        nombre = ?,
+        id_TipoComponente = ?,
+        id_AreaUDN = ? WHERE idComponente = '" . $idComponente . "' ";
+        $this->_DIU($query, $array, "2");
+    }
 
     // function actualizarCaracteristicas($array, $idCaracteristica)
     // {

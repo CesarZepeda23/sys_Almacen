@@ -303,10 +303,60 @@ $("#agregar").click(function () {
   }
 });
 
-//CORRECTO  ===================================================================================
+$("#actualizarComponente").click(function () {
+  if (
+    $("#udnEditar").val() == 0 ||
+    $("#areasEditar").val() == 0 ||
+    $("#nombreCompEditar").val().length < 1 ||
+    $("#marcaEditar").val().length < 1 ||
+    $("#modeloEditar").val().length < 1 ||
+    $("#categoriaEditar").val() == 0 ||
+    $("#precioEditar").val().length < 1 ||
+    $("#condicionEditar").val().length < 1
+  ) {
+    Swal.fire({
+      position: "center",
+      icon: "error",
+      title: "Error, Falta Llenar Campos Obligatorios",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else {
+    let datos = new FormData();
 
+    datos.append("opc", 9);
+    datos.append("idComponente", idComponente);
+    datos.append("nombre", $("#nombreCompEditar").val());
+    datos.append("id_TipoComponente", $("#categoriaEditar").val());
+    datos.append("id_AreaUDN", $("#areasEditar").val());
+
+    $.ajax({
+      type: "POST",
+      url: "../controlador/ctrl_Componentes.php",
+      contentType: false,
+      data: datos,
+      processData: false,
+      cache: false,
+      success: function (respuesta) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Datos Actualizados Con Exito",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        $("#modalEditar").modal("hide");
+        mostrarComponentes();
+      },
+    });
+  }
+});
+
+//CORRECTO  ===================================================================================
+let idComponente;
 $("tbody").on("click", "button", function () {
   if ($(this).attr("id") == "edit") {
+    idComponente = parseInt($(this).val());
     $("#modalEditar").modal("show");
 
     selectUDN("#udnEditar");
@@ -341,10 +391,10 @@ $("tbody").on("click", "button", function () {
         $("#marcaEditar").val(data["marca"]);
         $("#modeloEditar").val(data["modelo"]);
         $("#tipoEditar").val(data["tipo"]);
-        $("#categoriaEditar").prop(
-          "selectedIndex",
-          parseInt(data["id_TipoComponente"])
-        );
+
+        $(
+          "#categoriaEditar option[value=" + data["id_TipoComponente"] + "]"
+        ).attr("selected", true);
 
         $("#precioEditar").val(data["costo"]);
         $("#condicionEditar").val(data["condicion"]);
